@@ -10,6 +10,10 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
+    "paths": {
+      "@entities/*": ["src/entities/*"],
+      "@services/*": ["src/services/*"]
+    },
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": true,
@@ -18,4 +22,11 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false
   }
+  ,
+  "include": [
+    "src/**/*.ts", 
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

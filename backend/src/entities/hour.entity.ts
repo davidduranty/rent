@@ -1,6 +1,7 @@
 import { DateType, Entity, ManyToOne, PrimaryKey, Property } from "@mikro-orm/core";
+import { Location } from './location.entity'
 
-@Entity()
+@Entity({ schema: 'rentACar', tableName: 'hour' })
 
 export class Hour {
     @PrimaryKey({ autoincrement: true })

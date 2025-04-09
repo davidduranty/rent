@@ -2,7 +2,7 @@ import { Collection, Entity, OneToMany, OneToOne, PrimaryKey, Property } from "@
 import { Hour } from "./hour.entity";
 import { PublicHoliday } from "./public-holiday.entity";
 
-@Entity()
+@Entity({ schema: 'rentACar', tableName: 'location' })
 
 export class Location {
     @PrimaryKey({ autoincrement: true })
@@ -24,6 +24,6 @@ export class Location {
     hour = new Collection<Hour>(this)
 
     @OneToOne(() => PublicHoliday, (event) => event.location, { owner: true })
-    publicHoliday: PublicHoliday;
+    publicHoliday?: PublicHoliday;
 
 }

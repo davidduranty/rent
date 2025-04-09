@@ -1,7 +1,7 @@
 import { Entity, OneToOne, PrimaryKey, Property } from "@mikro-orm/core";
 import { Location } from './location.entity';
 
-@Entity()
+@Entity({ schema: 'rentACar', tableName: 'public_holiday' })
 
 export class PublicHoliday {
     @PrimaryKey({ autoincrement: true })
@@ -29,6 +29,6 @@ export class PublicHoliday {
     sunday: string;
 
     @OneToOne(() => Location, (location) => location.publicHoliday)
-    location: Location
+    location?: Location
 
 }
