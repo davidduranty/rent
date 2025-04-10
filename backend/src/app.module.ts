@@ -4,6 +4,7 @@ import { MikroOrmModule } from '@mikro-orm/nestjs'
 import { config as mikroOrmConfig } from './config-orm/mikro-orm.config';
 import { OrmModule } from './ormModule.module';
 
+
 @Module({
   imports: [MikroOrmModule.forRoot(mikroOrmConfig), OrmModule],
   controllers: [],

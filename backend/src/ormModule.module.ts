@@ -3,18 +3,20 @@ import { MiddlewareConsumer, Module, NestModule } from "@nestjs/common";
 import { Hour } from "./entities/hour.entity";
 import { Location } from "./entities/location.entity";
 import { PublicHoliday } from "./entities/public-holiday.entity";
+import { LocationService } from "@services/location/location.service";
+import { LocationController } from "./controllers/location/location.controller";
 
 @Module({
     imports: [MikroOrmModule.forFeature([Hour, Location, PublicHoliday])],
-    providers: [],
-    controllers: []
+    providers: [LocationService],
+    controllers: [LocationController]
 })
 
 class OrmModule implements NestModule {
     configure(consumer: MiddlewareConsumer) {
         consumer
             .apply() // Applique le middleware
-            .forRoutes();
+            .forRoutes(LocationController);
     }
 }
 export { OrmModule }
