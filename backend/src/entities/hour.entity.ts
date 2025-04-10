@@ -5,13 +5,16 @@ import { Location } from './location.entity'
 
 export class Hour {
     @PrimaryKey({ autoincrement: true })
-    id!: number
+    id!: number;
 
     @Property({ type: DateType, nullable: true })
-    date?: Date | null
+    startDate?: Date | null;
+
+    @Property({ type: DateType, nullable: true })
+    endDate?: Date | null;
 
     @Property({ type: 'string', nullable: true })
-    description?: string
+    description?: string;
 
     @ManyToOne(() => Location, { nullable: true })
     location?: Location;

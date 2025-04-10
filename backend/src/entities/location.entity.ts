@@ -1,6 +1,7 @@
-import { Collection, Entity, OneToMany, OneToOne, PrimaryKey, Property } from "@mikro-orm/core";
+import { Collection, Entity, ManyToMany, OneToMany, OneToOne, PrimaryKey, Property } from "@mikro-orm/core";
 import { Hour } from "./hour.entity";
 import { PublicHoliday } from "./public-holiday.entity";
+import { Vehicle } from "./vehicle.entity";
 
 @Entity({ schema: 'rentACar', tableName: 'location' })
 
@@ -15,10 +16,10 @@ export class Location {
     address: string;
 
     @Property({ type: 'string', nullable: false })
-    city: string
+    city: string;
 
     @Property({ type: 'string', nullable: false })
-    zipCode: string
+    zipCode: string;
 
     @OneToMany(() => Hour, (event) => event.location, { eager: false })
     hour = new Collection<Hour>(this)
@@ -26,4 +27,6 @@ export class Location {
     @OneToOne(() => PublicHoliday, (event) => event.location, { owner: true })
     publicHoliday?: PublicHoliday;
 
+    @ManyToMany({ entity: () => Vehicle, mappedBy: 'location' })
+    vehicles? = new Collection<Vehicle>(this);
 }

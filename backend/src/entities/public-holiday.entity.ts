@@ -29,6 +29,6 @@ export class PublicHoliday {
     sunday: string;
 
     @OneToOne(() => Location, (location) => location.publicHoliday)
-    location?: Location
+    location?: Location;
 
 }

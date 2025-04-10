@@ -217,8 +217,18 @@
           "nullable": false,
           "mappedType": "integer"
         },
-        "date": {
-          "name": "date",
+        "start_date": {
+          "name": "start_date",
+          "type": "date",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": true,
+          "length": 0,
+          "mappedType": "date"
+        },
+        "end_date": {
+          "name": "end_date",
           "type": "date",
           "unsigned": false,
           "autoincrement": false,
@@ -274,6 +284,141 @@
           ],
           "referencedTableName": "rentACar.location",
           "deleteRule": "set null",
+          "updateRule": "cascade"
+        }
+      },
+      "nativeEnums": {}
+    },
+    {
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "unsigned": false,
+          "autoincrement": true,
+          "primary": true,
+          "nullable": false,
+          "mappedType": "integer"
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(255)",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 255,
+          "mappedType": "string"
+        },
+        "model": {
+          "name": "model",
+          "type": "varchar(255)",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 255,
+          "mappedType": "string"
+        },
+        "transmition": {
+          "name": "transmition",
+          "type": "smallint",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "mappedType": "smallint"
+        },
+        "place": {
+          "name": "place",
+          "type": "int",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "mappedType": "integer"
+        }
+      },
+      "name": "vehicle",
+      "schema": "rentACar",
+      "indexes": [
+        {
+          "keyName": "vehicle_pkey",
+          "columnNames": [
+            "id"
+          ],
+          "composite": false,
+          "constraint": true,
+          "primary": true,
+          "unique": true
+        }
+      ],
+      "checks": [],
+      "foreignKeys": {},
+      "nativeEnums": {}
+    },
+    {
+      "columns": {
+        "vehicle_id": {
+          "name": "vehicle_id",
+          "type": "int",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "mappedType": "integer"
+        },
+        "location_id": {
+          "name": "location_id",
+          "type": "int",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "mappedType": "integer"
+        }
+      },
+      "name": "vehicle_location",
+      "schema": "rentACar",
+      "indexes": [
+        {
+          "keyName": "vehicle_location_pkey",
+          "columnNames": [
+            "vehicle_id",
+            "location_id"
+          ],
+          "composite": true,
+          "constraint": true,
+          "primary": true,
+          "unique": true
+        }
+      ],
+      "checks": [],
+      "foreignKeys": {
+        "vehicle_location_vehicle_id_foreign": {
+          "constraintName": "vehicle_location_vehicle_id_foreign",
+          "columnNames": [
+            "vehicle_id"
+          ],
+          "localTableName": "rentACar.vehicle_location",
+          "referencedColumnNames": [
+            "id"
+          ],
+          "referencedTableName": "rentACar.vehicle",
+          "deleteRule": "cascade",
+          "updateRule": "cascade"
+        },
+        "vehicle_location_location_id_foreign": {
+          "constraintName": "vehicle_location_location_id_foreign",
+          "columnNames": [
+            "location_id"
+          ],
+          "localTableName": "rentACar.vehicle_location",
+          "referencedColumnNames": [
+            "id"
+          ],
+          "referencedTableName": "rentACar.location",
+          "deleteRule": "cascade",
           "updateRule": "cascade"
         }
       },

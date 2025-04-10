@@ -17,7 +17,7 @@ export class LocationService {
         const location = await this._LocationService.find(
             {},
             {
-                populate: ['publicHoliday'],
+                populate: ['publicHoliday', 'vehicles'],
                 populateOrderBy: { publicHoliday: { id: QueryOrder.ASC } },
                 strategy: LoadStrategy.SELECT_IN,
                 limit: 10,
