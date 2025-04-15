@@ -8,7 +8,11 @@ export class LocationController {
 
     @Get('all')
     public async getAllLocation(): Promise<LocationDTO[]> {
-        return await this._LocationService.getAll();
+        try {
+            return await this._LocationService.getAll();
+        } catch (error) {
+            throw new Error('Location not found')
+        }
     }
 
 }

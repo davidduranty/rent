@@ -10,16 +10,25 @@ export class Vehicle {
     id!: number;
 
     @Property({ type: 'string', nullable: false })
-    name: string;
+    brand: string;
 
     @Property({ type: 'string', nullable: false })
     model: string;
 
-    @Property({ type: 'enum', nullable: false })
-    transmition: 'Automatique' | 'Manuelle';
+    @Property({ type: 'string', nullable: false })
+    image: string;
+
+    @Property({ type: 'string', nullable: false })
+    transmition: string;
 
     @Property({ type: 'number', nullable: false })
     place: number;
+
+    @Property({ type: 'boolean', nullable: false })
+    available: boolean;
+
+    @Property({ type: 'string', nullable: false })
+    type: string;
 
     @ManyToMany({ entity: () => Location, serializer: value => value, serializedName: 'location' })
     location?: Collection<Location> = new Collection<Location>(this);

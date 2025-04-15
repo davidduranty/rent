@@ -5,9 +5,10 @@ import { Location } from "./entities/location.entity";
 import { PublicHoliday } from "./entities/public-holiday.entity";
 import { LocationService } from "@services/location/location.service";
 import { LocationController } from "./controllers/location/location.controller";
+import { Vehicle } from "@entities/vehicle.entity";
 
 @Module({
-    imports: [MikroOrmModule.forFeature([Hour, Location, PublicHoliday])],
+    imports: [MikroOrmModule.forFeature([Hour, Location, PublicHoliday, Vehicle])],
     providers: [LocationService],
     controllers: [LocationController]
 })

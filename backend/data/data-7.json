@@ -1,0 +1,275 @@
+[
+  {
+    "transmition": "Manuelle",
+    "model": "500",
+    "brand": "Fiat",
+    "type": "Berline",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/fiat-500-2d-weiss-2020.png"
+  },
+  {
+    "transmition": "Manuelle",
+    "model": "Polo",
+    "brand": "VW",
+    "type": "Berline",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-polo-4d-blue-2022.png"
+  },
+  {
+    "transmition": "Automatique",
+    "model": "E-2008",
+    "brand": "Peugeot",
+    "type": "Berline",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/peugeot-2008-suv-white-2024.png"
+  },
+  {
+    "transmition": "Manuelle",
+    "model": "C4",
+    "brand": "Citroen",
+    "type": "SUV",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/citroen-c4-5d-silver-2023.png"
+  },
+  {
+    "transmition": "Manuelle",
+    "model": "2008",
+    "brand": "Peugeot",
+    "type": "Berline",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-taigo-suv-white-2022.png"
+  },
+  {
+    "transmition": "Automatique",
+    "model": "ID.3",
+    "brand": "VW",
+    "type": "SUV",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Manuelle",
+    "model": "Mokka Electric",
+    "brand": "Opel",
+    "type": "Berline",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Manuelle",
+    "model": "Taigo",
+    "brand": "VW",
+    "type": "SUV",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-taigo-suv-white-2022.png"
+  },
+  {
+    "transmition": "Automatique",
+    "model": "e-C4 X",
+    "brand": "Citroen",
+    "type": "Berline",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Automatique",
+    "model": "Cooper",
+    "brand": "MINI",
+    "type": "SUV",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Automatique",
+    "model": "408",
+    "brand": "Peugeot",
+    "type": "SUV",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Manuelle",
+    "model": "Grandland Hybride",
+    "brand": "Opel",
+    "type": "SUV",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Automatique",
+    "model": "Série 1",
+    "brand": "BMW",
+    "type": "Berline",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Automatique",
+    "model": "Countryman",
+    "brand": "MINI",
+    "type": "Berline",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Automatique",
+    "model": "308 SW",
+    "brand": "Peugeot",
+    "type": "SUV",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Manuelle",
+    "model": "Grandland",
+    "brand": "Opel",
+    "type": "SUV",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Automatique",
+    "model": "Série 2 Active Tourer",
+    "brand": "BMW",
+    "type": "Berline",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Manuelle",
+    "model": "Cooper Cabrio",
+    "brand": "MINI",
+    "type": "Berline",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Automatique",
+    "model": "Tiguan",
+    "brand": "VW",
+    "type": "SUV",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Manuelle",
+    "model": "GLA Hybride",
+    "brand": "Mercedes-Benz",
+    "type": "Berline",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Automatique",
+    "model": "Série 2 Gran Coupé",
+    "brand": "BMW",
+    "type": "Berline",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Manuelle",
+    "model": "CLA Shooting Brake",
+    "brand": "Mercedes",
+    "type": "Berline",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Automatique",
+    "model": "X1",
+    "brand": "BMW",
+    "type": "SUV",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Manuelle",
+    "model": "Classe C Hybride",
+    "brand": "Mercedes",
+    "type": "Berline",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Automatique",
+    "model": "Hybride",
+    "brand": "DS7",
+    "type": "Berline",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Manuelle",
+    "model": "Série 3 Touring",
+    "brand": "BMW",
+    "type": "Berline",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Automatique",
+    "model": "Stelvio",
+    "brand": "Alfa Romeo",
+    "type": "Berline",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Manuelle",
+    "model": "Classe C Hybride",
+    "brand": "Mercedes",
+    "type": "Berline",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Automatique",
+    "model": "Classe C",
+    "brand": "Mercedes-Benz",
+    "type": "SUV",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Manuelle",
+    "model": "Série 4 Gran Coupé",
+    "brand": "BMW",
+    "type": "Berline",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Automatique",
+    "model": "LYRIQ",
+    "brand": "Cadillac",
+    "type": "Berline",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Manuelle",
+    "model": "Série 5",
+    "brand": "BMW",
+    "type": "Berline",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Automatique",
+    "model": "X5 Hybride",
+    "brand": "BMW",
+    "type": "SUV",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Automatique",
+    "model": "X3 Hybride",
+    "brand": "BMW",
+    "type": "SUV",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Automatique",
+    "model": "X3",
+    "brand": "BMW",
+    "type": "Compact Break",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Automatique",
+    "model": "Classe V Extra Longue",
+    "brand": "Mercedes-Benz",
+    "type": "Berline",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Automatique",
+    "model": "X5",
+    "brand": "BMW",
+    "type": "SUV",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Manuelle",
+    "model": "Velar",
+    "brand": "Range Rover",
+    "type": "SUV",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Automatique",
+    "model": "XM",
+    "brand": "BMW",
+    "type": "Berline",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  }
+]

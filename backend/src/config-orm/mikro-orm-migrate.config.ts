@@ -1,11 +1,12 @@
 import { config } from "./mikro-orm.config";
-import { Migrator, TSMigrationGenerator } from '@mikro-orm/migrations'
+import { Migrator, TSMigrationGenerator } from '@mikro-orm/migrations';
+import { SeedManager } from '@mikro-orm/seeder'
 
 
 const migrationConfig = {
     ...config,
     entities: ['src/entities/**/*.entity.ts'],
-    extensions: [Migrator],
+    extensions: [Migrator, SeedManager],
     migrations: {
         tableName: 'mikro_orm_migrations', // name of database table with log of executed transactions
         path: 'dist/migrations', // path to the folder with migrations
@@ -19,6 +20,14 @@ const migrationConfig = {
         snapshot: true, // save snapshot when creating new migrations
         emit: 'ts', // migration generation mode
         generator: TSMigrationGenerator, // migration generator, e.g. to allow custom formatting
+    },
+    seeder: {
+        path: './src/seeder',
+        pathTs: undefined,
+        defaultSeeder: 'DatabaseSeeder',
+        glob: '!(*.d).{js,ts}', // how to match seeder files (all .js and .ts files, but not .d.ts)
+        emit: 'ts', // seeder generation mode
+        // fileName: (className: string) => className,
     }
 
 }
