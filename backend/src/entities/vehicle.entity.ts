@@ -1,4 +1,4 @@
-import { Collection, Entity, ManyToMany, PrimaryKey, Property } from "@mikro-orm/core";
+import { Collection, Entity, ManyToMany, ManyToOne, PrimaryKey, Property } from "@mikro-orm/core";
 import { Location } from "./location.entity";
 
 
@@ -30,8 +30,8 @@ export class Vehicle {
     @Property({ type: 'string', nullable: false })
     type: string;
 
-    @ManyToMany({ entity: () => Location, serializer: value => value, serializedName: 'location' })
-    location?: Collection<Location> = new Collection<Location>(this);
+    @ManyToOne(() => Location, { nullable: true })
+    location?: Location;
 }
 
 

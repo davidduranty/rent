@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Aéroport Charles de Gaule",
+    "address": "6 rue des bruyères",
+    "city": "Paris",
+    "zipCode":  95931
+  },
+  {
+    "name": "Aéroport Bordeaux",
+    "address": "avenue René Cassin",
+    "city": "Mérignac",
+    "zipCode":  33700
+  },
+  {
+    "name": "Aéroport Orly",
+    "address": "Roissy Charles de Gaulle Cedex",
+    "city": "Paris",
+    "zipCode":  94310
+  }
+]

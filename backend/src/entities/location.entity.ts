@@ -2,6 +2,7 @@ import { Collection, Entity, ManyToMany, OneToMany, OneToOne, PrimaryKey, Proper
 import { Hour } from "./hour.entity";
 import { PublicHoliday } from "./public-holiday.entity";
 import { Vehicle } from "./vehicle.entity";
+import { Utilities } from "./utilities.entity";
 
 @Entity({ schema: 'rentACar', tableName: 'location' })
 
@@ -18,8 +19,8 @@ export class Location {
     @Property({ type: 'string', nullable: false })
     city: string;
 
-    @Property({ type: 'string', nullable: false })
-    zipCode: string;
+    @Property({ type: 'number', nullable: false })
+    zipCode: number;
 
     @OneToMany(() => Hour, (event) => event.location, { eager: false })
     hour = new Collection<Hour>(this)
@@ -27,6 +28,9 @@ export class Location {
     @OneToOne(() => PublicHoliday, (event) => event.location, { owner: true })
     publicHoliday?: PublicHoliday;
 
-    @ManyToMany({ entity: () => Vehicle, mappedBy: 'location' })
+    @OneToMany(() => Vehicle, (event) => event.location, { eager: false })
     vehicles? = new Collection<Vehicle>(this);
+
+    @OneToMany(() => Utilities, (event) => event.location, { eager: false })
+    utilities? = new Collection<Utilities>(this);
 }

@@ -1,4 +1,5 @@
-import { Entity, PrimaryKey, Property } from "@mikro-orm/core";
+import { Entity, ManyToMany, ManyToOne, PrimaryKey, Property } from "@mikro-orm/core";
+import { Location } from '../entities/location.entity'
 
 @Entity({ schema: 'rentACar', tableName: 'utilities' })
 
@@ -7,13 +8,10 @@ export class Utilities {
     id!: number;
 
     @Property({ type: 'string', nullable: false })
-    model: string;
-
-    @Property({ type: 'string', nullable: false })
     brand: string;
 
     @Property({ type: 'string', nullable: false })
-    licence: string;
+    model: string;
 
     @Property({ type: 'number', nullable: false })
     weight: number;
@@ -25,6 +23,8 @@ export class Utilities {
     image: string;
 
     @Property({ type: 'boolean', nullable: false })
-    energy: boolean;
+    isElectric: boolean;
 
+    @ManyToOne(() => Location, { nullable: true })
+    location?: Location;
 }

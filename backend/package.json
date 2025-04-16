@@ -20,7 +20,8 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "migration:create": "mikro-orm migration:create",
     "migration:up": "mikro-orm migration:up",
-    "seeder:run": "mikro-orm seeder:run"
+    "seeder:run": "mikro-orm seeder:run",
+    "seeder:fresh": "npx mikro-orm migration:fresh --seed=DatabaseSeeder"
   },
   "dependencies": {
     "@mikro-orm/cli": "^6.4.4",

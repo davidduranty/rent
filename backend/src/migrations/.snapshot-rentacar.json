@@ -147,13 +147,12 @@
         },
         "zip_code": {
           "name": "zip_code",
-          "type": "varchar(255)",
+          "type": "int",
           "unsigned": false,
           "autoincrement": false,
           "primary": false,
           "nullable": false,
-          "length": 255,
-          "mappedType": "string"
+          "mappedType": "integer"
         },
         "public_holiday_id": {
           "name": "public_holiday_id",
@@ -300,16 +299,6 @@
           "nullable": false,
           "mappedType": "integer"
         },
-        "model": {
-          "name": "model",
-          "type": "varchar(255)",
-          "unsigned": false,
-          "autoincrement": false,
-          "primary": false,
-          "nullable": false,
-          "length": 255,
-          "mappedType": "string"
-        },
         "brand": {
           "name": "brand",
           "type": "varchar(255)",
@@ -320,8 +309,8 @@
           "length": 255,
           "mappedType": "string"
         },
-        "licence": {
-          "name": "licence",
+        "model": {
+          "name": "model",
           "type": "varchar(255)",
           "unsigned": false,
           "autoincrement": false,
@@ -358,14 +347,23 @@
           "length": 255,
           "mappedType": "string"
         },
-        "energy": {
-          "name": "energy",
+        "is_electric": {
+          "name": "is_electric",
           "type": "boolean",
           "unsigned": false,
           "autoincrement": false,
           "primary": false,
           "nullable": false,
           "mappedType": "boolean"
+        },
+        "location_id": {
+          "name": "location_id",
+          "type": "int",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": true,
+          "mappedType": "integer"
         }
       },
       "name": "utilities",
@@ -383,7 +381,21 @@
         }
       ],
       "checks": [],
-      "foreignKeys": {},
+      "foreignKeys": {
+        "utilities_location_id_foreign": {
+          "constraintName": "utilities_location_id_foreign",
+          "columnNames": [
+            "location_id"
+          ],
+          "localTableName": "rentACar.utilities",
+          "referencedColumnNames": [
+            "id"
+          ],
+          "referencedTableName": "rentACar.location",
+          "deleteRule": "set null",
+          "updateRule": "cascade"
+        }
+      },
       "nativeEnums": {}
     },
     {
@@ -464,6 +476,15 @@
           "nullable": false,
           "length": 255,
           "mappedType": "string"
+        },
+        "location_id": {
+          "name": "location_id",
+          "type": "int",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": true,
+          "mappedType": "integer"
         }
       },
       "name": "vehicle",
@@ -481,71 +502,18 @@
         }
       ],
       "checks": [],
-      "foreignKeys": {},
-      "nativeEnums": {}
-    },
-    {
-      "columns": {
-        "vehicle_id": {
-          "name": "vehicle_id",
-          "type": "int",
-          "unsigned": false,
-          "autoincrement": false,
-          "primary": false,
-          "nullable": false,
-          "mappedType": "integer"
-        },
-        "location_id": {
-          "name": "location_id",
-          "type": "int",
-          "unsigned": false,
-          "autoincrement": false,
-          "primary": false,
-          "nullable": false,
-          "mappedType": "integer"
-        }
-      },
-      "name": "vehicle_location",
-      "schema": "rentACar",
-      "indexes": [
-        {
-          "keyName": "vehicle_location_pkey",
-          "columnNames": [
-            "vehicle_id",
-            "location_id"
-          ],
-          "composite": true,
-          "constraint": true,
-          "primary": true,
-          "unique": true
-        }
-      ],
-      "checks": [],
       "foreignKeys": {
-        "vehicle_location_vehicle_id_foreign": {
-          "constraintName": "vehicle_location_vehicle_id_foreign",
-          "columnNames": [
-            "vehicle_id"
-          ],
-          "localTableName": "rentACar.vehicle_location",
-          "referencedColumnNames": [
-            "id"
-          ],
-          "referencedTableName": "rentACar.vehicle",
-          "deleteRule": "cascade",
-          "updateRule": "cascade"
-        },
-        "vehicle_location_location_id_foreign": {
-          "constraintName": "vehicle_location_location_id_foreign",
+        "vehicle_location_id_foreign": {
+          "constraintName": "vehicle_location_id_foreign",
           "columnNames": [
             "location_id"
           ],
-          "localTableName": "rentACar.vehicle_location",
+          "localTableName": "rentACar.vehicle",
           "referencedColumnNames": [
             "id"
           ],
           "referencedTableName": "rentACar.location",
-          "deleteRule": "cascade",
+          "deleteRule": "set null",
           "updateRule": "cascade"
         }
       },

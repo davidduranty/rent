@@ -27,4 +27,29 @@ export class LocationService {
         )
         return location
     }
+
+    public async getByName(name: string): Promise<LocationDTO> {
+        const result = await this._LocationService.findOne(
+            { name: { $ilike: name } },
+            {
+                populate: ['publicHoliday', 'vehicles'],
+                populateOrderBy: { publicHoliday: { id: QueryOrder.ASC } },
+                strategy: LoadStrategy.SELECT_IN,
+                orderBy: { id: QueryOrder.ASC }
+            }
+        )
+        console.log("Résultat trouvé :", result);
+        if (!result) {
+            throw new Error(`Aucun lieu trouvé avec le nom "${name}".`);
+        }
+        return {
+            id: result.id,
+            name: result.name,
+            address: result.address,
+            city: result.city,
+            zipCode: result.zipCode,
+            publicHoliday: result.publicHoliday,
+            vehicles: result.vehicles
+        } as LocationDTO;
+    }
 }

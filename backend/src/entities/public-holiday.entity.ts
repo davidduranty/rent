@@ -28,7 +28,7 @@ export class PublicHoliday {
     @Property({ type: 'string', nullable: false })
     sunday: string;
 
-    @OneToOne(() => Location, (location) => location.publicHoliday)
+    @OneToOne(() => Location, (location) => location.publicHoliday, { nullable: true })
     location?: Location;
 
 }

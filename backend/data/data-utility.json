@@ -1,0 +1,74 @@
+[
+  {
+    "brand": "Fiat",
+    "model": "Doblo",
+    "volume": 1570,
+    "weight": 625,
+    "isElectric": false,
+    "image": "https://www.sixt.com/fileadmin2/files/global/user_upload/fleet/png/630x360/fiat-doblo-box-white-2021-sx.png"
+  },
+  {
+    "brand": "Renault",
+    "model": "Trafic",
+    "volume": 1570,
+    "weight": 1025,
+    "isElectric": false,
+    "image": "https://www.sixt.com/fileadmin2/files/global/user_upload/fleet/png/630x360/renault-trafic-kasten-weiss-sx-2017.png"
+  },
+  {
+    "brand": "Renault",
+    "model": "Master",
+    "volume": 625,
+    "weight": 1190,
+    "isElectric": false,
+    "image": "https://www.sixt.com/fileadmin2/files/global/user_upload/fleet/png/630x360/renault-master-dcab-silver-2022-sx.png"
+  },
+  {
+    "brand": "Renault",
+    "model": "Master 3.5t",
+    "volume": 3200,
+    "weight": 1180,
+    "isElectric": false,
+    "image": "https://www.sixt.com/fileadmin2/files/global/user_upload/fleet/png/630x360/renault-master-scab-white-2022-sx.png"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "Sprinter 3.5t RALLONGE",
+    "volume": 3500,
+    "weight": 1255,
+    "isElectric": false,
+    "image": "https://www.sixt.com/fileadmin2/files/global/user_upload/fleet/png/630x360/mb-sprinter-box-long-white-sx-2021.png"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "Vito electric",
+    "volume": 3200,
+    "weight": 1030,
+    "isElectric": true,
+    "image": "https://www.sixt.com/fileadmin2/files/global/user_upload/fleet/png/630x360/mb-e-vito-box-white-2021-sx.png"
+  },
+  {
+    "brand": "Renault",
+    "model": "Master 3.5t",
+    "volume": 3500,
+    "weight": 1200,
+    "isElectric": false,
+    "image": "https://www.sixt.com/fileadmin2/files/global/user_upload/fleet/png/630x360/renault-master-ll-koffer-weiss-2016-sx.png"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "e-Sprinter 3.5t ELECTRIC",
+    "volume": 3200,
+    "weight": 1180,
+    "isElectric": true,
+    "image": "https://www.sixt.com/fileadmin2/files/global/user_upload/fleet/png/630x360/mb-sprinter-kurz-van-weiss-2019-sx.png"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "Sprinter 3.5t",
+    "volume": 3500,
+    "weight": 700,
+    "isElectric": false,
+    "image": "https://www.sixt.com/fileadmin2/files/global/user_upload/fleet/png/630x360/mb-sprinter-bbox-white-2021-sx.png"
+  }
+]
