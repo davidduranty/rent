@@ -21,8 +21,9 @@ export class LocationController {
             console.log(name)
             return await this._LocationService.getByName(name)
         } catch (error) {
-            throw new Error('Location not found')
+            throw new Error('User not found')
         }
     }
 
 }
+

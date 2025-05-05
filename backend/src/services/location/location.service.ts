@@ -1,7 +1,7 @@
 import { Location } from '@entities/location.entity';
 import { InjectRepository } from '@mikro-orm/nestjs';
 import { EntityRepository, LoadStrategy, QueryOrder } from '@mikro-orm/postgresql';
-import { Inject, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { LocationDTO } from 'src/models/location.model';
 
 @Injectable()

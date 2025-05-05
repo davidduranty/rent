@@ -2,11 +2,13 @@ import { Seeder } from "@mikro-orm/seeder";
 import { EntityManager } from '@mikro-orm/core';
 import { Vehicle } from "@entities/vehicle.entity";
 import Data from "../../data/data-7.json";
+import DataUser from "../../data/data-user.json";
 import DataUtilities from "../../data/data-utility.json";
 import DataLocation from "../../data/data-location.json";
 import { Utilities } from "@entities/utilities.entity";
 import { Location } from "@entities/location.entity";
 import { PublicHoliday } from "@entities/public-holiday.entity";
+import { User } from "@entities/user.entity";
 
 export class DatabaseSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
@@ -47,6 +49,19 @@ export class DatabaseSeeder extends Seeder {
         type: vehicleData.type,
       });
       await em.persistAndFlush(vehicle); // Persiste chaque véhicule
+    }
+
+    for (const UsersData of DataUser) {
+      const user = em.create(User, {
+        name: UsersData.name,
+        surname: UsersData.surname,
+        birthday: UsersData.birthday,
+        email: UsersData.email,
+        isAdmin: false,
+        professionnal: false,
+        password: "0000"
+      });
+      await em.persistAndFlush(user); // Persiste chaque user
     }
 
     // Persiste les utilities
