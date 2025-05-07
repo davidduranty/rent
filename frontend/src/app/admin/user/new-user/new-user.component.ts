@@ -10,7 +10,10 @@ import { FormsModule } from '@angular/forms';
 export class NewUserComponent {
   @Output() close = new EventEmitter<void>();
 
-  onSubmit() { }
+  onSubmit() {
+    this.close.emit();
+
+  }
 
   onCancel() {
     this.close.emit();
