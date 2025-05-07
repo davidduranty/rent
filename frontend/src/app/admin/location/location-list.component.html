@@ -1,3 +1,6 @@
+@if (isAddLocation) {
+<app-new-location (close)="onCloseAddLocation()" />
+}
 <div class="flex justify-center flex-col items-center h-screen bg-gray-100 ">
   <table class="table-auto border-collapse border border-gray-300 shadow-lg bg-white rounded-lg">
     <thead class="bg-gray-200">
@@ -33,6 +36,7 @@
   </table>
   <div class="flex justify-center  bg-gray-100 mt-4 ">
     <button
-      class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-0.5 min-w-20 block cursor-pointer">Create</button>
+      class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-0.5 min-w-20 block cursor-pointer"
+      (click)="onAddLocation()">Create</button>
   </div>
 </div>
