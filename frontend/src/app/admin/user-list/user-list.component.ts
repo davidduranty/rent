@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user.model';
 import { UserService } from '../../services/user.service';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-user-list',
-  imports: [],
+  imports: [MatIconModule],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.css'
 })
