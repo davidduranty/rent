@@ -1,0 +1,42 @@
+@if (isAddLocation) {
+<app-new-location (close)="onCloseAddLocation()" />
+}
+<div class="flex justify-center flex-col items-center h-screen bg-gray-100 ">
+  <table class="table-auto border-collapse border border-gray-300 shadow-lg bg-white rounded-lg">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Id</th>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Name</th>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Address</th>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">City</th>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Zip-Code</th>
+
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700"></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (location of locationList; track location.id) {
+      <tr class="hover:bg-gray-200">
+        <td class="px-6 py-4 border border-gray-300 text-gray-600">{{location.id}}</td>
+        <td class="px-6 py-4 border border-gray-300 text-gray-600">{{location.name}}</td>
+        <td class="px-6 py-4 border border-gray-300 text-gray-600">{{location.address}}</td>
+        <td class="px-6 py-4 border border-gray-300 text-gray-600">{{location.city}}</td>
+        <td class="px-6 py-4 border border-gray-300 text-gray-600">{{location.zipCode}}</td>
+        <div>
+          <td class="px-6 py-4 border border-gray-300 text-gray-600">
+            <button
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-0.5  cursor-pointer"><mat-icon>edit</mat-icon></button>
+            <button
+              class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded cursor-pointer"><mat-icon>delete</mat-icon></button>
+          </td>
+        </div>
+      </tr>
+      }
+    </tbody>
+  </table>
+  <div class="flex justify-center  bg-gray-100 mt-4 ">
+    <button
+      class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-0.5 min-w-20 block cursor-pointer"
+      (click)="onAddLocation()">Create</button>
+  </div>
+</div>

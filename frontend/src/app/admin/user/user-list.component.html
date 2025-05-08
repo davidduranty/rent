@@ -1,0 +1,45 @@
+@if (isAddUser) {
+<app-new-user (close)="onCloseAddUser()" />
+}
+<div class="flex justify-center items-center h-screen bg-gray-100">
+  <table class="table-auto border-collapse border border-gray-300 shadow-lg bg-white rounded-lg">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Id</th>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Name</th>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Surname</th>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Email</th>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Birthday</th>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Password</th>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Admin</th>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700"></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (user of listUser; track user.id) {
+      <tr class="hover:bg-gray-200">
+        <td class="px-6 py-4 border border-gray-300 text-gray-600">{{user.id}}</td>
+        <td class="px-6 py-4 border border-gray-300 text-gray-600">{{user.name}}</td>
+        <td class="px-6 py-4 border border-gray-300 text-gray-600">{{user.surname}}</td>
+        <td class="px-6 py-4 border border-gray-300 text-gray-600">{{user.email}}</td>
+        <td class="px-6 py-4 border border-gray-300 text-gray-600">{{user.birthday}}</td>
+        <td class="px-6 py-4 border border-gray-300 text-gray-600">{{user.password}}</td>
+        <td class="px-6 py-4 border border-gray-300 text-gray-600">{{user.isAdmin}}</td>
+        <div>
+          <td class="px-6 py-4 border border-gray-300 text-gray-600">
+            <button
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-0.5  cursor-pointer"><mat-icon>edit</mat-icon></button>
+            <button
+              class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded cursor-pointer"><mat-icon>delete</mat-icon></button>
+          </td>
+        </div>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
+<div class="flex justify-center  bg-gray-100">
+  <button
+    class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-0.5 min-w-20 block cursor-pointer"
+    (click)="onAddUser()">Create</button>
+</div>
