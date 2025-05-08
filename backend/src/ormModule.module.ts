@@ -10,18 +10,21 @@ import { Utilities } from "@entities/utilities.entity";
 import { User } from "@entities/user.entity";
 import { UserService } from "@services/user/user.service";
 import { UserController } from "./controllers/user/user.controller";
+import { VehicleController } from "./controllers/vehicle/vehicle.controller";
+import { VehicleService } from "@services/vehicle/vehicle.service";
+
 
 @Module({
     imports: [MikroOrmModule.forFeature([Hour, Location, PublicHoliday, Vehicle, Utilities, User])],
-    providers: [LocationService, UserService],
-    controllers: [LocationController, UserController]
+    providers: [LocationService, UserService, VehicleService],
+    controllers: [LocationController, UserController, VehicleController]
 })
 
 class OrmModule implements NestModule {
     configure(consumer: MiddlewareConsumer) {
         consumer
             .apply() // Applique le middleware
-            .forRoutes(LocationController, UserController);
+            .forRoutes(LocationController, UserController, VehicleController);
     }
 }
 export { OrmModule }

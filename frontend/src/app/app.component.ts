@@ -15,7 +15,13 @@ export class AppComponent {
   constructor(private router: Router) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.pageTitle = event.url.includes('location') ? 'LIST LOCATIONS' : 'LIST USERS';
+        if (event.url.includes('location')) {
+          this.pageTitle = 'LOCATION LIST';
+        } else if (event.url.includes('vehicle')) {
+          this.pageTitle = 'VEHICLE LIST';
+        } else {
+          this.pageTitle = 'USER LIST';
+        }
       }
     });
   }

@@ -1,8 +1,9 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user.model';
-import { UserService } from '../../services/user.service';
+
 import { MatIconModule } from '@angular/material/icon';
 import { NewUserComponent } from './new-user/new-user.component';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-user-list',
