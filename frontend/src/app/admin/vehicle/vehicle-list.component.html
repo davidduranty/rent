@@ -1,7 +1,19 @@
 @if (isAddVehicle) {
 <app-new-vehicle (close)="onCloseAddVehicle()" />
 }
-<div class="flex justify-center items-center h-screen bg-gray-100">
+<div class="flex justify-center ">
+  <div class="flex flex-col">
+    <label for="">Localité</label>
+    <select name="" id="" (change)="onClick($event)" class="border border-gray-300 rounded-md p-2">
+      <option value="">Sélectionner le lieu</option>
+      @for (location of locationList; track location.id) {
+      <option value="{{location.name}}">{{location.name}}</option>
+      }
+    </select>
+  </div>
+  <button (click)="getAllVehicles()"><mat-icon>cancel</mat-icon></button>
+</div>
+<div class="flex justify-center items-center h-screen ">
   <table class="table-auto border-collapse border border-gray-300 shadow-lg bg-white rounded-lg">
     <thead class="bg-gray-200">
       <tr>
@@ -22,7 +34,7 @@
         <td class="px-6 py-4 border border-gray-300 text-gray-600">{{vehicle.id}}</td>
         <td class="px-6 py-4 border border-gray-300 text-gray-600">{{vehicle.brand}}</td>
         <td class="px-6 py-4 border border-gray-300 text-gray-600">{{vehicle.model}}</td>
-        <td class="px-6 py-4 border border-gray-300 text-gray-600">{{vehicle.image}}</td>
+        <td class="px-6 py-4 border border-gray-300 text-gray-600 max-w-2xs overflow-hidden">{{vehicle.image}}</td>
         <td class="px-6 py-4 border border-gray-300 text-gray-600">{{vehicle.transmition}}</td>
         <td class="px-6 py-4 border border-gray-300 text-gray-600">{{vehicle.place}}</td>
         <td class="px-6 py-4 border border-gray-300 text-gray-600">{{vehicle.available}}</td>

@@ -18,4 +18,17 @@ export class LocationService {
       return [];
     }
   }
+
+  async getByName(name: string): Promise<Location> {
+    try {
+      const response = await fetch(`http://localhost:3000/location/name?name=${name}`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch users');
+      }
+      return await response.json();
+    } catch (error) {
+      return {} as Location;
+    }
+  }
+
 }

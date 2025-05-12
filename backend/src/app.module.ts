@@ -8,7 +8,5 @@ import { OrmModule } from './ormModule.module';
 
 @Module({
   imports: [MikroOrmModule.forRoot(mikroOrmConfig), OrmModule],
-  controllers: [],
-  providers: [],
 })
 export class AppModule { }

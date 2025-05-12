@@ -28,5 +28,5 @@ export interface Location {
   city: string;
   zipCode: string;
   publicHoliday: PublicHoliday;
-  vehicles: Vehicle;
+  vehicles: Vehicle[];
 }
