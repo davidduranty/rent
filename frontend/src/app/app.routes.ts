@@ -1,11 +1,11 @@
-import {Routes} from '@angular/router';
-import {UserListComponent} from './admin/user-list/user-list.component';
-import {LocationListComponent} from './admin/location-list/location-list.component';
+import { Routes } from '@angular/router';
+
 
 export const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: 'user', loadComponent: () => import('./admin/user/user-list.component').then((mod) => mod.UserListComponent) },
+  { path: 'location', loadComponent: () => import('./admin/location/location-list.component').then((mod) => mod.LocationListComponent) },
+  { path: 'vehicle', loadComponent: () => import('./admin/vehicle/vehicle-list.component').then((mod) => mod.VehicleListComponent) },
   {path: 'home', loadComponent: () => import('./home/home.component').then(m => m.HomeComponent)},
-  {path: 'user', component: UserListComponent},
-  {path: 'location', component: LocationListComponent}
-];
 
+];

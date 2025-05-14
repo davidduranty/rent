@@ -1,0 +1,59 @@
+@if (isAddVehicle) {
+<app-new-vehicle (close)="onCloseAddVehicle()" />
+}
+<div class="flex justify-center ">
+  <div class="flex flex-col">
+    <label for="">Localité</label>
+    <select name="" id="" (change)="onClick($event)" class="border border-gray-300 rounded-md p-2">
+      <option value="">Sélectionner le lieu</option>
+      @for (location of locationList; track location.id) {
+      <option value="{{location.name}}">{{location.name}}</option>
+      }
+    </select>
+  </div>
+  <button (click)="getAllVehicles()"><mat-icon>cancel</mat-icon></button>
+</div>
+<div class="flex justify-center items-center h-screen ">
+  <table class="table-auto border-collapse border border-gray-300 shadow-lg bg-white rounded-lg">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Id</th>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Brand</th>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Model</th>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Image</th>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Transmition</th>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Place</th>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Available</th>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Type</th>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700"></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (vehicle of listVehicle; track vehicle.id) {
+      <tr class="hover:bg-gray-200">
+        <td class="px-6 py-4 border border-gray-300 text-gray-600">{{vehicle.id}}</td>
+        <td class="px-6 py-4 border border-gray-300 text-gray-600">{{vehicle.brand}}</td>
+        <td class="px-6 py-4 border border-gray-300 text-gray-600">{{vehicle.model}}</td>
+        <td class="px-6 py-4 border border-gray-300 text-gray-600 max-w-2xs overflow-hidden">{{vehicle.image}}</td>
+        <td class="px-6 py-4 border border-gray-300 text-gray-600">{{vehicle.transmition}}</td>
+        <td class="px-6 py-4 border border-gray-300 text-gray-600">{{vehicle.place}}</td>
+        <td class="px-6 py-4 border border-gray-300 text-gray-600">{{vehicle.available}}</td>
+        <td class="px-6 py-4 border border-gray-300 text-gray-600">{{vehicle.type}}</td>
+        <div>
+          <td class="px-6 py-4 border border-gray-300 text-gray-600">
+            <button
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-0.5  cursor-pointer"><mat-icon>edit</mat-icon></button>
+            <button
+              class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded cursor-pointer"><mat-icon>delete</mat-icon></button>
+          </td>
+        </div>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
+<div class="flex justify-center  bg-gray-100">
+  <button
+    class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-0.5 min-w-20 block cursor-pointer"
+    (click)="onAddVehicle()">Create</button>
+</div>

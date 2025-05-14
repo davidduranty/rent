@@ -1,11 +1,11 @@
-import {Component} from '@angular/core';
-import {RouterOutlet, Router, NavigationEnd} from '@angular/router';
+import { Component } from '@angular/core';
+import { RouterLink, RouterOutlet, Router, NavigationEnd, RouterLinkActive } from '@angular/router';
 
 
 @Component({
   standalone: true,
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -16,7 +16,13 @@ export class AppComponent {
   constructor(private router: Router) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.pageTitle = event.url.includes('location') ? 'LIST LOCATIONS' : 'LIST USERS';
+        if (event.url.includes('location')) {
+          this.pageTitle = 'LOCATION LIST';
+        } else if (event.url.includes('vehicle')) {
+          this.pageTitle = 'VEHICLE LIST';
+        } else {
+          this.pageTitle = 'USER LIST';
+        }
       }
     });
   }

@@ -1,4 +1,12 @@
-<div class="flex justify-center flex-col items-center h-screen bg-gray-100 ">
+@if (isAddLocation) {
+<app-new-location (close)="onCloseAddLocation()" />
+}
+@if(isPublicHoliday) {
+<app-public-holiday (close)="isPublicHoliday=$event" [id]="publicHolidayId" />
+}
+
+
+<div class="flex flex-col items-center h-screen mt-10">
   <table class="table-auto border-collapse border border-gray-300 shadow-lg bg-white rounded-lg">
     <thead class="bg-gray-200">
       <tr>
@@ -7,7 +15,7 @@
         <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Address</th>
         <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">City</th>
         <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Zip-Code</th>
-
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Public-Holidays</th>
         <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700"></th>
       </tr>
     </thead>
@@ -19,6 +27,12 @@
         <td class="px-6 py-4 border border-gray-300 text-gray-600">{{location.address}}</td>
         <td class="px-6 py-4 border border-gray-300 text-gray-600">{{location.city}}</td>
         <td class="px-6 py-4 border border-gray-300 text-gray-600">{{location.zipCode}}</td>
+        <td>
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-0.5  cursor-pointer"
+            (click)="onClick(location.publicHoliday.id)">List
+            location_holiday</button>
+        </td>
+
         <div>
           <td class="px-6 py-4 border border-gray-300 text-gray-600">
             <button
@@ -33,6 +47,7 @@
   </table>
   <div class="flex justify-center  bg-gray-100 mt-4 ">
     <button
-      class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-0.5 min-w-20 block cursor-pointer">Create</button>
+      class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-0.5 min-w-20 block cursor-pointer"
+      (click)="onAddLocation()">Create</button>
   </div>
 </div>
