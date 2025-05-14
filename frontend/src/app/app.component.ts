@@ -1,15 +1,16 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet, Router, NavigationEnd } from '@angular/router';
+import {Component} from '@angular/core';
+import {RouterOutlet, Router, NavigationEnd} from '@angular/router';
 
 
 @Component({
+  standalone: true,
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'frontend';
+  title: string = 'frontend';
   pageTitle: string = 'USER LIST';
 
   constructor(private router: Router) {
