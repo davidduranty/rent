@@ -1,13 +1,12 @@
 <div class="mt-12">
   <form [formGroup]="reservationForm" class="max-w-lg mx-auto p-4 bg-white rounded-lg shadow-md">
-    <!-- Champ isProfessional -->
     <div class="mb-4">
       <label class="block text-gray-700 font-bold mb-2" for="vehicleType">
         Type de véhicule
       </label>
       <div class="flex items-center">
         <label class="mr-4">
-          <input type="radio" formControlName="isProfessional" (change)="setProfessional(false)"
+          <input name="vehicleType" id="vehicleType" type="radio" formControlName="isProfessional" (change)="setProfessional(false)"
                  [checked]="!reservationForm.get('isProfessional')?.value" class="mr-2">
           Véhicules
         </label>
@@ -19,12 +18,11 @@
       </div>
     </div>
 
-    <!-- Champ location -->
     <div class="mb-4">
       <label class="block text-gray-700 font-bold mb-2" for="location">
         Localisation
       </label>
-      <input type="text" formControlName="location" placeholder="Localisation" required
+      <input name="location" id="location" type="text" formControlName="location" placeholder="Localisation" required
              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
       @if (reservationForm.get('location')?.hasError('required') && reservationForm.get('location')?.touched) {
         <div class="text-red-500 text-xs italic">
@@ -33,12 +31,11 @@
       }
     </div>
 
-    <!-- Champ startDate -->
     <div class="mb-4">
       <label class="block text-gray-700 font-bold mb-2" for="startDate">
         Date de début
       </label>
-      <input type="date" formControlName="startDate" required
+      <input name="startDate" id="startDate" type="date" formControlName="startDate" required
              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
       @if (reservationForm.get('startDate')?.hasError('required') && reservationForm.get('startDate')?.touched) {
         <div class="text-red-500 text-xs italic">
@@ -52,12 +49,11 @@
       }
     </div>
 
-    <!-- Champ endDate -->
     <div class="mb-4">
       <label class="block text-gray-700 font-bold mb-2" for="endDate">
         Date de fin
       </label>
-      <input type="date" formControlName="endDate" required
+      <input name="endDate" id="endDate" type="date" formControlName="endDate" required
              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
       @if (reservationForm.get('endDate')?.hasError('required') && reservationForm.get('endDate')?.touched) {
         <div class="text-red-500 text-xs italic">
@@ -66,14 +62,12 @@
       }
     </div>
 
-    <!-- Message d'erreur pour la validation croisée -->
     @if (reservationForm.hasError('dateOrderInvalid') && reservationForm.touched) {
       <div class="text-red-500 text-xs italic mb-4">
         La date de fin doit être postérieure à la date de début
       </div>
     }
 
-    <!-- Bouton de soumission -->
     <div class="flex justify-center item-center mb-4">
       <button type="button" (click)="onSubmit()"
               class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
