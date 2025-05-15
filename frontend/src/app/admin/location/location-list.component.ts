@@ -4,11 +4,12 @@ import { LocationService } from '../../services/location.service';
 import { MatIconModule } from '@angular/material/icon';
 import { NewLocationComponent } from "./new-location/new-location.component";
 import { PublicHolidayComponent } from "../public-holiday/public-holiday.component";
+import { ModifyLocationComponent } from "./modify-location/modify-location.component";
 
 
 @Component({
   selector: 'app-location-list',
-  imports: [MatIconModule, NewLocationComponent, PublicHolidayComponent],
+  imports: [MatIconModule, NewLocationComponent, PublicHolidayComponent, ModifyLocationComponent],
   templateUrl: './location-list.component.html',
   styleUrl: './location-list.component.css'
 })
@@ -16,7 +17,10 @@ export class LocationListComponent implements OnInit {
   locationList: Location[] = [];
   isAddLocation: boolean = false;
   isPublicHoliday: boolean = false;
+  isModifyLocation: boolean = false;
   publicHolidayId!: number;
+  modifyId!: number;
+
 
   constructor(private readonly locationService: LocationService) { }
 
@@ -36,6 +40,19 @@ export class LocationListComponent implements OnInit {
   onClick(id: number) {
     this.isPublicHoliday = true
     this.publicHolidayId = id;
+  }
+
+  onClickLocation(id: number) {
+    this.isModifyLocation = true
+    this.modifyId = id;
+  }
+
+  async deleteLocation(id: number): Promise<void> {
+    const addDeleteLocation = await this.locationService.addDeleteLocation(id)
+    window.location.reload();
+    if (addDeleteLocation) {
+      this.locationList = this.locationList.filter(location => location.id !== id);
+    }
   }
 
 }

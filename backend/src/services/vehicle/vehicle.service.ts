@@ -7,11 +7,11 @@ import { Vehicle } from '@entities/vehicle.entity';
 @Injectable()
 export class VehicleService {
     public constructor(
-        @InjectRepository(Vehicle) private readonly _vehicleService: EntityRepository<VehicleDTO>
+        @InjectRepository(Vehicle) private readonly _vehicleRepository: EntityRepository<VehicleDTO>
     ) { }
 
     public async getAll(): Promise<VehicleDTO[]> {
-        const vehicles = await this._vehicleService.find(
+        const vehicles = await this._vehicleRepository.find(
             {},
             {
                 // populate: ['publicHoliday', 'vehicles'],
@@ -23,5 +23,10 @@ export class VehicleService {
             }
         )
         return vehicles
+    }
+
+    public async removeId(id: number): Promise<boolean> {
+        const deleteId = await this._vehicleRepository.nativeDelete({ id });
+        return deleteId > 0
     }
 }

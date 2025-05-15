@@ -48,5 +48,10 @@ export class VehicleListComponent implements OnInit {
 
     })
   }
+  deleteVehicle(id: number) {
+    this.vehicleService.deleteVehicle(id).then(() => {
+      this.listVehicle = this.listVehicle.filter(vehicle => vehicle.id !== id);
+    })
+  }
 
 }
