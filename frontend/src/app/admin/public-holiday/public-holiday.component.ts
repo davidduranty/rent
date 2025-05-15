@@ -1,4 +1,4 @@
-import { Component, inject, Inject, input, InputSignal, OnInit, output, OutputEmitterRef } from '@angular/core';
+import { Component, inject, Inject, input, InputSignal, OnInit, Output, output, OutputEmitterRef, EventEmitter } from '@angular/core';
 import { PublicHolidayService } from '../../services/public-holiday.service';
 import { PublicHoliday } from '../../models/location.model';
 
@@ -9,7 +9,8 @@ import { PublicHoliday } from '../../models/location.model';
   styleUrl: './public-holiday.component.css'
 })
 export class PublicHolidayComponent implements OnInit {
-  public close: OutputEmitterRef<boolean> = output<boolean>();
+  @Output() close = new EventEmitter<boolean>();
+  // public close: OutputEmitterRef<boolean> = output<boolean>();
   private publicHolidayService = inject(PublicHolidayService);
   public holidays!: PublicHoliday;
   public id: InputSignal<number> = input.required<number>();
