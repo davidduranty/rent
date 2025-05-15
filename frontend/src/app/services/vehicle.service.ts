@@ -18,4 +18,17 @@ export class VehicleService {
       return [];
     }
   }
+
+  async deleteVehicle(id: number): Promise<void> {
+    try {
+      const response = await fetch(`http://localhost:3000/vehicle/${id}`, {
+        method: 'DELETE',
+      });
+      if (!response.ok) {
+        throw new Error('Failed to delete vehicle');
+      }
+    } catch (error) {
+      console.error('Error deleting vehicle:', error);
+    }
+  }
 }

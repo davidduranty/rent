@@ -1,3 +1,4 @@
+import { Hour } from "@entities/hour.entity";
 import { PublicHoliday } from "@entities/public-holiday.entity";
 import { Vehicle } from "@entities/vehicle.entity";
 
@@ -9,4 +10,5 @@ export interface LocationDTO {
     zipCode: string;
     publicHoliday: PublicHoliday;
     vehicles: Vehicle;
+    hour: Hour;
 }

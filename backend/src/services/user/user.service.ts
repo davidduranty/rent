@@ -7,18 +7,18 @@ import { UserDTO } from 'src/models/user.model';
 @Injectable()
 export class UserService {
     public constructor(
-        @InjectRepository(User) private readonly _userService: EntityRepository<UserDTO>
+        @InjectRepository(User) private readonly _userRepository: EntityRepository<UserDTO>
 
     ) { }
 
     public async getAll(): Promise<UserDTO[]> {
-        const users = await this._userService.find(
+        const users = await this._userRepository.find(
             {},
             {
                 // populate: ['publicHoliday', 'vehicles'],
                 // populateOrderBy: { publicHoliday: { id: QueryOrder.ASC } },
                 strategy: LoadStrategy.SELECT_IN,
-                limit: 10,
+                limit: 20,
                 offset: 0,
                 orderBy: { id: QueryOrder.ASC }
             }
@@ -27,7 +27,7 @@ export class UserService {
     }
 
     public async getByName(name: string): Promise<UserDTO> {
-        const result = await this._userService.findOne(
+        const result = await this._userRepository.findOne(
             { name: { $ilike: name } },
             {
                 // populate: ['publicHoliday', 'vehicles'],
@@ -49,6 +49,11 @@ export class UserService {
             isAdmin: result.isAdmin,
             professionnal: result.professionnal
         } as UserDTO;
+    }
+    public async removeId(id: number): Promise<boolean> {
+        const deleteId = await this._userRepository.nativeDelete({ id })
+
+        return deleteId > 0;
     }
 
 }

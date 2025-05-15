@@ -1,4 +1,4 @@
-import { Controller, Get, Query } from '@nestjs/common';
+import { Controller, Delete, Get, Param, Query } from '@nestjs/common';
 import { UserService } from '@services/user/user.service';
 import { UserDTO } from 'src/models/user.model';
 
@@ -25,4 +25,14 @@ export class UserController {
             throw new Error('User not found')
         }
     }
+
+    @Delete(':id')
+    public async deleteUser(@Param('id') id: number): Promise<void> {
+        const user = await this._userService.removeId(id)
+        if (!user) {
+            throw new Error(`User with id ${id} not found`);
+        }
+    }
 }
+
+

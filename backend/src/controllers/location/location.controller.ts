@@ -1,4 +1,4 @@
-import { Controller, Get, Query } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Query } from '@nestjs/common';
 import { LocationService } from '@services/location/location.service';
 import { LocationDTO } from 'src/models/location.model';
 
@@ -25,5 +25,17 @@ export class LocationController {
         }
     }
 
+    @Patch(':id')
+    update(@Param('id') id: number, @Body() location: LocationDTO) {
+        return this._LocationService.update(id, location);
+    }
+
+    @Delete(':id')
+    public async deleteLocation(@Param('id') id: number): Promise<void> {
+        const location = await this._LocationService.removeId(id)
+        if (!location) {
+            throw new Error(`Location with id ${id} not found`);
+        }
+    }
 }
 
