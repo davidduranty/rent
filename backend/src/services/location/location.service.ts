@@ -7,14 +7,14 @@ import { LocationDTO } from 'src/models/location.model';
 @Injectable()
 export class LocationService {
     public constructor(
-        @InjectRepository(Location) private readonly _LocationRepository: EntityRepository<LocationDTO>,
+        @InjectRepository(Location) private readonly _locationRepository: EntityRepository<LocationDTO>,
         private readonly _em: EntityManager,
     ) { }
 
 
 
     public async getAll(): Promise<LocationDTO[]> {
-        const location = await this._LocationRepository.find(
+        const location = await this._locationRepository.find(
             {},
             {
                 populate: ['publicHoliday', 'vehicles'],
@@ -28,8 +28,24 @@ export class LocationService {
         return location
     }
 
+    public async getById(id: number): Promise<LocationDTO> {
+        const result = await this._locationRepository.findOne(
+            { id: id },
+            {
+                populate: ['publicHoliday', 'vehicles'],
+                populateOrderBy: { publicHoliday: { id: QueryOrder.ASC } },
+                strategy: LoadStrategy.SELECT_IN,
+                orderBy: { id: QueryOrder.ASC }
+            }
+        )
+        if (!result) {
+            throw new Error(`Aucun lieu trouvé avec l'ID "${id}".`);
+        }
+        return result
+    }
+
     public async getByName(name: string): Promise<LocationDTO> {
-        const result = await this._LocationRepository.findOne(
+        const result = await this._locationRepository.findOne(
             { name: { $ilike: name } },
             {
                 populate: ['publicHoliday', 'vehicles'],
@@ -53,8 +69,8 @@ export class LocationService {
         } as LocationDTO;
     }
 
-    public async update(id: number, location: LocationDTO): Promise<LocationDTO> {
-        const result = await this._LocationRepository.findOne({ id })
+    public async update(id: number, location: Location): Promise<LocationDTO> {
+        const result = await this._locationRepository.findOne({ id })
 
         if (!result) {
             throw new Error(`Aucun lieu trouvé avec l'ID "${id}".`);
@@ -64,15 +80,26 @@ export class LocationService {
         result.address = location.address;
         result.city = location.city;
         result.zipCode = location.zipCode;
-        result.publicHoliday = location.publicHoliday;
-        result.vehicles = location.vehicles;
         await this._em.persistAndFlush(result);
 
         return result;
     }
 
+    public async addLocation(locationDTO: LocationDTO): Promise<LocationDTO> {
+        const add = this._locationRepository.create(locationDTO);
+        // add.name = locationDTO.name;
+        // add.address = locationDTO.address;
+        // add.city = locationDTO.city;
+        // add.zipCode = locationDTO.zipCode;
+        // add.publicHoliday = locationDTO.publicHoliday || undefined;
+        // add.vehicles = locationDTO.vehicles || undefined;
+
+        await this._em.persistAndFlush(add);
+        return add;
+    }
+
     public async removeId(id: number): Promise<boolean> {
-        const deleteId = await this._LocationRepository.nativeDelete({ id })
+        const deleteId = await this._locationRepository.nativeDelete({ id })
 
         return deleteId > 0;
     }

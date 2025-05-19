@@ -19,7 +19,15 @@ export class LocationListComponent implements OnInit {
   isPublicHoliday: boolean = false;
   isModifyLocation: boolean = false;
   publicHolidayId!: number;
-  modifyId!: number;
+  modifyLocation: Location = {
+    id: 0,
+    name: '',
+    address: '',
+    city: '',
+    zipCode: 0,
+    publicHoliday: { id: 0, monday: '', tuesday: '', wednesday: '', thursday: '', friday: '', saturday: '', sunday: '' },
+    vehicles: []
+  };
 
 
   constructor(private readonly locationService: LocationService) { }
@@ -42,9 +50,11 @@ export class LocationListComponent implements OnInit {
     this.publicHolidayId = id;
   }
 
-  onClickLocation(id: number) {
+  onClickLocation(location: Location) {
+    console.log(location);
+
     this.isModifyLocation = true
-    this.modifyId = id;
+    this.modifyLocation = location;
   }
 
   async deleteLocation(id: number): Promise<void> {

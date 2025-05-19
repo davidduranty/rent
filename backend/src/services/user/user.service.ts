@@ -1,5 +1,5 @@
 import { User } from '@entities/user.entity';
-import { EntityRepository, LoadStrategy, QueryOrder } from '@mikro-orm/core';
+import { EntityManager, EntityRepository, LoadStrategy, QueryOrder } from '@mikro-orm/core';
 import { InjectRepository } from '@mikro-orm/nestjs';
 import { Injectable } from '@nestjs/common';
 import { UserDTO } from 'src/models/user.model';
@@ -7,7 +7,8 @@ import { UserDTO } from 'src/models/user.model';
 @Injectable()
 export class UserService {
     public constructor(
-        @InjectRepository(User) private readonly _userRepository: EntityRepository<UserDTO>
+        @InjectRepository(User) private readonly _userRepository: EntityRepository<UserDTO>,
+        private readonly _em: EntityManager,
 
     ) { }
 
@@ -18,7 +19,7 @@ export class UserService {
                 // populate: ['publicHoliday', 'vehicles'],
                 // populateOrderBy: { publicHoliday: { id: QueryOrder.ASC } },
                 strategy: LoadStrategy.SELECT_IN,
-                limit: 20,
+                limit: 30,
                 offset: 0,
                 orderBy: { id: QueryOrder.ASC }
             }
@@ -50,6 +51,36 @@ export class UserService {
             professionnal: result.professionnal
         } as UserDTO;
     }
+
+    public async addUser(user: UserDTO): Promise<UserDTO | null> {
+        try {
+            // Vérifie si l'email ou l'ID existe déjà en base
+            const existingUser = await this._userRepository.findOne({ email: user.email });
+
+            if (existingUser) {
+                throw new Error(`L'email ${user.email} est déjà utilisé.`);
+            }
+
+            // Ne pas assigner manuellement l'ID (il doit être auto-incrémenté)
+            const newUser = this._userRepository.create({
+                name: user.name,
+                surname: user.surname,
+                email: user.email,
+                password: user.password,
+                birthday: user.birthday,
+                isAdmin: user.isAdmin,
+                professionnal: user.professionnal
+            });
+
+            await this._em.persistAndFlush(newUser);
+            return newUser;
+        } catch (error) {
+            console.error("Erreur lors de l'ajout de l'utilisateur :", error);
+            return null;
+        }
+    }
+
+
     public async removeId(id: number): Promise<boolean> {
         const deleteId = await this._userRepository.nativeDelete({ id })
 

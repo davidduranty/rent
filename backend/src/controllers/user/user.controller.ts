@@ -1,4 +1,4 @@
-import { Controller, Delete, Get, Param, Query } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Query } from '@nestjs/common';
 import { UserService } from '@services/user/user.service';
 import { UserDTO } from 'src/models/user.model';
 
@@ -24,6 +24,11 @@ export class UserController {
         } catch (error) {
             throw new Error('User not found')
         }
+    }
+
+    @Post('add-user')
+    public async post(@Body() data: UserDTO) {
+        return await this._userService.addUser(data)
     }
 
     @Delete(':id')
