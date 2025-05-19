@@ -32,6 +32,7 @@ export class UserListComponent implements OnInit {
   removeId(id: number) {
     this.userService.deleteUser(id).then(() => {
       this.listUser = this.listUser.filter(user => user.id !== id);
+
     });
   }
 

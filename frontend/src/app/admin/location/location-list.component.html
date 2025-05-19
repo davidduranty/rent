@@ -5,7 +5,7 @@
 <app-public-holiday (close)="isPublicHoliday=$event" [id]="publicHolidayId" />
 }
 @if(isModifyLocation) {
-<app-modify-location [id]="modifyId" />
+<app-modify-location (close)="isModifyLocation=$event" [location]="modifyLocation" />
 }
 
 
@@ -19,7 +19,7 @@
         <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Address</th>
         <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">City</th>
         <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Zip-Code</th>
-        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Vehicle</th>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Jours d'ouverture</th>
 
         <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700"></th>
       </tr>
@@ -41,7 +41,7 @@
         <div>
           <td class="px-6 py-4 border border-gray-300 text-gray-600">
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-0.5  cursor-pointer"
-              (click)="onClickLocation(location.id)"><mat-icon>edit</mat-icon></button>
+              (click)="onClickLocation(location)"><mat-icon>edit</mat-icon></button>
             <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded cursor-pointer"
               (click)="deleteLocation(location.id)"><mat-icon>delete</mat-icon></button>
           </td>

@@ -23,7 +23,7 @@ export class Location {
     zipCode: number;
 
     @OneToMany(() => Hour, (event) => event.location, { eager: false })
-    hour = new Collection<Hour>(this)
+    hour? = new Collection<Hour>(this)
 
     @OneToOne(() => PublicHoliday, (event) => event.location, { owner: true })
     publicHoliday?: PublicHoliday;
@@ -33,4 +33,5 @@ export class Location {
 
     @OneToMany(() => Utilities, (event) => event.location, { eager: false })
     utilities? = new Collection<Utilities>(this);
+
 }
