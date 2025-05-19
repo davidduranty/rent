@@ -3,13 +3,14 @@ import { RouterLink, RouterOutlet, Router, NavigationEnd, RouterLinkActive } fro
 
 
 @Component({
+  standalone: true,
   selector: 'app-root',
   imports: [RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'frontend';
+  title: string = 'frontend';
   pageTitle: string = 'USER LIST';
 
   constructor(private router: Router) {
