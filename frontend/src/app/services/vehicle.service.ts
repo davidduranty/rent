@@ -1,5 +1,7 @@
-import { Injectable } from "@angular/core";
-import { Vehicle } from "../models/location.model";
+import {Injectable} from "@angular/core";
+import {Vehicle} from "../models/location.model";
+import {SearchParams} from '../models/search-params.model';
+import {User} from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +17,25 @@ export class VehicleService {
       }
       return await response.json();
     } catch (error) {
+      return [];
+    }
+  }
+
+  async getVehicleByParma(params: SearchParams): Promise<Vehicle[]> {
+    try {
+      const response = await fetch('http://localhost:3000/vehicle/available', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(params)
+      });
+
+      if (!response.ok) {
+        throw new Error("La recherche contient une erreur.");
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error("La recherche contient une erreur: ", error);
       return [];
     }
   }
