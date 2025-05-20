@@ -37,6 +37,7 @@ export class LocationController {
 
     @Post('add-location')
     public async post(@Body() data: LocationDTO) {
+        console.log(data)
         return await this._locationService.addLocation(data)
     }
 

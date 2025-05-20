@@ -54,7 +54,6 @@ export class UserService {
 
     public async addUser(user: UserDTO): Promise<UserDTO | null> {
         try {
-            // Vérifie si l'email ou l'ID existe déjà en base
             const existingUser = await this._userRepository.findOne({ email: user.email });
 
             if (existingUser) {
