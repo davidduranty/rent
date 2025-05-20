@@ -43,6 +43,18 @@ export class LocationService {
     }
   }
 
+  async getBySearch(name: string): Promise<Location[]> {
+    try {
+      const response = await fetch(`http://localhost:3000/location/search?name=${name}`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch locations');
+      }
+      return await response.json();
+    } catch (error) {
+      return [];
+    }
+  }
+
   async updateLocation(id: number, location: { id: number, name: string, address: string, city: string, zipCode: number }): Promise<Location> {
     try {
       const response = await fetch(`http://localhost:3000/location/${id}`, {
