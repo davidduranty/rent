@@ -16,12 +16,23 @@ export class LocationController {
         }
     }
 
+    @Get('search')
+    public async searchLocations(
+        @Query('name') name: string
+    ): Promise<LocationDTO[]> {
+        try {
+            return await this._locationService.searchByName(name);
+        } catch (error) {
+            throw new Error(error.message);
+        }
+    }
+
     @Get(':id')
     public async getLocationById(@Param('id') id: number): Promise<LocationDTO> {
         try {
             return await this._locationService.getById(id);
         } catch (error) {
-            throw new Error('Location not found')
+            throw new Error(error.message);
         }
     }
 
@@ -40,7 +51,6 @@ export class LocationController {
         return await this._locationService.addLocation(data)
     }
 
-
     @Put(':id')
     update(@Param('id') id: number, @Body() location: Location) {
         return this._locationService.update(id, location);
@@ -54,4 +64,3 @@ export class LocationController {
         }
     }
 }
-
