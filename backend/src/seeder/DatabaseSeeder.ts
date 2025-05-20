@@ -1,7 +1,7 @@
 import { Seeder } from "@mikro-orm/seeder";
 import { EntityManager } from '@mikro-orm/core';
 import { Vehicle } from "@entities/vehicle.entity";
-import Data from "../../data/data-7.json";
+import Data from "../../data/data-vehicle.json";
 import DataUser from "../../data/data-user.json";
 import DataUtilities from "../../data/data-utility.json";
 import DataLocation from "../../data/data-location.json";
@@ -12,8 +12,7 @@ import { User } from "@entities/user.entity";
 
 export class DatabaseSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
-    // Persiste les public holidays et locations
-    for (let k = 0; k < DataLocation.length; k++) {
+    for (let k: number = 1; k < DataLocation.length; k++) {
       const publicHoliday = em.create(PublicHoliday, {
         id: k,
         monday: "ouvert",
@@ -24,20 +23,19 @@ export class DatabaseSeeder extends Seeder {
         saturday: "ouvert",
         sunday: "fermé",
       });
-      await em.persistAndFlush(publicHoliday); // Assure que publicHoliday est persisté
+      await em.persistAndFlush(publicHoliday);
 
-      const location = em.create(Location, {
+      const location: Location = em.create(Location, {
         id: k,
         name: DataLocation[k].name,
         address: DataLocation[k].address,
         city: DataLocation[k].city,
         zipCode: DataLocation[k].zipCode,
-        publicHoliday: publicHoliday, // Passe l'instance correcte
+        publicHoliday: publicHoliday,
       });
-      await em.persistAndFlush(location); // Persiste chaque location
+      await em.persistAndFlush(location);
     }
 
-    // Persiste les véhicules
     for (const vehicleData of Data) {
       const vehicle = em.create(Vehicle, {
         brand: vehicleData.brand,
@@ -48,7 +46,7 @@ export class DatabaseSeeder extends Seeder {
         available: true,
         type: vehicleData.type,
       });
-      await em.persistAndFlush(vehicle); // Persiste chaque véhicule
+      await em.persistAndFlush(vehicle);
     }
 
     for (const UsersData of DataUser) {
@@ -61,10 +59,9 @@ export class DatabaseSeeder extends Seeder {
         professionnal: false,
         password: "0000"
       });
-      await em.persistAndFlush(user); // Persiste chaque user
+      await em.persistAndFlush(user);
     }
 
-    // Persiste les utilities
     for (const utilitiesData of DataUtilities) {
       const utilities = em.create(Utilities, {
         brand: utilitiesData.brand,
@@ -74,15 +71,14 @@ export class DatabaseSeeder extends Seeder {
         volume: utilitiesData.volume,
         isElectric: utilitiesData.isElectric,
       });
-      await em.persistAndFlush(utilities); // Persiste chaque utility
+      await em.persistAndFlush(utilities);
     }
 
-    // Associe les véhicules à des locations
-    for (let i = 1; i <= 10; i++) {
+    for (let i: number = 1; i <= 10; i++) {
       const currentVehicle = await em.findOne(Vehicle, { id: i });
       if (!currentVehicle) {
         console.error(`Véhicule avec l'id ${i} non trouvé`);
-        continue; // Passe au suivant si le véhicule est introuvable
+        continue;
       }
 
       const assignedLocation = await em.findOne(Location, { id: i % DataLocation.length });
@@ -91,7 +87,7 @@ export class DatabaseSeeder extends Seeder {
         continue;
       }
 
-      currentVehicle.location = assignedLocation; // Associe la bonne instance de Location
+      currentVehicle.location = assignedLocation;
       await em.persistAndFlush(currentVehicle);
     }
   }
