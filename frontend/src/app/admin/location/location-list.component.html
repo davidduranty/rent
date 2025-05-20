@@ -10,7 +10,7 @@
 
 
 
-<div class="flex flex-col items-center h-screen mt-10">
+<div class="flex flex-col items-center  mt-10">
   <table class="table-auto border-collapse border border-gray-300 shadow-lg bg-white rounded-lg">
     <thead class="bg-gray-200">
       <tr>
@@ -34,7 +34,7 @@
         <td class="px-6 py-4 border border-gray-300 text-gray-600">{{location.zipCode}}</td>
         <td>
           <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-0.5  cursor-pointer"
-            (click)="onClick(location.publicHoliday.id)">List
+            (click)="onClick(location.publicHoliday.id!)">List
             location_holiday</button>
         </td>
 
@@ -43,14 +43,14 @@
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-0.5  cursor-pointer"
               (click)="onClickLocation(location)"><mat-icon>edit</mat-icon></button>
             <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded cursor-pointer"
-              (click)="deleteLocation(location.id)"><mat-icon>delete</mat-icon></button>
+              (click)="deleteLocation(location.id!)"><mat-icon>delete</mat-icon></button>
           </td>
         </div>
       </tr>
       }
     </tbody>
   </table>
-  <div class="flex justify-center  bg-gray-100 mt-4 ">
+  <div class="flex justify-center mt-10">
     <button
       class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-0.5 min-w-20 block cursor-pointer"
       (click)="onAddLocation()">Create</button>

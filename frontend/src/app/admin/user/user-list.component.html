@@ -1,7 +1,7 @@
 @if (isAddUser) {
 <app-new-user (close)="onCloseAddUser()" />
 }
-<div class="flex justify-center items-center h-screen">
+<div class="flex flex-col justify-center items-center m-20">
   <table class="table-auto border-collapse border border-gray-300 shadow-lg bg-white rounded-lg">
     <thead class="bg-gray-200">
       <tr>
@@ -37,9 +37,9 @@
       }
     </tbody>
   </table>
-</div>
-<div class="flex justify-center  bg-gray-100">
-  <button
-    class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-0.5 min-w-20 block cursor-pointer"
-    (click)="onAddUser()">Create</button>
+  <div class="flex  justify-center  mt-10">
+    <button
+      class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-0.5 min-w-20 block cursor-pointer"
+      (click)="onAddUser()">Create</button>
+  </div>
 </div>
