@@ -35,6 +35,7 @@
     "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.0.14",
     "@nestjs/platform-express": "^11.0.14",
+    "dotenv": "^16.5.0",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
   },
