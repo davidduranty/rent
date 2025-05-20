@@ -1,6 +1,6 @@
 <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center" (click)="onCancel()">
   <dialog open class="m-auto bg-white rounded-lg shadow-lg p-6 w-full max-w-md" (click)="$event.stopPropagation()">
-    <h2 class="text-2xl font-bold mb-4 text-gray-800">Add User</h2>
+    <h2 class="text-2xl font-bold mb-4 text-gray-800">Add Location</h2>
     <form (ngSubmit)="onSubmit()" class="space-y-4">
       <div>
         <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
@@ -28,6 +28,12 @@
         <input type="number" id="zipCode" name="zipCode"
           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
           [(ngModel)]="newLocationDTO.zipCode">
+      </div>
+      <div>
+        <label for="LocationHoliday" class="block text-sm font-medium text-gray-700">Location Holiday</label>
+        <input type="number" id="LocationHoliday" name="LocationHoliday"
+          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+          [(ngModel)]="newLocationDTO.publicHoliday">
       </div>
       <div class="flex justify-end space-x-4">
         <button type="button" (click)="onCancel()"
