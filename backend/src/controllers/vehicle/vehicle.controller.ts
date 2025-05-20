@@ -1,6 +1,7 @@
-import { Controller, Delete, Get, Param } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { VehicleService } from '@services/vehicle/vehicle.service';
 import { VehicleDTO } from 'src/models/vehicle.model';
+import { VehicleAvailabilityModel } from '../../models/vehicle-availability.model';
 
 @Controller('vehicle')
 export class VehicleController {
@@ -12,6 +13,22 @@ export class VehicleController {
             return await this._vehicleService.getAll();
         } catch (error) {
             throw new Error('User not found')
+        }
+    }
+
+    @Post('available')
+    public async getAvailableVehicles(
+        @Body() availability: VehicleAvailabilityModel
+    ): Promise<VehicleDTO[]> {
+        try {
+            return await this._vehicleService.findAvailable(
+                availability.startDate,
+                availability.endDate,
+                availability.location,
+                availability.isProfessional
+            );
+        } catch (error) {
+            throw new Error(error.message);
         }
     }
 
