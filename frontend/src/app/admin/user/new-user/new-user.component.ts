@@ -25,7 +25,7 @@ export class NewUserComponent {
   onSubmit() {
     this.userService.addUser(this.newUserDTO)
     this.close.emit();
-
+    window.location.reload();
   }
 
   onCancel() {

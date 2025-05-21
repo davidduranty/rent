@@ -1,6 +1,6 @@
 
 export interface PublicHoliday {
-  id: number;
+  id?: number;
   monday: string;
   tuesday: string;
   wednesday: string;
@@ -11,7 +11,7 @@ export interface PublicHoliday {
 }
 
 export interface Vehicle {
-  id: number;
+  id?: number;
   brand: string;
   model: string;
   image: string;
@@ -22,11 +22,11 @@ export interface Vehicle {
 }
 
 export interface Location {
-  id: number;
+  id?: number;
   name: string;
   address: string;
   city: string;
-  zipCode: number;
+  zipCode?: number;
   publicHoliday: PublicHoliday;
   vehicles: Vehicle[];
 }

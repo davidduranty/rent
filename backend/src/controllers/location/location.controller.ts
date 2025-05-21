@@ -1,5 +1,5 @@
 import { Location } from '@entities/location.entity';
-import { Body, Controller, Delete, Get, Param, Patch, Post, Put, Query, ValidationPipe } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, Query, ValidationPipe } from '@nestjs/common';
 import { LocationService } from '@services/location/location.service';
 import { LocationDTO } from 'src/models/location.model';
 
@@ -37,6 +37,7 @@ export class LocationController {
 
     @Post('add-location')
     public async post(@Body() data: LocationDTO) {
+        console.log(data)
         return await this._locationService.addLocation(data)
     }
 

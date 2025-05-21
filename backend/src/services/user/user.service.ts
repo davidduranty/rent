@@ -19,7 +19,7 @@ export class UserService {
                 // populate: ['publicHoliday', 'vehicles'],
                 // populateOrderBy: { publicHoliday: { id: QueryOrder.ASC } },
                 strategy: LoadStrategy.SELECT_IN,
-                limit: 30,
+                limit: 50,
                 offset: 0,
                 orderBy: { id: QueryOrder.ASC }
             }
@@ -52,9 +52,27 @@ export class UserService {
         } as UserDTO;
     }
 
+    public async update(id: number, user: User): Promise<UserDTO> {
+        const result = await this._userRepository.findOne({ id })
+
+        if (!result) {
+            throw new Error(`Aucun utilisatuer trouvé avec l'ID "${id}".`);
+        }
+
+        result.name = user.name;
+        result.surname = user.surname;
+        result.email = user.email;
+        result.password = user.password;
+        result.birthday = user.birthday;
+        result.isAdmin = user.isAdmin;
+        result.professionnal = user.professionnal;
+        await this._em.persistAndFlush(result);
+
+        return result;
+    }
+
     public async addUser(user: UserDTO): Promise<UserDTO | null> {
         try {
-            // Vérifie si l'email ou l'ID existe déjà en base
             const existingUser = await this._userRepository.findOne({ email: user.email });
 
             if (existingUser) {

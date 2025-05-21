@@ -52,6 +52,8 @@ export class ModifyLocationComponent implements OnInit {
     this.locationService.updateLocation(updated.id, updated).then(() => {
     });
     this.close.emit(false);
+    window.location.reload();
+
 
   }
 

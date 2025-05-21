@@ -50,7 +50,7 @@ export class LocationListComponent implements OnInit {
     this.publicHolidayId = id;
   }
 
-  onClickLocation(location: Location) {
+  ModifyLocationId(location: Location) {
     console.log(location);
 
     this.isModifyLocation = true

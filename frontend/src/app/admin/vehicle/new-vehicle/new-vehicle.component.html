@@ -5,49 +5,56 @@
       <div>
         <label for="brand" class="block text-sm font-medium text-gray-700">Brand</label>
         <input type="text" id="brand" name="brand"
-          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+          [(ngModel)]="newVehicleDTO.brand">
         <span></span>
       </div>
 
       <div>
         <label for="model" class="block text-sm font-medium text-gray-700">Model</label>
         <input type="text" id="model" name="model"
-          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mb-0.5">
+          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mb-0.5"
+          [(ngModel)]="newVehicleDTO.model">
 
       </div>
 
       <div>
         <label for="image" class="block text-sm font-medium text-gray-700">Image</label>
         <input type="text" id="image" name="image"
-          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
-        <span></span>
+          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+          [(ngModel)]="newVehicleDTO.image">
+
 
       </div>
 
       <div>
         <label for="transmition" class="block text-sm font-medium text-gray-700">Transmition</label>
         <input type="text" id="transmition" name="transmition"
-          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
-        <span></span>
+          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+          [(ngModel)]="newVehicleDTO.transmition">
+
       </div>
 
       <div>
-        <label for="number" class="block text-sm font-medium text-gray-700">Place</label>
-        <input type="number" id="number" name="number"
-          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
-        <span></span>
+        <label for="place" class="block text-sm font-medium text-gray-700">Place</label>
+        <input type="number" id="place" name="place"
+          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+          [(ngModel)]="newVehicleDTO.place">
+
       </div>
 
       <div>
         <label for="type" class="block text-sm font-medium text-gray-700">Type</label>
         <input type="text" id="type" name="type"
-          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
-        <span></span>
+          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+          [(ngModel)]="newVehicleDTO.type">
+
       </div>
 
       <div class="flex items-center">
         <input type="checkbox" id="available" name="available"
-          class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
+          class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+          [(ngModel)]="newVehicleDTO.available">
         <label for="available" class="ml-2 block text-sm text-gray-700">Available</label>
       </div>
 

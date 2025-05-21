@@ -43,6 +43,26 @@ export class LocationService {
     }
   }
 
+  async addLocation(location: Location): Promise<Location | null> {
+    try {
+      const response = await fetch('http://localhost:3000/location/add-location', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(location)
+      });
+
+      if (!response.ok) {
+        throw new Error('Échec de l\'ajout de l\'utilisateur');
+      }
+
+      const newLocation = await response.json();
+      return newLocation;
+    } catch (error) {
+      console.error("Erreur lors de l'ajout de l'utilisateur :", error);
+      return null;
+    }
+  }
+
   async updateLocation(id: number, location: { id: number, name: string, address: string, city: string, zipCode: number }): Promise<Location> {
     try {
       const response = await fetch(`http://localhost:3000/location/${id}`, {
@@ -51,7 +71,7 @@ export class LocationService {
         body: JSON.stringify(location)
       });
       if (!response.ok) {
-        throw new Error('Failed to fetch users');
+        throw new Error('Failed to fetch location');
       }
       return await response.json();
     } catch (error) {
