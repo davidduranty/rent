@@ -71,7 +71,7 @@ export class LocationService {
         body: JSON.stringify(location)
       });
       if (!response.ok) {
-        throw new Error('Failed to fetch users');
+        throw new Error('Failed to fetch location');
       }
       return await response.json();
     } catch (error) {
