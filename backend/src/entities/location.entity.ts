@@ -25,7 +25,7 @@ export class Location {
     @OneToMany(() => Hour, (event) => event.location, { eager: false })
     hour? = new Collection<Hour>(this)
 
-    @ManyToOne(() => PublicHoliday)
+    @ManyToOne(() => PublicHoliday, { nullable: true })
     publicHoliday?: PublicHoliday;
 
     @OneToMany(() => Vehicle, (event) => event.location, { eager: false })

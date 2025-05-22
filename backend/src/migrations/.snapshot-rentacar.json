@@ -160,7 +160,7 @@
           "unsigned": false,
           "autoincrement": false,
           "primary": false,
-          "nullable": false,
+          "nullable": true,
           "mappedType": "integer"
         }
       },
@@ -190,6 +190,7 @@
             "id"
           ],
           "referencedTableName": "rentACar.public_holiday",
+          "deleteRule": "set null",
           "updateRule": "cascade"
         }
       },
