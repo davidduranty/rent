@@ -14,7 +14,7 @@ import { RouterLink, RouterOutlet, Router, NavigationEnd, RouterLinkActive } fro
 export class AppComponent {
   title: string = 'frontend';
   pageTitle: string = 'USER LIST';
-  showMenu: boolean = true;
+  showMenu: boolean = false;
   isMobile: any;
 
 

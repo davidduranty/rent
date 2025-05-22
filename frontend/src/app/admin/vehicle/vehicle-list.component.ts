@@ -28,6 +28,8 @@ export class VehicleListComponent implements OnInit {
     available: true,
     type: ""
   };
+  currentPage: number = 1;
+  totalPages: number = 1;
 
 
   constructor(private readonly vehicleService: VehicleService, private readonly locationService: LocationService) { }
@@ -37,6 +39,31 @@ export class VehicleListComponent implements OnInit {
     this.locationService.getAllLocations().then((locations: Location[]) => {
       this.locationList = locations;
     })
+    this.fetchVehicles(this.currentPage)
+  }
+
+  async fetchVehicles(page: number) {
+    console.log("Page demandée :", page);
+    if (page < 1 || page > this.totalPages) return;
+    const data = await this.vehicleService.getVehicles(page, 10);
+    this.listVehicle = data.vehicle;
+    this.currentPage = data.currentPage;
+    this.totalPages = data.totalPages;
+    console.log("Nouvelle page :", this.currentPage, "Total pages :", this.totalPages);
+  }
+
+  nextPage() {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+      this.fetchVehicles(this.currentPage);
+    }
+  }
+
+  prevPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.fetchVehicles(this.currentPage);
+    }
   }
 
   onClick(event: Event) {

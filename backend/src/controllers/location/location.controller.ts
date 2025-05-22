@@ -35,6 +35,14 @@ export class LocationController {
         }
     }
 
+    @Get()
+    public async getLocations(
+        @Query('page') page: number = 1,
+        @Query('limit') limit: number = 10
+    ) {
+        return this._locationService.getLocations(page, limit);
+    }
+
     @Post('add-location')
     public async post(@Body() data: LocationDTO) {
         console.log(data)

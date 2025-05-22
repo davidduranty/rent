@@ -5,6 +5,15 @@
 @if(isModifyVehicle) {
 <app-modify-vehicle (close)="isModifyVehicle=$event" [vehicle]="modifyVehicle" />
 }
+
+<div class="flex justify-center items-center flex-col mt-4">
+  <div class="flex justify-center items-center space-x-4 mb-2">
+    <button class="text-white cursor-pointer" (click)="prevPage()" [disabled]="currentPage === 1">Précédent</button>
+    <button class=" text-white cursor-pointer" (click)="nextPage()"
+      [disabled]="currentPage === totalPages">Suivant</button>
+  </div>
+  <span class="text-center text-white">Page {{ currentPage }} / {{ totalPages }}</span>
+</div>
 <div class="flex  justify-center m-10 ">
   <div class="flex flex-col">
     <label class="text-white text-center" for="">Localité</label>
