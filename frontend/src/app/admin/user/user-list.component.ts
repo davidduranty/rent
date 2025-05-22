@@ -26,6 +26,9 @@ export class UserListComponent implements OnInit {
     isAdmin: true,
     professionnal: true
   }
+  currentPage: number = 1;
+  totalPages: number = 1;
+
 
 
   constructor(private readonly userService: UserService) { }
@@ -33,7 +36,32 @@ export class UserListComponent implements OnInit {
   ngOnInit(): void {
     this.userService.getAllUsers().then((users: User[]) => {
       this.listUser = users;
+
     })
+    this.fetchUsers(this.currentPage);
+  }
+  async fetchUsers(page: number) {
+    console.log("Page demandée :", page);
+    if (page < 1 || page > this.totalPages) return;
+    const data = await this.userService.getUsers(page, 10);
+    this.listUser = data.users;
+    this.currentPage = data.currentPage;
+    this.totalPages = data.totalPages;
+    console.log("Nouvelle page :", this.currentPage, "Total pages :", this.totalPages);
+  }
+
+  nextPage() {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+      this.fetchUsers(this.currentPage);
+    }
+  }
+
+  prevPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.fetchUsers(this.currentPage);
+    }
   }
   onAddUser() {
     this.isAddUser = true

@@ -19,7 +19,7 @@ export class UserService {
                 // populate: ['publicHoliday', 'vehicles'],
                 // populateOrderBy: { publicHoliday: { id: QueryOrder.ASC } },
                 strategy: LoadStrategy.SELECT_IN,
-                limit: 50,
+                limit: 10,
                 offset: 0,
                 orderBy: { id: QueryOrder.ASC }
             }
@@ -50,6 +50,19 @@ export class UserService {
             isAdmin: result.isAdmin,
             professionnal: result.professionnal
         } as UserDTO;
+    }
+
+    async getUsers(page: number, limit: number) {
+        const [users, totalCount] = await this._userRepository.findAndCount(
+            {},
+            { offset: (page - 1) * limit, limit }
+        );
+
+        return {
+            users,
+            totalPages: Math.ceil(totalCount / limit),
+            currentPage: page,
+        };
     }
 
     public async update(id: number, user: User): Promise<UserDTO> {

@@ -69,6 +69,19 @@ export class LocationService {
         } as LocationDTO;
     }
 
+    async getLocations(page: number, limit: number) {
+        const [locations, totalCount] = await this._locationRepository.findAndCount(
+            {},
+            { offset: (page - 1) * limit, limit }
+        );
+
+        return {
+            locations,
+            totalPages: Math.ceil(totalCount / limit),
+            currentPage: page,
+        };
+    }
+
     public async update(id: number, location: Location): Promise<LocationDTO> {
         const result = await this._locationRepository.findOne({ id })
 

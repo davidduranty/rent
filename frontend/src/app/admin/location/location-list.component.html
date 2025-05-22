@@ -9,7 +9,14 @@
 }
 
 
-
+<div class="flex justify-center items-center flex-col mt-4">
+  <div class="flex justify-center items-center space-x-4 mb-2">
+    <button class="text-white cursor-pointer" (click)="prevPage()" [disabled]="currentPage === 1">Précédent</button>
+    <button class=" text-white cursor-pointer" (click)="nextPage()"
+      [disabled]="currentPage === totalPages">Suivant</button>
+  </div>
+  <span class="text-center text-white">Page {{ currentPage }} / {{ totalPages }}</span>
+</div>
 <div class="flex flex-col items-center  mt-10">
   <table class="table-auto border-collapse border border-gray-300 shadow-lg bg-white rounded-lg">
     <thead class="bg-gray-200">
@@ -24,6 +31,7 @@
         <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700"></th>
       </tr>
     </thead>
+
     <tbody>
       @for (location of locationList; track location.id) {
       <tr class="hover:bg-gray-200">

@@ -43,6 +43,21 @@ export class LocationService {
     }
   }
 
+  async getLocations(page: number, limit: number): Promise<{ locations: Location[], totalPages: number, currentPage: number }> {
+    try {
+      const response = await fetch(`http://localhost:3000/location?page=${page}&limit=${limit}`);
+      if (!response.ok) {
+        throw new Error("Failed to fetch locations");
+      }
+      return await response.json();
+    } catch (error) {
+      console.error("Erreur lors de la récupération des locations :", error);
+      return { locations: [], totalPages: 1, currentPage: 1 };
+    }
+  }
+
+
+
   async addLocation(location: Location): Promise<Location | null> {
     try {
       const response = await fetch('http://localhost:3000/location/add-location', {

@@ -17,12 +17,25 @@ export class VehicleService {
                 // populate: ['publicHoliday', 'vehicles'],
                 // populateOrderBy: { publicHoliday: { id: QueryOrder.ASC } },
                 strategy: LoadStrategy.SELECT_IN,
-                limit: 50,
+                limit: 10,
                 offset: 0,
                 orderBy: { id: QueryOrder.ASC }
             }
         )
         return vehicles
+    }
+
+    async getVehicles(page: number, limit: number) {
+        const [vehicle, totalCount] = await this._vehicleRepository.findAndCount(
+            {},
+            { offset: (page - 1) * limit, limit }
+        );
+
+        return {
+            vehicle,
+            totalPages: Math.ceil(totalCount / limit),
+            currentPage: page,
+        };
     }
 
     public async update(id: number, vehicle: Vehicle): Promise<VehicleDTO> {
