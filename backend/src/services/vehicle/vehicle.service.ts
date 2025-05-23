@@ -76,4 +76,31 @@ export class VehicleService {
         const deleteId = await this._vehicleRepository.nativeDelete({ id });
         return deleteId > 0
     }
+
+    public async findAvailable(
+        startDate: string,
+        endDate: string,
+        locationId: number,
+        isProfessional: boolean
+    ): Promise<VehicleDTO[]> {
+        const start = new Date(startDate);
+        const end = new Date(endDate);
+
+        if (isNaN(start.getTime()) || isNaN(end.getTime())) {
+            throw new Error('Dates invalides');
+        }
+
+        const whereClause = {
+            available: true,
+            ...(locationId && { location: locationId }),
+            ...(isProfessional && { isProfessional: true })
+        };
+
+        const vehicles = await this._vehicleRepository.find(whereClause, {
+            strategy: LoadStrategy.SELECT_IN,
+            orderBy: { id: QueryOrder.ASC }
+        });
+
+        return vehicles;
+    }
 }

@@ -1,6 +1,8 @@
-import { Injectable } from "@angular/core";
-import { Vehicle } from "../models/location.model";
-import { VehicleDTO } from '../../../../backend/dist/src/models/vehicle.model';
+import {Injectable} from "@angular/core";
+import {Vehicle} from "../models/location.model";
+import {Injectable} from "@angular/core";
+import {Vehicle} from "../models/location.model";
+import {SearchParams} from '../models/search-params.model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +22,30 @@ export class VehicleService {
     }
   }
 
-  async getVehicles(page: number, limit: number): Promise<{ vehicle: Vehicle[], totalPages: number, currentPage: number }> {
+  async getVehicleByParma(params: SearchParams): Promise<Vehicle[]> {
+    try {
+      const response = await fetch('http://localhost:3000/vehicle/available', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(params)
+      });
+
+      if (!response.ok) {
+        throw new Error("La recherche contient une erreur.");
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error("La recherche contient une erreur: ", error);
+      return [];
+    }
+  }
+
+  async getVehicles(page: number, limit: number): Promise<{
+    vehicle: Vehicle[],
+    totalPages: number,
+    currentPage: number
+  }> {
     try {
       const response = await fetch(`http://localhost:3000/vehicle?page=${page}&limit=${limit}`);
       if (!response.ok) {
@@ -29,7 +54,7 @@ export class VehicleService {
       return await response.json();
     } catch (error) {
       console.error("Erreur lors de la récupération des vehicles :", error);
-      return { vehicle: [], totalPages: 1, currentPage: 1 };
+      return {vehicle: [], totalPages: 1, currentPage: 1};
     }
   }
 
@@ -37,7 +62,7 @@ export class VehicleService {
     try {
       const response = await fetch('http://localhost:3000/vehicle/add-vehicle', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(vehicle)
       });
 
@@ -57,7 +82,7 @@ export class VehicleService {
     try {
       const response = await fetch(`http://localhost:3000/vehicle/${id}`, {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(vehicle)
       });
       if (!response.ok) {

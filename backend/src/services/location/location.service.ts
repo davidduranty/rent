@@ -69,6 +69,32 @@ export class LocationService {
         } as LocationDTO;
     }
 
+    public async searchByName(name: string): Promise<LocationDTO[]> {
+        if (!name || name.length < 2) {
+            return [];
+        }
+        
+        const results = await this._locationRepository.find(
+            { name: { $ilike: `%${name}%` } },
+            { 
+                fields: ['id', 'name', 'address', 'city', 'zipCode'],
+                limit: 5,
+                orderBy: { name: QueryOrder.ASC },
+                populate: ['publicHoliday', 'vehicles']
+            }
+        );
+
+        return results.map(location => ({
+            id: location.id,
+            name: location.name,
+            address: location.address,
+            city: location.city,
+            zipCode: location.zipCode,
+            publicHoliday: location.publicHoliday,
+            vehicles: location.vehicles
+        } as LocationDTO));
+    }
+
     async getLocations(page: number, limit: number) {
         const [locations, totalCount] = await this._locationRepository.findAndCount(
             {},

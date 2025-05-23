@@ -74,21 +74,16 @@ export class DatabaseSeeder extends Seeder {
       await em.persistAndFlush(utilities);
     }
 
-    for (let i: number = 1; i <= 10; i++) {
-      const currentVehicle = await em.findOne(Vehicle, { id: i });
-      if (!currentVehicle) {
-        console.error(`Véhicule avec l'id ${i} non trouvé`);
-        continue;
-      }
+    const allLocations = await em.find(Location, {});
 
-      const assignedLocation = await em.findOne(Location, { id: i % DataLocation.length });
-      if (!assignedLocation) {
-        console.error(`Location pour le véhicule avec l'id ${i} introuvable`);
-        continue;
-      }
+    const allVehicles = await em.find(Vehicle, {});
 
-      currentVehicle.location = assignedLocation;
-      await em.persistAndFlush(currentVehicle);
+    for (const vehicle of allVehicles) {
+        const randomLocation = allLocations[Math.floor(Math.random() * allLocations.length)];
+        vehicle.location = randomLocation;
+        em.persist(vehicle);
     }
+    
+    await em.flush();
   }
 }

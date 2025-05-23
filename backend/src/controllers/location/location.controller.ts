@@ -16,6 +16,17 @@ export class LocationController {
         }
     }
 
+    @Get('search')
+    public async searchLocations(
+        @Query('name') name: string
+    ): Promise<LocationDTO[]> {
+        try {
+            return await this._locationService.searchByName(name);
+        } catch (error) {
+            throw new Error(error.message);
+        }
+    }
+
     @Get(':id')
     public async getLocationById(@Param('id') id: number): Promise<LocationDTO> {
         try {
