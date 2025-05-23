@@ -1,4 +1,5 @@
-import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import { Vehicle } from '@entities/vehicle.entity';
+import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/common';
 import { VehicleService } from '@services/vehicle/vehicle.service';
 import { VehicleDTO } from 'src/models/vehicle.model';
 import { VehicleAvailabilityModel } from '../../models/vehicle-availability.model';
@@ -14,6 +15,25 @@ export class VehicleController {
         } catch (error) {
             throw new Error('User not found')
         }
+    }
+
+    @Get()
+    public async getVehicles(
+        @Query('page') page: number = 1,
+        @Query('limit') limit: number = 10
+    ) {
+        return this._vehicleService.getVehicles(page, limit);
+    }
+
+    @Post('add-vehicle')
+    public async post(@Body() data: VehicleDTO) {
+        console.log(data)
+        return await this._vehicleService.addVehicle(data)
+    }
+
+    @Put(':id')
+    update(@Param('id') id: number, @Body() data: Vehicle) {
+        return this._vehicleService.update(id, data);
     }
 
     @Post('available')

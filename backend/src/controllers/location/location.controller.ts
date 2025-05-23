@@ -1,5 +1,5 @@
 import { Location } from '@entities/location.entity';
-import { Body, Controller, Delete, Get, Param, Patch, Post, Put, Query, ValidationPipe } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, Query, ValidationPipe } from '@nestjs/common';
 import { LocationService } from '@services/location/location.service';
 import { LocationDTO } from 'src/models/location.model';
 
@@ -32,7 +32,7 @@ export class LocationController {
         try {
             return await this._locationService.getById(id);
         } catch (error) {
-            throw new Error(error.message);
+            throw new Error('Location not found')
         }
     }
 
@@ -46,10 +46,20 @@ export class LocationController {
         }
     }
 
+    @Get()
+    public async getLocations(
+        @Query('page') page: number = 1,
+        @Query('limit') limit: number = 10
+    ) {
+        return this._locationService.getLocations(page, limit);
+    }
+
     @Post('add-location')
     public async post(@Body() data: LocationDTO) {
+        console.log(data)
         return await this._locationService.addLocation(data)
     }
+
 
     @Put(':id')
     update(@Param('id') id: number, @Body() location: Location) {
@@ -64,3 +74,4 @@ export class LocationController {
         }
     }
 }
+

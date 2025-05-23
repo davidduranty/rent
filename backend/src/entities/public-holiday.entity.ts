@@ -1,4 +1,4 @@
-import { Entity, OneToOne, PrimaryKey, Property } from "@mikro-orm/core";
+import { Collection, Entity, OneToMany, OneToOne, PrimaryKey, Property } from "@mikro-orm/core";
 import { Location } from './location.entity';
 
 @Entity({ schema: 'rentACar', tableName: 'public_holiday' })
@@ -28,7 +28,7 @@ export class PublicHoliday {
     @Property({ type: 'string', nullable: false })
     sunday: string;
 
-    @OneToOne(() => Location, (location) => location.publicHoliday, { nullable: true })
-    location?: Location;
+    @OneToMany(() => Location, (location) => location.publicHoliday)
+    location = new Collection<Location>(this);
 
 }

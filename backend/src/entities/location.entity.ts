@@ -1,4 +1,4 @@
-import { Collection, Entity, ManyToMany, OneToMany, OneToOne, PrimaryKey, Property } from "@mikro-orm/core";
+import { Collection, Entity, ManyToMany, ManyToOne, OneToMany, OneToOne, PrimaryKey, Property } from "@mikro-orm/core";
 import { Hour } from "./hour.entity";
 import { PublicHoliday } from "./public-holiday.entity";
 import { Vehicle } from "./vehicle.entity";
@@ -25,7 +25,7 @@ export class Location {
     @OneToMany(() => Hour, (event) => event.location, { eager: false })
     hour? = new Collection<Hour>(this)
 
-    @OneToOne(() => PublicHoliday, (event) => event.location, { owner: true })
+    @ManyToOne(() => PublicHoliday)
     publicHoliday?: PublicHoliday;
 
     @OneToMany(() => Vehicle, (event) => event.location, { eager: false })

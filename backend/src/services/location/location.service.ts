@@ -95,6 +95,19 @@ export class LocationService {
         } as LocationDTO));
     }
 
+    async getLocations(page: number, limit: number) {
+        const [locations, totalCount] = await this._locationRepository.findAndCount(
+            {},
+            { offset: (page - 1) * limit, limit }
+        );
+
+        return {
+            locations,
+            totalPages: Math.ceil(totalCount / limit),
+            currentPage: page,
+        };
+    }
+
     public async update(id: number, location: Location): Promise<LocationDTO> {
         const result = await this._locationRepository.findOne({ id })
 
@@ -111,17 +124,28 @@ export class LocationService {
         return result;
     }
 
-    public async addLocation(locationDTO: LocationDTO): Promise<LocationDTO> {
-        const add = this._locationRepository.create(locationDTO);
-        // add.name = locationDTO.name;
-        // add.address = locationDTO.address;
-        // add.city = locationDTO.city;
-        // add.zipCode = locationDTO.zipCode;
-        // add.publicHoliday = locationDTO.publicHoliday || undefined;
-        // add.vehicles = locationDTO.vehicles || undefined;
+    public async addLocation(location: LocationDTO): Promise<LocationDTO | null> {
+        try {
+            const existingLocation = await this._locationRepository.findOne({ name: location.name });
+            if (existingLocation) {
+                throw new Error(`Le nom ${location.name} est déjà utilisé.`);
+            }
 
-        await this._em.persistAndFlush(add);
-        return add;
+            const newLocation = this._locationRepository.create({
+                name: location.name,
+                address: location.address,
+                city: location.city,
+                zipCode: location.zipCode,
+                publicHoliday: location.publicHoliday,
+                vehicles: location.vehicles,
+                hour: 0
+            })
+
+            await this._em.persistAndFlush(newLocation);
+            return newLocation;
+        } catch (error) {
+            throw new Error(`Erreur lors de l'ajout du lieu : ${error}`);
+        }
     }
 
     public async removeId(id: number): Promise<boolean> {
