@@ -55,8 +55,8 @@ export class ReservationFormComponent implements OnInit {
         })
       )
       .subscribe((locations) => {
-        this.locations = locations;
-        this.showLocationsDropdown = locations.length > 0;
+        this.locations = (locations as any[]).filter(l => typeof l.id === 'number' && true && l.name);
+        this.showLocationsDropdown = this.locations.length > 0;
       });
   }
 

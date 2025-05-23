@@ -1,18 +1,16 @@
 <div class="mt-12">
   <form [formGroup]="reservationForm" class="max-w-lg mx-auto p-4 bg-white rounded-lg shadow-md">
     <div class="mb-4">
-      <label class="block text-gray-700 font-bold mb-2" for="vehicleType">
+      <label class="block text-gray-700 font-bold mb-2">
         Type de véhicule
       </label>
       <div class="flex items-center">
         <label class="mr-4">
-          <input name="vehicleType" id="vehicleType" type="radio" formControlName="isProfessional" (change)="setProfessional(false)"
-                 [checked]="!reservationForm.get('isProfessional')?.value" class="mr-2">
+          <input name="isProfessional" id="vehicleType1" type="radio" formControlName="isProfessional" [value]="false" class="mr-2">
           Véhicules
         </label>
         <label>
-          <input type="radio" formControlName="isProfessional" (change)="setProfessional(true)"
-                 [checked]="reservationForm.get('isProfessional')?.value" class="mr-2">
+          <input name="isProfessional" id="vehicleType2" type="radio" formControlName="isProfessional" [value]="true" class="mr-2">
           Utilitaires
         </label>
       </div>

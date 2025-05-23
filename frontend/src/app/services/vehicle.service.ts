@@ -1,7 +1,5 @@
 import {Injectable} from "@angular/core";
 import {Vehicle} from "../models/location.model";
-import {Injectable} from "@angular/core";
-import {Vehicle} from "../models/location.model";
 import {SearchParams} from '../models/search-params.model';
 
 @Injectable({
