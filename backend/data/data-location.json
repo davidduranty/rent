@@ -3,144 +3,168 @@
     "name": "Aéroport Charles de Gaule",
     "address": "6 rue des bruyères",
     "city": "Paris",
-    "zipCode": 95931
+    "zipCode": 95931,
+    "image": "https://france3-regions.franceinfo.fr/image/rkpLKrgHYNlf0giGKDrpwFuMaGw/3957x4015/regions/2024/03/07/2-2-65e9e8a9e7525205906044.jpg"
   },
   {
     "name": "Aéroport Bordeaux",
     "address": "avenue René Cassin",
     "city": "Mérignac",
-    "zipCode": 33700
+    "zipCode": 33700,
+    "image": "https://www.enia.fr/projects/diapos/Cr%C3%A9dit_enia-architectes_web_668e778a6cac2.jpeg"
   },
   {
     "name": "Aéroport Orly",
     "address": "Roissy Charles de Gaulle Cedex",
     "city": "Paris",
-    "zipCode": 94310
+    "zipCode": 94310,
+    "image": "https://cdn.generationvoyage.fr/2025/03/Laeroport-dOrly-est-le-deuxieme-plus-grand-de-Paris-apres-celui-de-Roissy-Charles-de-Gaulle.jpeg"
   },
   {
     "name": "Aéroport Nice Côte d'Azur",
     "address": "Aéroport Nice Côte d'Azur BP 3331",
     "city": "Nice",
-    "zipCode": 62060
+    "zipCode": 62060,
+    "image": "https://www.datocms-assets.com/17742/1575298937-nice-cote-d-azur-airport-photos.jpg?auto=format&w=1542"
   },
   {
     "name": "Aéroport Lyon-Saint-Exupéry",
     "address": "BP 113 69125",
     "city": "Colombier-Saugnieu",
-    "zipCode": 69125
+    "zipCode": 69125,
+    "image": "https://businessaviation.lyonaeroports.com/sites/default/files/2021-02/decouvrir-lyon-aeroport-clair.jpg"
   },
   {
     "name": "Aéroport Marseille Provence",
     "address": "BP 100 13727",
     "city": "Marignane",
-    "zipCode": 13727
+    "zipCode": 13727,
+    "image": "https://www.marseille.aeroport.fr/fileadmin/user_upload/pistes.png"
   },
   {
     "name": "Aéroport Toulouse-Blagnac",
     "address": "1 Avenue Corneille BP 90103",
     "city": "Blagnac",
-    "zipCode": 31703
+    "zipCode": 31703,
+    "image": "https://www.toulouse.aeroport.fr/sites/default/files/styles/atb_xlarge/public/jpg/Fronton-Aeroport-Toulouse-Blagnac-2_mxl.jpg?itok=OjPbsOpD"
   },
   {
     "name": "Aéroport Nantes Atlantique",
     "address": "Boulevard de l'Aéroport BP 40609",
     "city": "Bouguenais",
-    "zipCode": 44332
+    "zipCode": 44332,
+    "image": "https://vinci-airports.com/wp-content/uploads/2024/08/Low-resolution-file-VINCIAIRPORT_NANTES_H.BRUNNER_CAPA_HD_4.jpg"
   },
   {
     "name": "Aéroport Strasbourg",
     "address": "Route de l'Aéroport BP 60020",
     "city": "Entzheim",
-    "zipCode": 67960
+    "zipCode": 67960,
+    "image": "https://alsace.news/wp-content/uploads/2017/02/Entzheim-aeroport-1-web.jpg"
   },
   {
     "name": "Aéroport Montpellier-Méditerranée",
     "address": "Aéroport de Montpellier BP 10104",
     "city": "Mauguio",
-    "zipCode": 34137
+    "zipCode": 34137,
+    "image": "https://www.montpellier.aeroport.fr/sites/default/files/2024-09/facade-aeroport-montpellier.jpg"
   },
   {
     "name": "Aéroport Lille-Lesquin",
     "address": "BP 90175",
     "city": "Lesquin",
-    "zipCode": 59810
+    "zipCode": 59810,
+    "image": "https://www.enia.fr/projects/diapos/aerienne_5e53a51a3628c.jpeg"
   },
   {
     "name": "Aéroport Rennes-Saint-Jacques",
     "address": "Aéroport Rennes Bretagne BP 33509",
     "city": "Saint-Jacques-de-la-Lande",
-    "zipCode": 35035
+    "zipCode": 35035,
+    "image": "https://media.ouest-france.fr/v1/pictures/MjAxODAxYjM2NGM1MjkyMDkxY2ZhMjc5ZjljZDMyYjE1YWFkY2Q?width=1260&height=708&focuspoint=50%2C25&cropresize=1&client_id=bpeditorial&sign=b43f2eaec95a5397881ba1902a71d26939d12976f226b03ee453666d6b1ccbe8"
   },
   {
     "name": "Aéroport Clermont-Ferrand Auvergne",
     "address": "Aéroport Clermont-Ferrand Auvergne BP 50008",
     "city": "Aulnat",
-    "zipCode": 63510
+    "zipCode": 63510,
+    "image": "https://vinci-airports.com/wp-content/uploads/2024/08/Aeroport-Clermont-Ferrand-Auvergne.png"
   },
   {
     "name": "Aéroport Bâle-Mulhouse-Fribourg",
     "address": "BP 60120",
     "city": "Saint-Louis",
-    "zipCode": 68304
+    "zipCode": 68304,
+    "image": "https://s3.eu-central-1.amazonaws.com/annuaire.mairie/img/aeroports/aeroport-de-bale-mulhouse-fribourg-mlh.jpg"
   },
   {
     "name": "Aéroport Pau Pyrénées",
     "address": "Aéroport Pau Pyrénées BP 2009",
     "city": "Uzein",
-    "zipCode": 64046
+    "zipCode": 64046,
+    "image": "https://www.pau.fr/sites/default/files/styles/header/public/media/image/2023-10/49196d0bfb20678ecc925b9f0544d4db_Facade-aeroport-Pau-pyrenees.jpeg?itok=zQe6JqPu"
   },
   {
     "name": "Aéroport Biarritz Pays Basque",
     "address": "Aéroport Biarritz Pays Basque BP 30100",
     "city": "Anglet",
-    "zipCode": 64600
+    "zipCode": 64600,
+    "image": "https://www.anglet-tourisme.com/wp-content/uploads/tis/large/WP-20170123-0108R-Aeroport-Biarritz-Pays-Basque.jpg"
   },
   {
     "name": "Aéroport Perpignan-Rivesaltes",
     "address": "Aéroport de Perpignan BP 10001",
     "city": "Perpignan",
-    "zipCode": 66001
+    "zipCode": 66001,
+    "image": "https://www.aeroport-perpignan.com/medias_front/actualite/092833MB8A1210-min.jpeg"
   },
   {
     "name": "Aéroport Toulon-Hyères",
     "address": "Aéroport Toulon Hyères BP 600",
     "city": "Hyères",
-    "zipCode": 83418
+    "zipCode": 83418,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Aeroport_de_Toulon-Hy%C3%A8res_terminal.JPG"
   },
   {
     "name": "Aéroport La Rochelle-Île de Ré",
     "address": "Aéroport La Rochelle BP 3003",
     "city": "Laleu",
-    "zipCode": 17000
+    "zipCode": 17000,
+    "image": "https://www.leparisien.fr/resizer/p_RqK9Dbf52qVxUKYzmtXhvF4ZQ=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/leparisien/KBBIMPIYBFDFLPWF367LPNRQUI.jpg"
   },
   {
     "name": "Aéroport Grenoble-Isère",
     "address": "Aéroport Grenoble-Isère BP 100",
     "city": "Saint-Étienne-de-Saint-Geoirs",
-    "zipCode": 38590
+    "zipCode": 38590,
+    "image": "https://vinci-airports.com/wp-content/uploads/2024/08/Aeroport-Grenoble-Alpes-Isere.png"
   },
   {
     "name": "Aéroport Chambéry-Savoie",
     "address": "Aéroport Chambéry-Savoie BP 32",
     "city": "Voglans",
-    "zipCode": 73420
+    "zipCode": 73420,
+    "image": "https://vinci-airports.com/wp-content/uploads/2024/08/VINCIAIRPORT_CHAMBERY_L.CIPRIANI__14012017_CAPA_HD03-scaled.jpg"
   },
   {
     "name": "Aéroport Caen-Carpiquet",
     "address": "Aéroport de Caen BP 5186",
     "city": "Carpiquet",
-    "zipCode": 14650
+    "zipCode": 14650,
+    "image": "https://www.francebleu.fr/s3/cruiser-production-eu3/2024/02/245811e8-a62a-4542-88f7-fd9d6eeae905/1200x680_sc_20240212-121115.jpg"
   },
   {
     "name": "Aéroport Limoges-Bellegarde",
     "address": "Aéroport Limoges BP 2001",
     "city": "Limoges",
-    "zipCode": 87000
+    "zipCode": 87000,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/59/A%C3%A9roport_Limoges-Bellegarde2.JPG"
   },
   {
     "name": "Aéroport Metz-Nancy-Lorraine",
     "address": "Aéroport Metz Nancy Lorraine BP 10001",
     "city": "Goin",
-    "zipCode": 57420
+    "zipCode": 57420,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/A%C3%A9roport_Metz-Nancy_Lorraine4.JPG/1200px-A%C3%A9roport_Metz-Nancy_Lorraine4.JPG"
   }
 ]
