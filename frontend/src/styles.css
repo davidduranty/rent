@@ -2,10 +2,25 @@
 @import "tailwindcss";
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background: teal; }
 
 .active {
   background: linear-gradient(90deg, #008080, #32cd32); /* teal and green shades only */
 }
 
+.toggle-menu-btn {
+  position: fixed;
+  top: 10px;
+  left: 13%;
+  z-index: 1000;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+nav {
+  position: fixed;
+  left: 0;
+  height: 100vh;
+  overflow: hidden;
+}
 

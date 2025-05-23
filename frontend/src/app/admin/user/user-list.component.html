@@ -1,7 +1,20 @@
 @if (isAddUser) {
 <app-new-user (close)="onCloseAddUser()" />
 }
-<div class="flex justify-center items-center h-screen">
+
+@if(isModifyUser) {
+<app-modify-user (close)="isModifyUser=$event" [user]="modifyUser" />
+}
+
+<div class="flex justify-center items-center flex-col mt-4">
+  <div class="flex justify-center items-center space-x-4 mb-2">
+    <button class="text-white cursor-pointer" (click)="prevPage()" [disabled]="currentPage === 1">Précédent</button>
+    <button class=" text-white cursor-pointer" (click)="nextPage()"
+      [disabled]="currentPage === totalPages">Suivant</button>
+  </div>
+  <span class="text-center text-white">Page {{ currentPage }} / {{ totalPages }}</span>
+</div>
+<div class="flex flex-col justify-center items-center m-20">
   <table class="table-auto border-collapse border border-gray-300 shadow-lg bg-white rounded-lg">
     <thead class="bg-gray-200">
       <tr>
@@ -27,8 +40,8 @@
         <td class="px-6 py-4 border border-gray-300 text-gray-600">{{user.isAdmin}}</td>
         <div>
           <td class="px-6 py-4 border border-gray-300 text-gray-600">
-            <button
-              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-0.5  cursor-pointer"><mat-icon>edit</mat-icon></button>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-0.5  cursor-pointer"
+              (click)="modifyUserId(user)"><mat-icon>edit</mat-icon></button>
             <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded cursor-pointer"
               (click)="removeId(user.id!)"><mat-icon>delete</mat-icon></button>
           </td>
@@ -37,9 +50,9 @@
       }
     </tbody>
   </table>
-</div>
-<div class="flex justify-center  bg-gray-100">
-  <button
-    class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-0.5 min-w-20 block cursor-pointer"
-    (click)="onAddUser()">Create</button>
+  <div class="flex  justify-center  mt-10">
+    <button
+      class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-0.5 min-w-20 block cursor-pointer"
+      (click)="onAddUser()">Create</button>
+  </div>
 </div>

@@ -1,7 +1,8 @@
 import {Injectable} from "@angular/core";
 import {Vehicle} from "../models/location.model";
+import {Injectable} from "@angular/core";
+import {Vehicle} from "../models/location.model";
 import {SearchParams} from '../models/search-params.model';
-import {User} from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,59 @@ export class VehicleService {
     } catch (error) {
       console.error("La recherche contient une erreur: ", error);
       return [];
+    }
+  }
+
+  async getVehicles(page: number, limit: number): Promise<{
+    vehicle: Vehicle[],
+    totalPages: number,
+    currentPage: number
+  }> {
+    try {
+      const response = await fetch(`http://localhost:3000/vehicle?page=${page}&limit=${limit}`);
+      if (!response.ok) {
+        throw new Error("Failed to fetch vehicles");
+      }
+      return await response.json();
+    } catch (error) {
+      console.error("Erreur lors de la récupération des vehicles :", error);
+      return {vehicle: [], totalPages: 1, currentPage: 1};
+    }
+  }
+
+  async addVehicle(vehicle: Vehicle): Promise<Vehicle | null> {
+    try {
+      const response = await fetch('http://localhost:3000/vehicle/add-vehicle', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(vehicle)
+      });
+
+      if (!response.ok) {
+        throw new Error('Échec de l\'ajout de l\'utilisateur');
+      }
+
+      const newVehicle = await response.json();
+      return newVehicle;
+    } catch (error) {
+      console.error("Erreur lors de l'ajout d'un véhicule' :", error);
+      return null;
+    }
+  }
+
+  async updateVehicle(id: number, vehicle: Vehicle): Promise<Vehicle> {
+    try {
+      const response = await fetch(`http://localhost:3000/vehicle/${id}`, {
+        method: 'PUT',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(vehicle)
+      });
+      if (!response.ok) {
+        throw new Error('Failed to fetch vehicle');
+      }
+      return await response.json();
+    } catch (error) {
+      return {} as Vehicle;
     }
   }
 
