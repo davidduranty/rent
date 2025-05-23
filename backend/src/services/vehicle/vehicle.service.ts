@@ -1,5 +1,5 @@
 import { InjectRepository } from '@mikro-orm/nestjs';
-import { EntityManager, EntityRepository, LoadStrategy, QueryOrder, t } from '@mikro-orm/core';
+import { EntityManager, EntityRepository, LoadStrategy, QueryOrder } from '@mikro-orm/core';
 import { Injectable } from '@nestjs/common';
 import { VehicleDTO } from 'src/models/vehicle.model';
 import { Vehicle } from '@entities/vehicle.entity';
@@ -93,7 +93,7 @@ export class VehicleService {
         const whereClause = {
             available: true,
             ...(locationId && { location: locationId }),
-            ...(isProfessional && { isProfessional: true })
+            // ...(isProfessional && { isProfessional: true })
         };
 
         const vehicles = await this._vehicleRepository.find(whereClause, {
