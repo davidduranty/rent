@@ -25,8 +25,8 @@ export class LocationController {
         }
     }
 
-    @Get('name')
-    public async getName(@Query('name') name: string): Promise<LocationDTO> {
+    @Get('name/:name')
+    public async getName(@Param('name') name: string): Promise<LocationDTO> {
         try {
             console.log(name)
             return await this._locationService.getByName(name)
