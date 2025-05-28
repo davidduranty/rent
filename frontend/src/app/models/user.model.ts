@@ -4,7 +4,7 @@ export interface User {
   surname: string;
   email: string;
   password: string;
-  birthday: string;
-  isAdmin: boolean;
-  professionnal: boolean;
+  birthday?: string;
+  isAdmin?: boolean;
+  professionnal?: boolean;
 }
