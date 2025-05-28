@@ -8,7 +8,7 @@ import { LoginComponent } from "./login/login.component";
 @Component({
   standalone: true,
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, CommonModule, MatIconModule, LoginComponent],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, CommonModule, MatIconModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -16,7 +16,6 @@ export class AppComponent {
   title: string = 'frontend';
   pageTitle: string = 'USER LIST';
   showMenu: boolean = false;
-  login: boolean = false;
   isMobile: any;
 
 
@@ -42,12 +41,6 @@ export class AppComponent {
 
   }
 
-  openLogin() {
-    this.login = true;
-  }
 
-  closeLogin() {
-    this.login = false;
-  }
 
 }
