@@ -74,7 +74,6 @@ export class RegisterComponent {
   }
 
   onProfessionnal() {
-    console.log("click")
     this.router.navigate(['/professionnal']);
   }
 }
