@@ -21,9 +21,9 @@ export class User {
     @Property({ type: 'string', nullable: false })
     birthday: string;
 
-    @Property({ type: 'boolean', nullable: false })
+    @Property({ type: 'boolean', nullable: true })
     isAdmin: boolean;
 
-    @Property({ type: 'boolean', nullable: false })
+    @Property({ type: 'boolean', nullable: true })
     professionnal: boolean;
 }

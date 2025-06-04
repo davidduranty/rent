@@ -6,6 +6,7 @@ import { NewLocationComponent } from "./new-location/new-location.component";
 import { PublicHolidayComponent } from "../public-holiday/public-holiday.component";
 import { ModifyLocationComponent } from "./modify-location/modify-location.component";
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -34,7 +35,7 @@ export class LocationListComponent implements OnInit {
 
 
 
-  constructor(private readonly locationService: LocationService) { }
+  constructor(private readonly locationService: LocationService, private router: Router) { }
 
 
   ngOnInit(): void {
@@ -47,7 +48,7 @@ export class LocationListComponent implements OnInit {
   async fetchLocations(page: number) {
     console.log("Page demandée :", page);
     if (page < 1 || page > this.totalPages) return;
-    const data = await this.locationService.getLocations(page, 10);
+    const data = await this.locationService.getLocations(page);
     this.locationList = data.locations;
     this.currentPage = data.currentPage;
     this.totalPages = data.totalPages;
@@ -94,6 +95,10 @@ export class LocationListComponent implements OnInit {
     if (addDeleteLocation) {
       this.locationList = this.locationList.filter(location => location.id !== id);
     }
+  }
+
+  backToHome() {
+    this.router.navigate(['/home']);
   }
 
 }

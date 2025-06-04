@@ -55,9 +55,9 @@ export class LocationService {
     }
   }
 
-  async getLocations(page: number, limit: number): Promise<{ locations: Location[], totalPages: number, currentPage: number }> {
+  async getLocations(page: number): Promise<{ locations: Location[], totalPages: number, currentPage: number }> {
     try {
-      const response = await fetch(`http://localhost:3000/location?page=${page}&limit=${limit}`);
+      const response = await fetch(`http://localhost:3000/location/${page}/${10}`);
       if (!response.ok) {
         throw new Error("Failed to fetch locations");
       }

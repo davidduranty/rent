@@ -6,6 +6,7 @@ import { VehicleService } from '../../services/vehicle.service';
 import { NewVehicleComponent } from './new-vehicle/new-vehicle.component';
 import { LocationService } from '../../services/location.service';
 import { ModifyVehicleComponent } from "./modify-vehicle/modify-vehicle.component";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-vehicle-list',
@@ -32,7 +33,7 @@ export class VehicleListComponent implements OnInit {
   totalPages: number = 1;
 
 
-  constructor(private readonly vehicleService: VehicleService, private readonly locationService: LocationService) { }
+  constructor(private readonly vehicleService: VehicleService, private readonly locationService: LocationService, private router: Router) { }
 
   ngOnInit(): void {
     this.getAllVehicles();
@@ -98,4 +99,7 @@ export class VehicleListComponent implements OnInit {
     })
   }
 
+  backToHome() {
+    this.router.navigate(['/home']);
+  }
 }
