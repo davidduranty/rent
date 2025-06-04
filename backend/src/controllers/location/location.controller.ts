@@ -46,10 +46,10 @@ export class LocationController {
         }
     }
 
-    @Get()
+    @Get(':page/:limit')
     public async getLocations(
-        @Query('page') page: number = 1,
-        @Query('limit') limit: number = 10
+        @Param('page') page: number,
+        @Param('limit') limit: number
     ) {
         return this._locationService.getLocations(page, limit);
     }

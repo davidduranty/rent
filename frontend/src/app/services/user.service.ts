@@ -22,6 +22,7 @@ export class UserService {
   async getUsers(page: number, limit: number): Promise<{ users: User[], totalPages: number, currentPage: number }> {
     try {
       const response = await fetch(`http://localhost:3000/user?page=${page}&limit=${limit}`);
+      console.log(response);
       if (!response.ok) {
         throw new Error("Failed to fetch users");
       }
@@ -29,6 +30,18 @@ export class UserService {
     } catch (error) {
       console.error("Erreur lors de la récupération des users :", error);
       return { users: [], totalPages: 1, currentPage: 1 };
+    }
+  }
+
+  async getRoles(roles: string): Promise<User> {
+    try {
+      const response = await fetch(`http://localhost:3000/user/roles?roles=${roles}`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch users');
+      }
+      return await response.json();
+    } catch (error) {
+      throw new Error('Failed to fetch users');
     }
   }
 

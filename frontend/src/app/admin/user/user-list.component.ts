@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { NewUserComponent } from './new-user/new-user.component';
 import { UserService } from '../../services/user.service';
 import { ModifyUserComponent } from './modify-user/modify-user.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
@@ -31,7 +32,7 @@ export class UserListComponent implements OnInit {
 
 
 
-  constructor(private readonly userService: UserService) { }
+  constructor(private readonly userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.userService.getAllUsers().then((users: User[]) => {
@@ -81,6 +82,10 @@ export class UserListComponent implements OnInit {
       this.listUser = this.listUser.filter(user => user.id !== id);
       window.location.reload();
     });
+  }
+
+  backToHome() {
+    this.router.navigate(['/home']);
   }
 
 }
