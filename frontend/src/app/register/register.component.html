@@ -17,7 +17,7 @@
         <input type="text" id="surname" name="surname"
           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
           [(ngModel)]="newUserDTO.surname" formControlName="surname">
-        @if(nameIsInvalid) {
+        @if(surnameIsInvalid) {
         <p class="control-error">Please enter a name with 4-10 characters, no numbers or special characters.</p>
         }
       </div>
@@ -27,6 +27,9 @@
         <input type="text" id="email" name="email"
           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
           [(ngModel)]="newUserDTO.email" formControlName="email">
+        @if(emailIsInvalid) {
+        <p class="control-error"> Please enter a valid email adress.</p>
+        }
       </div>
 
       <div>
@@ -41,7 +44,7 @@
 
       <div>
         <label for="text" class="block text-sm font-medium text-gray-700">Birthday</label>
-        <input type="text" id="text" name="text"
+        <input type="date" id="text" name="text"
           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
           [(ngModel)]="newUserDTO.birthday" formControlName="birthday">
       </div>

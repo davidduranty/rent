@@ -52,15 +52,20 @@ export class RegisterComponent {
   get nameIsInvalid() {
     return this.profileForm.controls.name.touched && this.profileForm.controls.name.dirty && this.profileForm.controls.name.invalid;
   }
+  get surnameIsInvalid() {
+    return this.profileForm.controls.name.touched && this.profileForm.controls.name.dirty && this.profileForm.controls.name.invalid;
+  }
 
   get passwordIsInvalid() {
+    return this.profileForm.controls.password.touched && this.profileForm.controls.password.dirty && this.profileForm.controls.password.invalid
+  }
+  get emailIsInvalid() {
     return this.profileForm.controls.password.touched && this.profileForm.controls.password.dirty && this.profileForm.controls.password.invalid
   }
 
   onSubmit() {
     this.userService.addUser(this.newUserDTO)
     this.router.navigate(['/home']);
-    alert('Inscription réussie !');
 
   }
 
