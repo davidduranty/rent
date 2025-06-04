@@ -20,10 +20,13 @@ export class LoginComponent {
 
 
   profileForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.email,
+      Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|fr|net|org|io|eu)$/i)
+    ]),
     password: new FormControl('', [Validators.required, Validators.minLength(6)])
   });
-
   get emailIsInvalid() {
     return this.profileForm.controls.email.touched && this.profileForm.controls.email.dirty && this.profileForm.controls.email.invalid
   }
