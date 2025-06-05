@@ -8,3 +8,7 @@ export interface User {
   isAdmin?: boolean;
   professionnal?: boolean;
 }
+
+export interface Lost {
+  email: string;
+}
