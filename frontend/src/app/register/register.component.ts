@@ -46,7 +46,7 @@ export class RegisterComponent {
     birthday: new FormControl('', [
       Validators.required,
       Validators.pattern(/^\d{2}-\d{2}-\d{4}$/)
-    ]),
+    ])
   });
 
   get nameIsInvalid() {
@@ -75,5 +75,8 @@ export class RegisterComponent {
 
   onProfessionnal() {
     this.router.navigate(['/professionnal']);
+  }
+  back() {
+    this.router.navigate(['/login']);
   }
 }

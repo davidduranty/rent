@@ -50,4 +50,8 @@ export class LoginComponent {
   register() {
     this.router.navigate(['/register']);
   }
+
+  loginLost() {
+    this.router.navigate(['find-email'])
+  }
 }

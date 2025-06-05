@@ -11,6 +11,7 @@ export const routes: Routes = [
   { path: 'register', loadComponent: () => import('./register/register.component').then((mod) => mod.RegisterComponent) },
   { path: 'professionnal', loadComponent: () => import('./professionnal/professionnal.component').then((mod) => mod.ProfessionnalComponent) },
   { path: 'new-professionnal', loadComponent: () => import('./professionnal/new-professionnal/new-professionnal.component').then((mod) => mod.NewProfessionnalComponent) },
+  { path: 'find-email', loadComponent: () => import('./find-email/find-email.component').then((mod) => mod.FindEmailComponent) },
 
 
   {
