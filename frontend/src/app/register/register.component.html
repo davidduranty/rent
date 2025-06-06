@@ -4,9 +4,9 @@
     <form (ngSubmit)="onSubmit()" class="space-y-4" [formGroup]="profileForm">
       <div>
         <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-        <input type="text" id="name" name="name"
-          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-          [(ngModel)]="newUserDTO.name" formControlName="name">
+        <input type="text" id="name" name="name" class="mt-1 pl-2 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500
+          placeholder:text-gray-300 placeholder:text-sm" placeholder="Enter your name" [(ngModel)]="newUserDTO.name"
+          formControlName="name">
         @if(nameIsInvalid) {
         <p class="control-error">Please enter a name with 4-10 characters, no numbers or special characters.</p>
         }
@@ -14,8 +14,8 @@
 
       <div>
         <label for="surname" class="block text-sm font-medium text-gray-700">Surname</label>
-        <input type="text" id="surname" name="surname"
-          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+        <input type="text" id="surname" name="surname" class="mt-1 pl-2 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500
+          placeholder:text-gray-300 placeholder:text-sm" placeholder="Enter your surname"
           [(ngModel)]="newUserDTO.surname" formControlName="surname">
         @if(surnameIsInvalid) {
         <p class="control-error">Please enter a name with 4-10 characters, no numbers or special characters.</p>
@@ -24,8 +24,8 @@
 
       <div>
         <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-        <input type="text" id="email" name="email"
-          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+        <input type="text" id="email" name="email" class="mt-1 pl-2 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500
+          placeholder:text-gray-300 placeholder:text-sm" placeholder="Enter your email address"
           [(ngModel)]="newUserDTO.email" formControlName="email">
         @if(emailIsInvalid) {
         <p class="control-error"> Please enter a valid email adress.</p>
@@ -34,8 +34,8 @@
 
       <div>
         <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-        <input type="password" id="password" name="password"
-          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+        <input type="password" id="password" name="password" class="mt-1 pl-2 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500
+          placeholder:text-gray-300 placeholder:text-sm" placeholder="Enter your password"
           [(ngModel)]="newUserDTO.password" formControlName="password">
         @if(passwordIsInvalid) {
         <p class="control-error"> Must be valid password with min 6 caracters.</p>
@@ -45,7 +45,7 @@
       <div>
         <label for="text" class="block text-sm font-medium text-gray-700">Birthday</label>
         <input type="date" id="text" name="text"
-          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+          class="mt-1 pl-2 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
           [(ngModel)]="newUserDTO.birthday" formControlName="birthday">
       </div>
       <div class="flex justify-end space-x-4">
