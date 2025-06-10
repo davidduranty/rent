@@ -38,15 +38,15 @@ export class LoginComponent {
     this.router.navigate(['/home']);
   }
   onSubmit() {
-    if (this.userDTO.email === '' || this.userDTO.password === '') {
+    const email = this.profileForm.value.email;
+    if (this.profileForm.invalid) {
       console.log('Veuillez remplir tous les champs');
-    } else if (this.userDTO.email.includes('@admin.com')) {
+    } else if (email?.includes('@admin.com')) {
       this.router.navigate(['/admin']);
     } else {
       this.router.navigate(['/user']);
     }
   }
-
   register() {
     this.router.navigate(['/register']);
   }

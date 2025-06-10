@@ -5,10 +5,12 @@ import Data from "../../data/data-vehicle.json";
 import DataUser from "../../data/data-user.json";
 import DataUtilities from "../../data/data-utility.json";
 import DataLocation from "../../data/data-location.json";
+import DataProfessionnal from "../../data/data-professionnal.json";
 import { Utilities } from "@entities/utilities.entity";
 import { Location } from "@entities/location.entity";
 import { PublicHoliday } from "@entities/public-holiday.entity";
 import { User } from "@entities/user.entity";
+import { Professionnal } from "@entities/professionnal.entity";
 
 export class DatabaseSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
@@ -62,6 +64,17 @@ export class DatabaseSeeder extends Seeder {
       await em.persistAndFlush(user);
     }
 
+    for (const ProfessionnalData of DataProfessionnal) {
+      const professionnal = em.create(Professionnal, {
+        name: ProfessionnalData.name,
+        siret: ProfessionnalData.siret,
+        email: ProfessionnalData.email,
+        password: ProfessionnalData.password,
+        image: ProfessionnalData.image,
+      })
+      await em.persistAndFlush(professionnal);
+    }
+
     for (const utilitiesData of DataUtilities) {
       const utilities = em.create(Utilities, {
         brand: utilitiesData.brand,
@@ -79,11 +92,11 @@ export class DatabaseSeeder extends Seeder {
     const allVehicles = await em.find(Vehicle, {});
 
     for (const vehicle of allVehicles) {
-        const randomLocation = allLocations[Math.floor(Math.random() * allLocations.length)];
-        vehicle.location = randomLocation;
-        em.persist(vehicle);
+      const randomLocation = allLocations[Math.floor(Math.random() * allLocations.length)];
+      vehicle.location = randomLocation;
+      em.persist(vehicle);
     }
-    
+
     await em.flush();
   }
 }

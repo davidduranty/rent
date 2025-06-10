@@ -4,4 +4,5 @@ export interface Professionnal {
   siret: string;
   email: string;
   password: string;
+  image: string;
 }

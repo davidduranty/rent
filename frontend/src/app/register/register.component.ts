@@ -64,7 +64,7 @@ export class RegisterComponent {
   }
 
   onSubmit() {
-    this.userService.addUser(this.newUserDTO)
+
     this.router.navigate(['/home']);
 
   }

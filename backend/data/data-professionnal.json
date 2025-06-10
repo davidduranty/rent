@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Coca-Cola France",
+    "siret": "12345678901234",
+    "email": "M1r8q@example.com",
+    "image": "https://www.coca-cola.com/content/dam/onexp/fr/home-images/en_france-coca-cola-logo_black_600x96.png",
+    "password": "M1r8q"
+  },
+  {
+    "id": 2,
+    "name": "France Travail",
+    "siret": "12345678901235",
+    "email": "M1r8q@example.com",
+    "image": "https://cdn.francetravail.fr/studio/logos/marque/Logo_France_Travail_RVB_Horizontal_Coul_Positif.svg",
+    "password": "M1r8q"
+  },
+  {
+    "id": 3,
+    "name": "Total Energies",
+    "siret": "12345678901236",
+    "email": "M1r8q@example.com",
+    "image": "https://companieslogo.com/img/orig/TTE_BIG-cf13cf30.png?t=1720244494",
+    "password": "M1r8q"
+  },
+  {
+    "id": 4,
+    "name": "Danone",
+    "siret": "12345678901237",
+    "email": "M1r8q@example.com",
+    "image": "https://companieslogo.com/img/orig/BN.PA_BIG-24538bea.png?t=1720244491",
+    "password": "M1r8q"
+  }
+]
