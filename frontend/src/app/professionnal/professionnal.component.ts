@@ -12,13 +12,13 @@ import { Professionnal } from '../models/professionnal.model';
 })
 export class ProfessionnalComponent {
   @Output() close = new EventEmitter<void>();
-  private userService = inject(UserService);
   private router = inject(Router);
   newProDTO: Professionnal = {
     name: '',
     siret: '',
     email: '',
     password: '',
+    image: ''
   };
 
   profileForm = new FormGroup({
@@ -59,7 +59,7 @@ export class ProfessionnalComponent {
   }
 
   onSubmit() {
-    this.userService.addUser(this.newProDTO)
+
     this.router.navigate(['/home']);
 
   }

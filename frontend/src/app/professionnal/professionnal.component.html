@@ -5,8 +5,7 @@
       <div>
         <label for="name" class="block text-sm font-medium text-gray-700">Name Society</label>
         <input type="text" id="name" name="name" class="mt-1 pl-2 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500
-          placeholder:text-gray-300 placeholder:text-sm" placeholder="Enter your society name"
-          [(ngModel)]="newProDTO.name" formControlName="name">
+          placeholder:text-gray-300 placeholder:text-sm" placeholder="Enter your society name" formControlName="name">
         @if(nameIsInvalid) {
         <p class="control-error">Please enter a name with 4-10 characters, no numbers or special characters.</p>
         }
@@ -16,7 +15,7 @@
         <label for="siret" class="block text-sm font-medium text-gray-700">N° Siret</label>
         <input type="number" id="siret" name="siret" class="mt-1 pl-2 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500
           placeholder:text-gray-300 placeholder:text-sm" placeholder="Enter your society siret number"
-          [(ngModel)]="newProDTO.siret" formControlName="siret">
+          formControlName="siret">
         @if(surnameIsInvalid) {
         <p class="control-error">Please enter a name with 4-10 characters, no numbers or special characters.</p>
         }
@@ -26,7 +25,7 @@
         <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
         <input type="text" id="email" name="email" class="mt-1 pl-2 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500
           placeholder:text-gray-300 placeholder:text-sm" placeholder="Enter your email address"
-          [(ngModel)]="newProDTO.email" formControlName="email">
+          formControlName="email">
         @if(emailIsInvalid) {
         <p class="control-error"> Please enter a valid email adress.</p>
         }
@@ -34,9 +33,8 @@
 
       <div>
         <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-        <input type="password" id="password" name="password" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500
-          placeholder:text-gray-300 placeholder:text-sm" placeholder="Enter your password"
-          [(ngModel)]="newProDTO.password" formControlName="password">
+        <input type="password" id="password" name="password" class="mt-1 pl-2 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500
+          placeholder:text-gray-300 placeholder:text-sm" placeholder="Enter your password" formControlName="password">
         @if(passwordIsInvalid) {
         <p class="control-error"> Must be valid password with min 6 caracters.</p>
         }

@@ -22,6 +22,8 @@ export const routes: Routes = [
       },
       { path: 'location', loadComponent: () => import('./admin/location/location-list.component').then((mod) => mod.LocationListComponent) },
       { path: 'vehicle', loadComponent: () => import('./admin/vehicle/vehicle-list.component').then((mod) => mod.VehicleListComponent) },
+      { path: 'professionnal', loadComponent: () => import('./admin/professionnal/professionnal.component').then((mod) => mod.ProfessionnalComponent) },
+      { path: 'new-professionnal', loadComponent: () => import('./admin/professionnal/new-professionnal/new-professionnal.component').then((mod) => mod.NewProfessionnalComponent) },
     ]
   },
 ];
