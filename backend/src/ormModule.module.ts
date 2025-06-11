@@ -15,11 +15,13 @@ import { VehicleController } from "./controllers/vehicle/vehicle.controller";
 import { VehicleService } from "@services/vehicle/vehicle.service";
 import { LocationHolidayService } from "@services/location-holiday/location-holiday.service";
 import { LocationHolidayController } from "./controllers/location-holiday/location-holiday.controller";
-import { Professionnal } from "@entities/professionnal.entity";
-import { HttpModule } from "@nestjs/axios"; // Ajoutez HttpModule à la liste des imports
+import { Professionnal } from "@entities/professionnal.entity";// Ajoutez HttpModule à la liste des imports
 
 import { ProfessionnalService } from "@services/professionnal/professionnal.service";
 import { ProfessionnalController } from './controllers/professionnal/professionnal.controller';
+import { AuthService } from "@services/auth/auth.service";
+import { AuthController } from "./controllers/auth/auth.controller";
+import { JwtService } from "@nestjs/jwt";
 
 @Module({
     imports: [
@@ -39,6 +41,8 @@ import { ProfessionnalController } from './controllers/professionnal/professionn
         VehicleService,
         LocationHolidayService,
         ProfessionnalService,
+        AuthService,
+        JwtService
     ],
     controllers: [
         LocationController,
@@ -46,6 +50,7 @@ import { ProfessionnalController } from './controllers/professionnal/professionn
         VehicleController,
         ProfessionnalController,
         LocationHolidayController,
+        AuthController
     ],
 })
 class OrmModule implements NestModule {

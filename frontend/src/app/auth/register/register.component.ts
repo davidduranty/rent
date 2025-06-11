@@ -1,7 +1,7 @@
 import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { User } from '../models/user.model';
-import { UserService } from '../services/user.service';
+import { User } from '../../models/user.model';
+import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 
 @Component({
