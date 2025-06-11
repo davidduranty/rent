@@ -8,7 +8,7 @@ export const routes: Routes = [
   { path: 'home', loadComponent: () => import('./home/home.component').then((mod) => mod.HomeComponent) },
 
   { path: 'login', loadComponent: () => import('./login/login.component').then((mod) => mod.LoginComponent) },
-  { path: 'register', loadComponent: () => import('./register/register.component').then((mod) => mod.RegisterComponent) },
+  { path: 'register', loadComponent: () => import('./auth/register/register.component').then((mod) => mod.RegisterComponent) },
   { path: 'professionnal', loadComponent: () => import('./professionnal/professionnal.component').then((mod) => mod.ProfessionnalComponent) },
   { path: 'new-professionnal', loadComponent: () => import('./professionnal/new-professionnal/new-professionnal.component').then((mod) => mod.NewProfessionnalComponent) },
   { path: 'find-email', loadComponent: () => import('./find-email/find-email.component').then((mod) => mod.FindEmailComponent) },

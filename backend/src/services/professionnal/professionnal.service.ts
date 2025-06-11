@@ -1,12 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { HttpService } from '@nestjs/axios';
+
 import { from, Observable, of } from 'rxjs';
-import { catchError, switchMap } from 'rxjs/operators';
 import { ProDto } from 'src/models/professionnal.model';
 import { Professionnal } from '@entities/professionnal.entity';
-import { EntityRepository, EntityManager, LoadStrategy, QueryOrder, Loaded } from '@mikro-orm/core';
+import { EntityRepository, EntityManager, LoadStrategy, QueryOrder } from '@mikro-orm/core';
 import { InjectRepository } from '@mikro-orm/nestjs';
-import { UserDTO } from 'src/models/user.model';
+
 
 @Injectable()
 export class ProfessionnalService {
