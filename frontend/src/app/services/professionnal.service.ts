@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { Professionnal } from '../models/professionnal.model';
-import { Observable, map, catchError } from 'rxjs';
+import { Observable, catchError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -52,6 +52,44 @@ export class ProfessionnalService {
         return new Observable<Professionnal[]>(); // Retourne un Observable vide en cas d'erreur
       })
     );
+  }
+
+  async addPro(professionnal: Professionnal): Promise<Professionnal | null> {
+    try {
+      const response = await fetch('http://localhost:3000/professionnal/add-professionnal', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(professionnal)
+      });
+
+      if (!response.ok) {
+        throw new Error('Échec de l\'ajout du professionnel');
+      }
+
+      const newPro = await response.json();
+      this.professionnals.push(newPro);
+      console.log(newPro)
+      return newPro;
+    } catch (error) {
+      console.error("Erreur lors de l'ajout du professionnel :", error);
+      return null;
+    }
+  }
+
+  async updatePro(id: number, pro: Professionnal): Promise<Professionnal> {
+    try {
+      const response = await fetch(`http://localhost:3000/professionnal/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(pro)
+      });
+      if (!response.ok) {
+        throw new Error('Failed to fetch professionnal');
+      }
+      return await response.json();
+    } catch (error) {
+      return {} as Professionnal;
+    }
   }
 
   public deleteProfessionnal(id: number): Observable<void> {

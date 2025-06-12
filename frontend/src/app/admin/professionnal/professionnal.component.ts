@@ -3,13 +3,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { Professionnal } from '../../models/professionnal.model';
 import { ProfessionnalService } from '../../services/professionnal.service';
 import { Router } from '@angular/router';
-import { ProDto } from '../../../../../backend/dist/src/models/professionnal.model';
 import { Subject } from 'rxjs';
+import { NewProfessionnalComponent } from "./new-professionnal/new-professionnal.component";
+import { ModifyProfessionnalComponent } from "./modify-professionnal/modify-professionnal.component";
 
 
 @Component({
   selector: 'app-professionnal',
-  imports: [MatIconModule],
+  imports: [MatIconModule, NewProfessionnalComponent, ModifyProfessionnalComponent],
   templateUrl: './professionnal.component.html',
   styleUrl: './professionnal.component.css'
 })
@@ -51,7 +52,10 @@ export class ProfessionnalComponent implements OnInit, OnDestroy {
 
   }
 
-  modifyProfessionnalId(professionnal: Professionnal) { }
+  modifyProfessionnalId(professionnal: Professionnal) {
+    this.modifyProfessionnal = professionnal;
+    this.isModifyProfessionnal = true;
+  }
 
   deleteProfessionnal(id: number) {
     this.professionalService.deleteProfessionnal(id).subscribe(() => {
@@ -60,7 +64,11 @@ export class ProfessionnalComponent implements OnInit, OnDestroy {
   }
 
   onAddPro() {
-    this.router.navigate(['/admin/new-professionnal']);
+    this.isAddProfessionnal = true;
+  }
+
+  onCloseAddPro() {
+    this.isAddProfessionnal = false;
   }
 
   backToHome() {

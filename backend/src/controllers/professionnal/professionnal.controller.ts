@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Inject, Param, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Inject, Param, Post, Put } from '@nestjs/common';
 import { ProfessionnalService } from '@services/professionnal/professionnal.service';
 import { ProDto } from 'src/models/professionnal.model';
 
@@ -14,7 +14,14 @@ export class ProfessionnalController {
 
     @Post('add-professionnal')
     async addProfessionnal(@Body() pro: ProDto) {
+        console.log(pro);
         return this._professionnalService.addProfessionnal(pro);
+
+    }
+
+    @Put(':id')
+    update(@Param('id') id: number, @Body() data: ProDto) {
+        return this._professionnalService.update(id, data);
     }
 
 
