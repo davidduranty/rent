@@ -1,3 +1,10 @@
+@if (isAddProfessionnal) {
+<app-new-professionnal (close)="onCloseAddPro()" />
+}
+@if (isModifyProfessionnal) {
+<app-modify-professionnal (close)="isModifyProfessionnal=$event" [pro]="modifyProfessionnal" />
+}
+
 <div class="flex justify-center items-center flex-col mt-4">
   @if (totalPages > 1) {
   <div class="flex justify-center items-center space-x-4 mb-2">

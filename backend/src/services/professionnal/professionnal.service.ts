@@ -71,6 +71,23 @@ export class ProfessionnalService {
         }
     }
 
+    public async update(id: number, pro: Professionnal): Promise<ProDto> {
+        const result = await this._proRepository.findOne({ id })
+
+        if (!result) {
+            throw new Error(`Aucun professionel trouvé avec l'ID "${id}".`);
+        }
+
+        result.name = pro.name;
+        result.siret = pro.siret;
+        result.email = pro.email;
+        result.password = pro.password;
+        result.image = pro.image;
+        await this._em.persistAndFlush(result);
+
+        return result;
+    }
+
     public async removeId(id: number): Promise<boolean> {
         const deleteId = await this._proRepository.nativeDelete({ id });
         return deleteId > 0;
