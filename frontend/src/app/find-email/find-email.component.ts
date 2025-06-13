@@ -2,6 +2,7 @@ import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Lost, User } from '../models/user.model';
+import { emailValidators } from '../utils/validators';
 
 @Component({
   selector: 'app-find-email',
@@ -20,9 +21,9 @@ export class FindEmailComponent {
 
   profileForm = new FormGroup({
     email: new FormControl('', [
-      Validators.required,
-      Validators.email,
-      Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|fr|net|org|io|eu)$/i)
+      Validators.required, emailValidators()
+      // Validators.email,
+      // Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|fr|net|org|io|eu)$/i)
     ]),
   });
   get emailIsInvalid() {

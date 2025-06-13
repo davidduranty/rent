@@ -3,6 +3,7 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { Professionnal } from '../models/professionnal.model';
+import { emailValidators, nameValidators, passwordValidators, siretValidators } from '../utils/validators';
 
 @Component({
   selector: 'app-professionnal',
@@ -23,24 +24,24 @@ export class ProfessionnalComponent {
 
   profileForm = new FormGroup({
     name: new FormControl('', [
-      Validators.required,
-      Validators.pattern(/^[a-zA-Z0-9]+$/),
-      Validators.minLength(3),
-      Validators.maxLength(20)
+      Validators.required, nameValidators()
+      // Validators.pattern(/^[a-zA-Z0-9]+$/),
+      // Validators.minLength(3),
+      // Validators.maxLength(20)
     ]),
     siret: new FormControl('', [
-      Validators.required,
-      Validators.pattern(/^[a-zA-Z]+$/),
-      Validators.minLength(4),
-      Validators.maxLength(10)
+      Validators.required, siretValidators()
+      // Validators.pattern(/^[a-zA-Z]+$/),
+      // Validators.minLength(4),
+      // Validators.maxLength(10)
     ]),
     email: new FormControl('', [
-      Validators.required,
-      Validators.email
+      Validators.required, emailValidators()
+      // Validators.email
     ]),
     password: new FormControl('', [
-      Validators.required,
-      Validators.minLength(6)
+      Validators.required, passwordValidators()
+      // Validators.minLength(6)
     ]),
   });
 
