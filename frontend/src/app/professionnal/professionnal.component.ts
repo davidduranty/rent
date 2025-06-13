@@ -3,7 +3,7 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { Professionnal } from '../models/professionnal.model';
-import { emailValidators, nameValidators, passwordValidators, siretValidators } from '../utils/validators';
+import { emailValidators, nameValidators, siretValidators } from '../utils/validators';
 
 @Component({
   selector: 'app-professionnal',
@@ -40,8 +40,9 @@ export class ProfessionnalComponent {
       // Validators.email
     ]),
     password: new FormControl('', [
-      Validators.required, passwordValidators()
-      // Validators.minLength(6)
+      Validators.required,
+      // passwordValidators()
+      Validators.minLength(6)
     ]),
   });
 
