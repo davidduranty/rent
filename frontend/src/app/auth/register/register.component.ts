@@ -3,6 +3,7 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { User } from '../../models/user.model';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
+import { birthdayValidators, emailValidators, nameValidators, passwordValidators } from '../../utils/validators';
 
 @Component({
   selector: 'app-register',
@@ -24,28 +25,28 @@ export class RegisterComponent {
 
   profileForm = new FormGroup({
     name: new FormControl('', [
-      Validators.required,
-      Validators.pattern(/^[a-zA-Z]+$/),
-      Validators.minLength(4),
-      Validators.maxLength(10)
+      Validators.required, nameValidators()
+      // Validators.pattern(/^[a-zA-Z]+$/),
+      // Validators.minLength(4),
+      // Validators.maxLength(10)
     ]),
     surname: new FormControl('', [
-      Validators.required,
-      Validators.pattern(/^[a-zA-Z]+$/),
-      Validators.minLength(4),
-      Validators.maxLength(10)
+      Validators.required, nameValidators()
+      // Validators.pattern(/^[a-zA-Z]+$/),
+      // Validators.minLength(4),
+      // Validators.maxLength(10)
     ]),
     email: new FormControl('', [
-      Validators.required,
-      Validators.email
+      Validators.required, emailValidators()
+      // Validators.email
     ]),
     password: new FormControl('', [
-      Validators.required,
-      Validators.minLength(6)
+      Validators.required, passwordValidators()
+      // Validators.minLength(6)
     ]),
     birthday: new FormControl('', [
-      Validators.required,
-      Validators.pattern(/^\d{2}-\d{2}-\d{4}$/)
+      Validators.required, birthdayValidators()
+      // Validators.pattern(/^\d{2}-\d{2}-\d{4}$/)
     ])
   });
 
