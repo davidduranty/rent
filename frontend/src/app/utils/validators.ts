@@ -1,4 +1,5 @@
 import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
+import { min } from 'rxjs';
 
 export function requiredValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
@@ -33,21 +34,32 @@ export function emailValidators(): ValidatorFn {
   };
 }
 
-export function passwordValidators(): ValidatorFn {
-  return (control: AbstractControl): ValidationErrors | null => {
-    // const password = control.value;
-    if (!control.value) return null;
-    const hasUpperCase = /[A-Z]/.test(control.value);
-    const hasLowerCase = /[a-z]/.test(control.value);
-    const hasNumber = /\d/.test(control.value);
-    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(control.value);
-    const isValidLength = control.value.length >= 8;
+export class PasswordValidators {
 
-    return hasUpperCase && hasLowerCase && hasNumber && hasSpecialChar && isValidLength
-      ? null
-      : { invalidPassword: true };
-  };
+  static minLength(minLength: number): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      if (!control.value) return null;
+      return control.value.length >= minLength ? null : { minLength: true };
+    };
+  }
+
 }
+
+// export function passwordValidators(): ValidatorFn {
+//   return (control: AbstractControl): ValidationErrors | null => {
+//     // const password = control.value;
+//     // if (!control.value) return null;
+//     const hasUpperCase = /[A-Z]/.test(control.value);
+//     const hasLowerCase = /[a-z]/.test(control.value);
+//     const hasNumber = /\d/.test(control.value);
+//     const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(control.value);
+//     const isValidLength = control.value.length >= 8;
+
+//     return hasUpperCase && hasLowerCase && hasNumber && hasSpecialChar && isValidLength
+//       ? null
+//       : { invalidPassword: true };
+//   };
+// }
 export function nameValidators(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
     const nameRegex = /^[a-zA-Z0-9]+$/;

@@ -3,7 +3,7 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { User } from '../../models/user.model';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
-import { birthdayValidators, emailValidators, nameValidators, passwordValidators } from '../../utils/validators';
+import { birthdayValidators, emailValidators, nameValidators } from '../../utils/validators';
 
 @Component({
   selector: 'app-register',
@@ -41,8 +41,9 @@ export class RegisterComponent {
       // Validators.email
     ]),
     password: new FormControl('', [
-      Validators.required, passwordValidators()
-      // Validators.minLength(6)
+      Validators.required,
+      // passwordValidators()
+      Validators.minLength(6)
     ]),
     birthday: new FormControl('', [
       Validators.required, birthdayValidators()

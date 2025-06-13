@@ -2,7 +2,7 @@ import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { User } from '../models/user.model';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { emailValidators, passwordValidators } from '../utils/validators';
+import { emailValidators, PasswordValidators } from '../utils/validators';
 
 @Component({
   selector: 'app-login',
@@ -19,13 +19,17 @@ export class LoginComponent {
   };
 
 
+
   profileForm = new FormGroup({
     email: new FormControl('', [
       Validators.required, emailValidators()
       // Validators.email,
       // Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|fr|net|org|io|eu)$/i)
     ]),
-    password: new FormControl('', [Validators.required, passwordValidators()])
+    password: new FormControl('', [Validators.required,
+    PasswordValidators.minLength(6),
+      // Validators.minLength(6)])
+    ]),
   });
   get emailIsInvalid() {
     return this.profileForm.controls.email.touched && this.profileForm.controls.email.dirty && this.profileForm.controls.email.invalid
