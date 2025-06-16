@@ -1,11 +1,12 @@
-import {Component, inject, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, ReactiveFormsModule} from '@angular/forms';
-import {dateIsTodayOrLater, endDateAfterStartDate, requiredValidator} from '../../utils/validators';
-import {VehicleService} from '../../services/vehicle.service';
-import {SearchParams} from '../../models/search-params.model';
-import {LocationService} from '../../services/location.service';
-import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
-import {of} from 'rxjs';
+import { Component, inject, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { dateIsTodayOrLater, endDateAfterStartDate, requiredValidator } from '../../utils/validators';
+import { VehicleService } from '../../services/vehicle.service';
+import { SearchParams } from '../../models/search-params.model';
+import { LocationService } from '../../services/location.service';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { Router } from '@angular/router';
 
 export interface Reservation {
   isProfessional: boolean;
@@ -23,13 +24,13 @@ export interface Reservation {
   imports: [ReactiveFormsModule]
 })
 export class ReservationFormComponent implements OnInit {
-
+  private router = inject(Router);
   private fb: FormBuilder = inject<FormBuilder>(FormBuilder);
   private vehicleService: VehicleService = inject<VehicleService>(VehicleService);
   private locationService: LocationService = inject<LocationService>(LocationService);
 
   protected reservationForm!: FormGroup;
-  protected locations: {id: number, name: string}[] = [];
+  protected locations: { id: number, name: string }[] = [];
   protected showLocationsDropdown = false;
   protected selectedLocationId: number | null = null;
 
@@ -39,7 +40,7 @@ export class ReservationFormComponent implements OnInit {
       location: ['', requiredValidator()],
       startDate: [null, [requiredValidator(), dateIsTodayOrLater()]],
       endDate: [null, requiredValidator()]
-    }, {validators: endDateAfterStartDate()});
+    }, { validators: endDateAfterStartDate() });
 
     this.reservationForm.get('location')?.valueChanges
       .pipe(
@@ -60,8 +61,8 @@ export class ReservationFormComponent implements OnInit {
       });
   }
 
-  selectLocation(location: {id: number, name: string}) {
-    this.reservationForm.patchValue({location: location.name});
+  selectLocation(location: { id: number, name: string }) {
+    this.reservationForm.patchValue({ location: location.name });
     this.selectedLocationId = location.id;
     this.showLocationsDropdown = false;
   }
@@ -88,9 +89,10 @@ export class ReservationFormComponent implements OnInit {
     }
 
     this.vehicleService.getVehicleByParma(params);
+    this.router.navigate(['/list-vehicle']);
   }
 
   setProfessional(value: boolean) {
-    this.reservationForm.patchValue({isProfessional: value});
+    this.reservationForm.patchValue({ isProfessional: value });
   }
 }
