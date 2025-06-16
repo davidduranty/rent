@@ -35,7 +35,6 @@ export function emailValidators(): ValidatorFn {
 }
 
 export class PasswordValidators {
-
   static minLength(minLength: number): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       if (!control.value) return null;
