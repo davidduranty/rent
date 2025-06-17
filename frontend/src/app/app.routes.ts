@@ -12,7 +12,11 @@ export const routes: Routes = [
   { path: 'professionnal', loadComponent: () => import('./professionnal/professionnal.component').then((mod) => mod.ProfessionnalComponent) },
   // { path: 'new-professionnal', loadComponent: () => import('./professionnal/new-professionnal/new-professionnal.component').then((mod) => mod.NewProfessionnalComponent) },
   { path: 'find-email', loadComponent: () => import('./find-email/find-email.component').then((mod) => mod.FindEmailComponent) },
-  { path: 'list-vehicle', loadComponent: () => import('./vehicle-list/vehicle-list.component').then((mod) => mod.VehicleListComponent) },
+  {
+    path: 'list-vehicle', loadComponent: () => import('./vehicle-list/vehicle-list.component').then((mod) => mod.VehicleListComponent), children: [
+    ]
+  },
+  { path: 'list-vehicle/new-reservation', loadComponent: () => import('./reservation/new-reservation/new-reservation.component').then((mod) => mod.NewReservationComponent) },
 
 
   {

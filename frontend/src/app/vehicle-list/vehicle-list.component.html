@@ -6,7 +6,7 @@
     @for (list of vehicles; track list.id) {
     @if (list.available === true) {
     <div
-      class="flex-col rounded-lg border-2 min-w-120 max-w-121  min-h-64 bg-gradient-to-br from-black via-white to-black">
+      class="flex-col rounded-lg border-2 min-w-120 max-w-121 cursor-pointer min-h-64 bg-gradient-to-br from-black via-white to-black">
       <div class="flex">
         <h2 class="flex items-start text-white">{{list.brand}}</h2>
         <p class="ml-2 text-white">{{list.model}}</p>
@@ -22,8 +22,9 @@
       </div>
       <img class="" src="{{list.image}}" alt="">
       <div class="flex justify-center">
-        <button
-          class="bg-gray-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-0.5 min-w-20 block cursor-pointer">Reserver</button>
+        <a class="bg-gray-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-0.5 min-w-20 block cursor-pointer"
+          routerLink="new-reservation">Reserver</a>
+
       </div>
     </div>
     }

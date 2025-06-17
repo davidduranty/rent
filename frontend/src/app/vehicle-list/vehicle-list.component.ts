@@ -2,10 +2,11 @@ import { Component, inject, OnInit } from '@angular/core';
 import { Vehicle } from '../models/location.model';
 import { VehicleService } from '../services/vehicle.service';
 import { throwError } from 'rxjs';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-vehicle-list',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './vehicle-list.component.html',
   styleUrl: './vehicle-list.component.css'
 })
