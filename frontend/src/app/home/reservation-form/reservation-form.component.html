@@ -6,11 +6,13 @@
       </label>
       <div class="flex items-center">
         <label class="mr-4">
-          <input name="isProfessional" id="vehicleType1" type="radio" formControlName="isProfessional" [value]="false" class="mr-2">
+          <input name="isProfessional" id="vehicleType1" type="radio" formControlName="isProfessional" [value]="false"
+            class="mr-2">
           Véhicules
         </label>
         <label>
-          <input name="isProfessional" id="vehicleType2" type="radio" formControlName="isProfessional" [value]="true" class="mr-2">
+          <input name="isProfessional" id="vehicleType2" type="radio" formControlName="isProfessional" [value]="true"
+            class="mr-2">
           Utilitaires
         </label>
       </div>
@@ -21,23 +23,23 @@
         Localisation
       </label>
       <input name="location" id="location" type="text" formControlName="location" placeholder="Localisation" required
-             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-             (focus)="showLocationsDropdown = locations.length > 0">
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        (focus)="showLocationsDropdown = locations.length > 0">
       @if (reservationForm.get('location')?.hasError('required') && reservationForm.get('location')?.touched) {
-        <div class="text-red-500 text-xs italic">
-          Veuillez saisir une localisation
-        </div>
+      <div class="text-red-500 text-xs italic">
+        Veuillez saisir une localisation
+      </div>
       }
       @if (showLocationsDropdown && locations.length > 0) {
-        <div class="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg">
-          <ul>
-            @for (location of locations; track location.id) {
-              <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer" (click)="selectLocation(location)">
-                {{ location.name }}
-              </li>
-            }
-          </ul>
-        </div>
+      <div class="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg">
+        <ul>
+          @for (location of locations; track location.id) {
+          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer" (click)="selectLocation(location)">
+            {{ location.name }}
+          </li>
+          }
+        </ul>
+      </div>
       }
     </div>
 
@@ -46,16 +48,16 @@
         Date de début
       </label>
       <input name="startDate" id="startDate" type="date" formControlName="startDate" required
-             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
       @if (reservationForm.get('startDate')?.hasError('required') && reservationForm.get('startDate')?.touched) {
-        <div class="text-red-500 text-xs italic">
-          Veuillez sélectionner une date de début
-        </div>
+      <div class="text-red-500 text-xs italic">
+        Veuillez sélectionner une date de début
+      </div>
       }
       @if (reservationForm.get('startDate')?.hasError('dateInvalid')) {
-        <div class="text-red-500 text-xs italic">
-          La date doit être aujourd'hui ou ultérieure
-        </div>
+      <div class="text-red-500 text-xs italic">
+        La date doit être aujourd'hui ou ultérieure
+      </div>
       }
     </div>
 
@@ -64,23 +66,23 @@
         Date de fin
       </label>
       <input name="endDate" id="endDate" type="date" formControlName="endDate" required
-             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
       @if (reservationForm.get('endDate')?.hasError('required') && reservationForm.get('endDate')?.touched) {
-        <div class="text-red-500 text-xs italic">
-          Veuillez sélectionner une date de fin
-        </div>
+      <div class="text-red-500 text-xs italic">
+        Veuillez sélectionner une date de fin
+      </div>
       }
     </div>
 
     @if (reservationForm.hasError('dateOrderInvalid') && reservationForm.touched) {
-      <div class="text-red-500 text-xs italic mb-4">
-        La date de fin doit être postérieure à la date de début
-      </div>
+    <div class="text-red-500 text-xs italic mb-4">
+      La date de fin doit être postérieure à la date de début
+    </div>
     }
 
     <div class="flex justify-center item-center mb-4">
       <button type="button" (click)="onSubmit()"
-              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline cursor-pointer">
         Réserver
       </button>
     </div>

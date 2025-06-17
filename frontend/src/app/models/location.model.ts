@@ -30,3 +30,10 @@ export interface Location {
   publicHoliday: PublicHoliday;
   vehicles: Vehicle[];
 }
+
+export interface Data {
+  id?: number;
+  location: string;
+  startDate: string;
+  endDate: string;
+}

@@ -1,8 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background: teal; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: linear-gradient(to bottom right, #000000, #ffffff, #000000);
+  background-attachment: fixed;
+  background-size: cover;
+}
 
 .active {
   background: linear-gradient(90deg, #008080, #32cd32); /* teal and green shades only */
@@ -22,6 +36,7 @@ nav {
   left: 0;
   height: 100vh;
   overflow: hidden;
+  background: linear-gradient(to bottom right, #000000, #ffffff, #000000);
 }
 
 .control-error {

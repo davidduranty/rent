@@ -10,19 +10,17 @@ export class VehicleService {
         @InjectRepository(Vehicle) private readonly _vehicleRepository: EntityRepository<VehicleDTO>, private readonly _em: EntityManager,
     ) { }
 
-    public async getAll(): Promise<VehicleDTO[]> {
+    public async getAll(limit?: number): Promise<VehicleDTO[]> {
         const vehicles = await this._vehicleRepository.find(
             {},
             {
-                // populate: ['publicHoliday', 'vehicles'],
-                // populateOrderBy: { publicHoliday: { id: QueryOrder.ASC } },
                 strategy: LoadStrategy.SELECT_IN,
-                limit: 10,
                 offset: 0,
-                orderBy: { id: QueryOrder.ASC }
+                orderBy: { id: QueryOrder.ASC },
+                ...(limit ? { limit } : {})
             }
-        )
-        return vehicles
+        );
+        return vehicles;
     }
 
     async getVehicles(page: number, limit: number) {
