@@ -1,12 +1,24 @@
 <header class="text-center">
   <h1 class="text-2xl font-bold mb-4 mt-4">Liste des véhicles disponibles</h1>
 </header>
+@if (donneesAffichees && donneesAffichees.length > 0) {
+<div class="flex justify-center">
+  @for (item of donneesAffichees; track item.id) {
+  <p class="italic">
+
+    {{ item.location }} - {{ item.startDate | date:'longDate'}} - {{ item.endDate | date:'longDate'}}
+  </p>
+  }
+</div>
+} @else {
+<p>Aucune donnée à afficher.</p>
+}
 <main>
   <div class="flex flex-wrap justify-center items-center row-auto gap-4">
     @for (list of vehicles; track list.id) {
     @if (list.available === true) {
     <div
-      class="flex-col rounded-lg border-2 min-w-120 max-w-121 cursor-pointer min-h-64 bg-gradient-to-br from-black via-white to-black">
+      class="flex-col rounded-lg shadow-xl/20 min-w-120 max-w-121 cursor-pointer min-h-64 bg-gradient-to-br from-black via-white to-black">
       <div class="flex">
         <h2 class="flex items-start text-white">{{list.brand}}</h2>
         <p class="ml-2 text-white">{{list.model}}</p>
