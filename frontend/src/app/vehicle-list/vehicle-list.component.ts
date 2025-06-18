@@ -5,16 +5,18 @@ import { throwError } from 'rxjs';
 import { RouterLink } from '@angular/router';
 import { DataService } from '../services/data.service';
 import { CommonModule } from '@angular/common';
+import { ModalComponent } from "./modal/modal.component";
 
 @Component({
   selector: 'app-vehicle-list',
-  imports: [RouterLink, CommonModule],
+  imports: [RouterLink, CommonModule, ModalComponent],
   templateUrl: './vehicle-list.component.html',
   styleUrl: './vehicle-list.component.css'
 })
 export class VehicleListComponent implements OnInit {
   vehicles: Vehicle[] = [];
   public dataList: Data[] = [];
+  showModal = false;
 
   private vehicleService = inject(VehicleService)
   private dataService = inject(DataService)
@@ -30,5 +32,9 @@ export class VehicleListComponent implements OnInit {
     }
     this.dataList = this.dataService.getData();
     console.log('Données récupérées :', this.dataList);
+  }
+
+  openDialog() {
+    this.showModal = true;
   }
 }
