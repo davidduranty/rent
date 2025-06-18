@@ -12,7 +12,9 @@
     routerLink="/home">Modify</button>
 </div>
 } @else {
-<p>Aucune donnée à afficher.</p>
+<div class="flex justify-center italic">
+  <p>Aucune donnée à afficher.</p>
+</div>
 }
 <main>
   <div class="flex flex-wrap justify-center items-center row-auto gap-4">
@@ -22,7 +24,10 @@
       class="flex-col rounded-lg shadow-xl/20 min-w-120 max-w-121 cursor-pointer min-h-64 bg-gradient-to-br from-black via-white to-black">
       <div class="flex">
         <h2 class="flex items-start text-white">{{list.brand}}</h2>
-        <p class="ml-2 text-white">{{list.model}}</p>
+        <p class="ml-2 mr-20 text-white">{{list.model}}</p>
+        <div class="flex justify-end min-w-60 ">
+          <button class="cursor-pointer hover:text-teal-400" (click)="openDialog()">Infos</button>
+        </div>
       </div>
       <div class="flex">
         <p class="text-white"> {{list.type}}</p>
@@ -37,7 +42,6 @@
       <div class="flex justify-center">
         <a class="bg-gray-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-0.5 min-w-20 block cursor-pointer"
           routerLink="new-reservation">Reserver</a>
-
       </div>
     </div>
     }
@@ -45,3 +49,4 @@
 
   </div>
 </main>
+<app-modal [visible]="showModal" />
