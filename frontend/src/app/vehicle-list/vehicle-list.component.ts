@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
 })
 export class VehicleListComponent implements OnInit {
   vehicles: Vehicle[] = [];
-  public donneesAffichees: Data[] = [];
+  public dataList: Data[] = [];
 
   private vehicleService = inject(VehicleService)
   private dataService = inject(DataService)
@@ -28,7 +28,7 @@ export class VehicleListComponent implements OnInit {
     } catch (error) {
       throwError(() => new Error('Failed to fetch vehicles'));
     }
-    this.donneesAffichees = this.dataService.getData();
-    console.log('Données récupérées :', this.donneesAffichees);
+    this.dataList = this.dataService.getData();
+    console.log('Données récupérées :', this.dataList);
   }
 }
