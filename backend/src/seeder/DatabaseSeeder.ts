@@ -47,6 +47,8 @@ export class DatabaseSeeder extends Seeder {
         place: 5,
         available: true,
         type: vehicleData.type,
+        price: vehicleData.price,
+        description: vehicleData.description
       });
       await em.persistAndFlush(vehicle);
     }
