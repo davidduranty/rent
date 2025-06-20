@@ -26,7 +26,7 @@
         <h2 class="flex items-start text-white">{{list.brand}}</h2>
         <p class="ml-2 mr-20 text-white">{{list.model}}</p>
         <div class="flex justify-end min-w-60 ">
-          <button class="cursor-pointer hover:text-teal-400" (click)="openDialog()">Infos</button>
+          <button class="cursor-pointer hover:text-teal-400" (click)="openInfo(list.id)">Infos</button>
         </div>
       </div>
       <div class="flex">
@@ -49,4 +49,4 @@
 
   </div>
 </main>
-<app-modal [visible]="showModal" />
+<app-modal *ngIf="showModal" [vehicles]="vehicleInfo" (close)="closeModal()"></app-modal>

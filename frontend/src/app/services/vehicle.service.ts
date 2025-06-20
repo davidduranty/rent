@@ -21,6 +21,20 @@ export class VehicleService {
     }
   }
 
+  async getById(id: number): Promise<Vehicle> {
+    try {
+      const response = await fetch(`http://localhost:3000/vehicle/${id}`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch vehicle');
+      }
+      console.log(response);
+      return await response.json();
+    } catch (error) {
+      return {} as Vehicle;
+    }
+  }
+
+
   async getVehicleByParma(params: SearchParams): Promise<Vehicle[]> {
     try {
       const response = await fetch('http://localhost:3000/vehicle/available', {
