@@ -12,9 +12,11 @@ import { Vehicle } from '../../models/location.model';
 })
 export class ModalComponent implements OnInit {
 
-  @Input() id!: number;
+  @Input() id!: number | undefined;
   @Input() vehicles!: Vehicle;
+  @Input() total!: number
   @Output() close = new EventEmitter<void>();
+
 
 
   private vehicleService = inject(VehicleService)
@@ -28,8 +30,10 @@ export class ModalComponent implements OnInit {
     console.log(this.vehicles)
   }
 
-
-
+  totalPrice() {
+    if (!this.vehicles || !this.vehicles.price) return 0;
+    return Number(this.vehicles.price) * this.total;
+  }
   cancel() {
     this.close.emit();
   }

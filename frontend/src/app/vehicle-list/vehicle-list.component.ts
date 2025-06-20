@@ -18,7 +18,8 @@ export class VehicleListComponent implements OnInit {
   vehicles: Vehicle[] = [];
   public dataList: Data[] = [];
   showModal = false;
-  private router = inject(Router);
+  public totalDays!: number;
+
 
   private vehicleService = inject(VehicleService)
   private dataService = inject(DataService)
@@ -45,14 +46,26 @@ export class VehicleListComponent implements OnInit {
 
   openInfo(id?: number) {
     if (id === undefined) return;
+    const dates = this.dataList[0]; // ou une logique pour récupérer les dates en cours
+    this.getNumberOfDays(dates.startDate, dates.endDate);
     this.showModal = true;
-    this.vehicleService.getById(id).then((res) => {
-      this.vehicleInfo = res;
+    this.vehicleService.getById(id).then((vehicule) => {
+      this.vehicleInfo = vehicule;
     });
   }
 
   closeModal() {
     this.showModal = false;
+  }
+
+  getNumberOfDays(start: string, end: string) {
+    const startDate = new Date(start);
+    const endDate = new Date(end);
+
+    const diffTime = Math.abs(endDate.getTime() - startDate.getTime());
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    this.totalDays = diffDays;
+    return diffDays;
   }
 
 }
