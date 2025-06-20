@@ -27,6 +27,7 @@
   <div class="flex flex-wrap justify-center items-center row-auto gap-4">
     @for (list of vehicles; track list.id) {
     @if (list.available === true) {
+    @if(dataList) {
     <div
       class="flex-col rounded-lg shadow-xl/20 min-w-120 max-w-121 cursor-pointer min-h-64 bg-gradient-to-br from-black via-white to-black"
       (click)="openInfo(list.id)">
@@ -50,6 +51,8 @@
           routerLink="new-reservation">Reserver</a>
       </div>
     </div>
+
+    }
     }
     }
 

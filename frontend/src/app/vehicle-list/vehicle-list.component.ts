@@ -44,14 +44,18 @@ export class VehicleListComponent implements OnInit {
     console.log('Données récupérées :', this.dataList);
   }
 
-  openInfo(id?: number) {
+  async openInfo(id?: number) {
     if (id === undefined) return;
-    const dates = this.dataList[0]; // ou une logique pour récupérer les dates en cours
-    this.getNumberOfDays(dates.startDate, dates.endDate);
-    this.showModal = true;
-    this.vehicleService.getById(id).then((vehicule) => {
+
+    try {
+      const dates = this.dataList[0];
+      this.getNumberOfDays(dates.startDate, dates.endDate);
+      const vehicule = await this.vehicleService.getById(id);
       this.vehicleInfo = vehicule;
-    });
+      this.showModal = true;
+    } catch (error) {
+      console.error('Erreur lors de la récupération du véhicule :', error);
+    }
   }
 
   closeModal() {
@@ -63,7 +67,7 @@ export class VehicleListComponent implements OnInit {
     const endDate = new Date(end);
 
     const diffTime = Math.abs(endDate.getTime() - startDate.getTime());
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
     this.totalDays = diffDays;
     return diffDays;
   }
