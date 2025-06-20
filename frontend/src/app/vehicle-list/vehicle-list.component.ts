@@ -1,8 +1,8 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { Data, Vehicle } from '../models/location.model';
 import { VehicleService } from '../services/vehicle.service';
 import { throwError } from 'rxjs';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { DataService } from '../services/data.service';
 import { CommonModule } from '@angular/common';
 import { ModalComponent } from "./modal/modal.component";
@@ -14,12 +14,21 @@ import { ModalComponent } from "./modal/modal.component";
   styleUrl: './vehicle-list.component.css'
 })
 export class VehicleListComponent implements OnInit {
+  @Input() id!: number;
   vehicles: Vehicle[] = [];
   public dataList: Data[] = [];
   showModal = false;
+  private router = inject(Router);
 
   private vehicleService = inject(VehicleService)
   private dataService = inject(DataService)
+
+  vehicleInfo: Vehicle = {
+    id: 0,
+    price: '',
+    description: '',
+    brand: '',
+  }
 
   ngOnInit(): void {
 
@@ -34,7 +43,16 @@ export class VehicleListComponent implements OnInit {
     console.log('Données récupérées :', this.dataList);
   }
 
-  openDialog() {
+  openInfo(id?: number) {
+    if (id === undefined) return;
     this.showModal = true;
+    this.vehicleService.getById(id).then((res) => {
+      this.vehicleInfo = res;
+    });
   }
+
+  closeModal() {
+    this.showModal = false;
+  }
+
 }

@@ -1,4 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, inject, Input, OnInit, Output } from '@angular/core';
+import { VehicleService } from '../../services/vehicle.service';
+import { Vehicle } from '../../models/location.model';
+
 
 
 @Component({
@@ -7,23 +10,28 @@ import { Component, Input } from '@angular/core';
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.css'
 })
-export class ModalComponent {
-  @Input() visible = false;
+export class ModalComponent implements OnInit {
+
+  @Input() id!: number;
+  @Input() vehicles!: Vehicle;
+  @Output() close = new EventEmitter<void>();
 
 
-  close() {
-    this.visible = false;
+  private vehicleService = inject(VehicleService)
+
+  ngOnInit(): void {
+    if (this.id !== undefined) {
+      this.vehicleService.getById(this.id).then((vehicle: Vehicle) => {
+        this.vehicles = vehicle
+      })
+    }
+    console.log(this.vehicles)
   }
 
-  confirm() {
-    // action à déclencher
-    this.visible = false;
-  }
 
-  deactivate() {
-    // action à déclencher
-    this.visible = false;
-    window.location.reload();
+
+  cancel() {
+    this.close.emit();
   }
 
 }

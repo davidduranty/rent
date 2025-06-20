@@ -7,4 +7,6 @@ export interface VehicleDTO {
     place: number;
     available: boolean;
     type: string;
+    price?: string;
+    description?: string;
 }

@@ -16,7 +16,9 @@ export const routes: Routes = [
     path: 'list-vehicle', loadComponent: () => import('./vehicle-list/vehicle-list.component').then((mod) => mod.VehicleListComponent), children: [
     ]
   },
+  { path: 'list-vehicle/modal', loadComponent: () => import('./vehicle-list/modal/modal.component').then((mod) => mod.ModalComponent) },
   { path: 'list-vehicle/new-reservation', loadComponent: () => import('./reservation/new-reservation/new-reservation.component').then((mod) => mod.NewReservationComponent) },
+
 
 
   {

@@ -17,6 +17,15 @@ export class VehicleController {
         }
     }
 
+    @Get(':id')
+    public async getById(@Param('id') id: number): Promise<VehicleDTO | null> {
+        try {
+            return await this._vehicleService.getById(id);
+        } catch (error) {
+            throw new Error('Vehicle not found')
+        }
+    }
+
     @Get()
     public async getVehicles(
         @Query('page') page: number = 1,

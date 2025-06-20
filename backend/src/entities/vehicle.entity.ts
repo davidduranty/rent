@@ -1,9 +1,7 @@
 import { Entity, ManyToOne, PrimaryKey, Property } from '@mikro-orm/core';
 import { Location } from './location.entity';
 
-
 @Entity({ schema: 'rentACar', tableName: 'vehicle' })
-
 export class Vehicle {
 
   @PrimaryKey({ autoincrement: true })
@@ -30,10 +28,15 @@ export class Vehicle {
   @Property({ type: 'string', nullable: false })
   type: string;
 
+  @Property({ type: 'string', nullable: true })
+  price?: string;
+
+  @Property({ type: 'string', nullable: true })
+  description?: string;
+
   @ManyToOne(() => Location, { nullable: true })
   location?: Location;
 }
-
 
 
 
