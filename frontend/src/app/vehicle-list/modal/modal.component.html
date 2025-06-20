@@ -7,9 +7,18 @@
       @if (vehicles) {
       <img [src]="vehicles.image" [alt]="vehicles.brand" class="w-full h-40 object-cover rounded mb-2">
       <p class="text-gray-600 mb-2">{{ vehicles.description }}</p>
-      <p class="font-semibold text-lg text-gray-700 mb-1" (click)="openDetail()">
-        {{ totalPrice() > 0 ? ('Prix total : ' + totalPrice() + ' €') : ('Prix par jour : ' + vehicles.price + ' €') }}
-      </p>
+      <div class="relative inline-block group">
+        <span class="font-semibold text-lg text-gray-700 mb-1" (click)="openDetail()">
+          {{ totalPrice() > 0 ? ('Prix total : ' + totalPrice() + ' €') : ('Prix par jour : ' + vehicles.price + ' €')
+          }}
+        </span>
+        <div
+          class="absolute z-10 left-1/2 -translate-x-1/2 mt-2 w-64 p-3 text-sm text-white bg-gray-800 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none">
+          <p>Voir le détail de la tarification. <br />
+
+          </p>
+        </div>
+      </div>
       }
       <div class="flex justify-end">
         <button type="button" class="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 cursor-pointer"
@@ -18,6 +27,8 @@
         </button>
       </div>
     </div>
+
   </dialog>
 </div>
+
 <app-modal-price-datail />
