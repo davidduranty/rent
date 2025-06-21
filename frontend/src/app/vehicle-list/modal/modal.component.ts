@@ -6,6 +6,7 @@ import { ModalPriceDatailComponent } from "./modal-price-datail/modal-price-data
 
 
 
+
 @Component({
   selector: 'app-modal',
   imports: [ModalPriceDatailComponent],
@@ -16,8 +17,18 @@ export class ModalComponent implements OnInit {
 
   @Input() id!: number | undefined;
   @Input() vehicles!: Vehicle;
-  @Input() total!: number
+  @Input() inputTotalModal!: number
   @Output() close = new EventEmitter<void>();
+  showModal = false;
+  public totalDays!: number;
+
+  vehicleInfo: Vehicle = {
+    id: 0,
+    price: '',
+    description: '',
+    brand: '',
+  }
+
 
   private router = inject(Router)
 
@@ -36,7 +47,7 @@ export class ModalComponent implements OnInit {
 
   totalPrice() {
     if (!this.vehicles || !this.vehicles.price) return 0;
-    return Number(this.vehicles.price) * this.total;
+    return Number(this.vehicles.price) * this.inputTotalModal;
   }
   cancel() {
     this.close.emit();
@@ -44,6 +55,10 @@ export class ModalComponent implements OnInit {
 
   openDetail() {
     this.router.navigate(['modal-price-datail']);
+  }
+
+  closeModal() {
+    this.showModal = false;
   }
 
 }

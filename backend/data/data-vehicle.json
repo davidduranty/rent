@@ -58,7 +58,7 @@
     "model": "Mokka Electric",
     "brand": "Opel",
     "type": "Berline",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/opel-mokka-suv-silver-2022.png",
     "price": "58",
     "description": "L’Opel Mokka Electric propose une expérience de conduite silencieuse et dynamique, idéale en ville."
   },
@@ -76,16 +76,16 @@
     "model": "e-C4 X",
     "brand": "Citroen",
     "type": "Berline",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/citroen-c4x-5d-black-2024.png",
     "price": "62",
     "description": "La Citroën e-C4 X offre une motorisation électrique et un confort typique de la marque."
   },
   {
     "transmition": "Automatique",
-    "model": "Cooper",
+    "model": "Countryman",
     "brand": "MINI",
     "type": "SUV",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/mini-countryman-jcw-5d-grey-2024.png",
     "price": "70",
     "description": "La MINI Cooper SUV allie style britannique et agilité pour une conduite urbaine dynamique."
   },
@@ -94,7 +94,7 @@
     "model": "408",
     "brand": "Peugeot",
     "type": "SUV",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/peugeot-408-4d-white-2022.png",
     "price": "68",
     "description": "Le Peugeot 408 SUV séduit par son design audacieux et ses équipements technologiques avancés."
   },
@@ -103,7 +103,7 @@
     "model": "Grandland Hybride",
     "brand": "Opel",
     "type": "SUV",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/opel-grandland-x-suv-white-2021.png",
     "price": "66",
     "description": "L’Opel Grandland Hybride combine puissance et sobriété pour des trajets économiques et écologiques."
   },
@@ -112,7 +112,7 @@
     "model": "Série 1",
     "brand": "BMW",
     "type": "Berline",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/bmw-1-hatch-4d-black-2025.png",
     "price": "75",
     "description": "La BMW Série 1 est une berline compacte premium, offrant sportivité et confort."
   },
@@ -121,7 +121,7 @@
     "model": "Countryman",
     "brand": "MINI",
     "type": "Berline",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/mini-countryman-jcw-5d-grey-2024.png",
     "price": "72",
     "description": "Le MINI Countryman est une berline spacieuse et élégante, parfaite pour les escapades en famille."
   },
@@ -130,7 +130,7 @@
     "model": "308 SW",
     "brand": "Peugeot",
     "type": "SUV",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/peugeot-308-sw-stw-4d-silver-2021-JV.png",
     "price": "67",
     "description": "La Peugeot 308 SW SUV offre un grand volume de coffre et une conduite agréable sur tous types de routes."
   },
@@ -139,7 +139,7 @@
     "model": "Grandland",
     "brand": "Opel",
     "type": "SUV",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/opel-grandland-x-suv-white-2021.png",
     "price": "64",
     "description": "L’Opel Grandland est un SUV robuste et confortable, idéal pour les longs trajets."
   },
@@ -148,7 +148,7 @@
     "model": "Série 2 Active Tourer",
     "brand": "BMW",
     "type": "Berline",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/bmw-2-activ-tourer-grey-2022.png",
     "price": "78",
     "description": "La BMW Série 2 Active Tourer est une berline familiale alliant espace et dynamisme."
   },
@@ -172,19 +172,19 @@
   },
   {
     "transmition": "Manuelle",
-    "model": "GLA Hybride",
+    "model": "CLA Shooting Brake",
     "brand": "Mercedes-Benz",
     "type": "Berline",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/mb-cla-stw-silver-2021.png",
     "price": "77",
     "description": "La Mercedes-Benz GLA Hybride combine luxe, performance et respect de l’environnement."
   },
   {
     "transmition": "Automatique",
-    "model": "Série 2 Gran Coupé",
+    "model": "Série 2 Active Tourer",
     "brand": "BMW",
     "type": "Berline",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/bmw-2-activ-tourer-grey-2022.png",
     "price": "79",
     "description": "La BMW Série 2 Gran Coupé séduit par son design sportif et ses technologies embarquées."
   },
@@ -193,7 +193,7 @@
     "model": "CLA Shooting Brake",
     "brand": "Mercedes",
     "type": "Berline",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/mb-cla-stw-silver-2021.png",
     "price": "76",
     "description": "La Mercedes CLA Shooting Brake offre élégance et espace dans une silhouette dynamique."
   },
@@ -202,16 +202,16 @@
     "model": "X1",
     "brand": "BMW",
     "type": "SUV",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/bmw-x1-suv-grey-2025-US.png",
     "price": "85",
     "description": "Le BMW X1 est un SUV compact premium, idéal pour la ville comme pour les escapades."
   },
   {
     "transmition": "Manuelle",
-    "model": "Classe C Hybride",
+    "model": "Classe Benz EQE",
     "brand": "Mercedes",
     "type": "Berline",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/mb-eqe53-amg-sedan-4d-black-2023-JV.png",
     "price": "82",
     "description": "La Mercedes Classe C Hybride allie raffinement, puissance et efficacité énergétique."
   },
@@ -229,7 +229,7 @@
     "model": "Série 3 Touring",
     "brand": "BMW",
     "type": "Berline",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/bmw-3-stw-black-2023.png",
     "price": "81",
     "description": "La BMW Série 3 Touring est une berline spacieuse et dynamique, idéale pour les longs trajets."
   },
@@ -238,7 +238,7 @@
     "model": "Stelvio",
     "brand": "Alfa Romeo",
     "type": "Berline",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/alfa-romeo-stelvio-suv-red-2023.png",
     "price": "90",
     "description": "L’Alfa Romeo Stelvio offre un design italien distinctif et des performances sportives."
   },
@@ -262,10 +262,10 @@
   },
   {
     "transmition": "Manuelle",
-    "model": "Série 4 Gran Coupé",
-    "brand": "BMW",
+    "model": "Cayenne",
+    "brand": "Porsche",
     "type": "Berline",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/porsche-cayenne-s-hybrid-suv-4d-black-2024.png",
     "price": "86",
     "description": "La BMW Série 4 Gran Coupé séduit par son élégance et ses performances routières."
   },
@@ -274,16 +274,16 @@
     "model": "LYRIQ",
     "brand": "Cadillac",
     "type": "Berline",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/cadillac-lyriq-suv-silver-2023.png",
     "price": "95",
     "description": "La Cadillac LYRIQ est une berline électrique de luxe, alliant technologie et raffinement."
   },
   {
     "transmition": "Manuelle",
-    "model": "Série 5",
+    "model": "X5 M50",
     "brand": "BMW",
     "type": "Berline",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/bmw-x5-5d-weiss-2018.png",
     "price": "92",
     "description": "La BMW Série 5 est une berline haut de gamme, reconnue pour son confort et sa puissance."
   },
@@ -343,10 +343,10 @@
   },
   {
     "transmition": "Automatique",
-    "model": "XM",
-    "brand": "BMW",
+    "model": "Panamera",
+    "brand": "Porsche",
     "type": "Berline",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/porsche-panamera-sedan-4d-black-2021-JV.png",
     "price": "120",
     "description": "La BMW XM est une berline sportive et luxueuse, conçue pour les passionnés de conduite."
   },
