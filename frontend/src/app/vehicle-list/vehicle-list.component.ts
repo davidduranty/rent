@@ -6,10 +6,11 @@ import { Router, RouterLink } from '@angular/router';
 import { DataService } from '../services/data.service';
 import { CommonModule } from '@angular/common';
 import { ModalComponent } from "./modal/modal.component";
+import { ModalPriceDatailComponent } from "./modal/modal-price-datail/modal-price-datail.component";
 
 @Component({
   selector: 'app-vehicle-list',
-  imports: [RouterLink, CommonModule, ModalComponent],
+  imports: [RouterLink, CommonModule, ModalComponent, ModalPriceDatailComponent],
   templateUrl: './vehicle-list.component.html',
   styleUrl: './vehicle-list.component.css'
 })
@@ -18,7 +19,7 @@ export class VehicleListComponent implements OnInit {
   vehicles: Vehicle[] = [];
   public dataList: Data[] = [];
   showModal = false;
-  public totalDays!: number;
+  public totalDayslistVehicule: number = 0;
 
 
   private vehicleService = inject(VehicleService)
@@ -50,9 +51,10 @@ export class VehicleListComponent implements OnInit {
     try {
       const dates = this.dataList[0];
       this.getNumberOfDays(dates.startDate, dates.endDate);
+      console.log(this.totalDayslistVehicule)
       const vehicule = await this.vehicleService.getById(id);
-      this.vehicleInfo = vehicule;
       this.showModal = true;
+      this.vehicleInfo = vehicule;
     } catch (error) {
       console.error('Erreur lors de la récupération du véhicule :', error);
     }
@@ -68,7 +70,8 @@ export class VehicleListComponent implements OnInit {
 
     const diffTime = Math.abs(endDate.getTime() - startDate.getTime());
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
-    this.totalDays = diffDays;
+    this.totalDayslistVehicule = diffDays;
+    console.log("sup" + this.totalDayslistVehicule);
     return diffDays;
   }
 
