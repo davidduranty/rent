@@ -1,5 +1,5 @@
 import { Component, EventEmitter, inject, Input, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Vehicle } from '../../../models/location.model';
 import { VehicleService } from '../../../services/vehicle.service';
 
@@ -12,25 +12,22 @@ import { VehicleService } from '../../../services/vehicle.service';
   styleUrl: './modal-price-datail.component.css'
 })
 export class ModalPriceDatailComponent implements OnInit {
-  @Output() close = new EventEmitter<void>();
-  @Input() id!: number | undefined;
-  @Input() vehicles!: Vehicle;
-  @Input() inputTotalModalPriceDetail!: number
-  private vehicleService = inject(VehicleService)
+
+  public priceVehicle!: number
+  vehicleService = inject(VehicleService)
   private router = inject(Router)
+  private readonly route = inject(ActivatedRoute)
+
   // public totalDaysPriceDetail!: number;
 
 
 
   ngOnInit(): void {
-    console.log("jours: " + this.inputTotalModalPriceDetail)
-    // if (this.id !== undefined) {
-    //   this.vehicleService.getById(this.id).then((vehicle: Vehicle) => {
-    //     this.vehicles = vehicle
-
-    //   })
-    // }
-    // console.log(this.vehicles)
+    console.log("jours: " + this.vehicleService.totalDays)
+    const id: number = Number(this.route.snapshot.paramMap.get('id'));
+    this.vehicleService.getByPrice(id).then((price: number | null) => {
+      this.priceVehicle = price ?? NaN
+    })
   }
   back() {
     // this.close.emit();

@@ -59,9 +59,5 @@
   </div>
 </main>
 @if (showModal) {
-<app-modal [inputTotalModal]="totalDayslistVehicule" [id]="vehicleInfo.id" (close)="closeModal()" />
-}
-
-@if (showModal) {
-<app-modal-price-datail [inputTotalModalPriceDetail]="totalDayslistVehicule" />
+<app-modal [id]="vehicleInfo.id" (close)="closeModal()" />
 }

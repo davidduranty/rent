@@ -28,8 +28,8 @@ export class Vehicle {
   @Property({ type: 'string', nullable: false })
   type: string;
 
-  @Property({ type: 'string', nullable: true })
-  price?: string;
+  @Property({ type: 'number', nullable: true })
+  price?: number;
 
   @Property({ type: 'string', nullable: true })
   description?: string;
