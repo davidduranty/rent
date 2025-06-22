@@ -2,11 +2,15 @@ import { Injectable } from "@angular/core";
 import { Vehicle } from "../models/location.model";
 import { SearchParams } from '../models/search-params.model';
 
+
+
 @Injectable({
   providedIn: 'root'
 })
 
 export class VehicleService {
+
+  public totalDays: number = 2;
 
   async getAllVehicles(): Promise<Vehicle[]> {
     try {
@@ -31,6 +35,18 @@ export class VehicleService {
       return await response.json();
     } catch (error) {
       return {} as Vehicle;
+    }
+  }
+
+  async getByPrice(id: number): Promise<number | null> {
+    try {
+      const response = await fetch(`http://localhost:3000/vehicle/price/${id}`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch vehicle');
+      }
+      return await response.json();
+    } catch (error) {
+      return null;
     }
   }
 

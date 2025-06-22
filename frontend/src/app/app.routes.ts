@@ -16,7 +16,7 @@ export const routes: Routes = [
     path: 'list-vehicle', loadComponent: () => import('./vehicle-list/vehicle-list.component').then((mod) => mod.VehicleListComponent), children: [
     ]
   },
-  { path: 'modal-price-datail', loadComponent: () => import('./vehicle-list/modal/modal-price-datail/modal-price-datail.component').then((mod) => mod.ModalPriceDatailComponent) },
+  { path: 'modal-price-datail/:id', loadComponent: () => import('./vehicle-list/modal/modal-price-datail/modal-price-datail.component').then((mod) => mod.ModalPriceDatailComponent) },
   // { path: 'list-vehicle/modal', loadComponent: () => import('./vehicle-list/modal/modal.component').then((mod) => mod.ModalComponent) },
   { path: 'list-vehicle/new-reservation', loadComponent: () => import('./reservation/new-reservation/new-reservation.component').then((mod) => mod.NewReservationComponent) },
 

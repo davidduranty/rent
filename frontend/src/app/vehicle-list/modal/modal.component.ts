@@ -1,25 +1,30 @@
 import { Component, EventEmitter, inject, Input, OnInit, Output } from '@angular/core';
 import { VehicleService } from '../../services/vehicle.service';
 import { Vehicle } from '../../models/location.model';
-import { Router } from '@angular/router';
 import { ModalPriceDatailComponent } from "./modal-price-datail/modal-price-datail.component";
+import { Router } from '@angular/router';
+
 
 
 
 
 @Component({
   selector: 'app-modal',
-  imports: [ModalPriceDatailComponent],
+  imports: [],
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.css'
 })
 export class ModalComponent implements OnInit {
 
+  private router = inject(Router)
+
+  private vehicleService = inject(VehicleService)
+
   @Input() id!: number | undefined;
   @Input() vehicles!: Vehicle;
-  @Input() inputTotalModal!: number
   @Output() close = new EventEmitter<void>();
   showModal = false;
+  showDetail = false;
   public totalDays!: number;
 
   vehicleInfo: Vehicle = {
@@ -30,11 +35,11 @@ export class ModalComponent implements OnInit {
   }
 
 
-  private router = inject(Router)
 
 
 
-  private vehicleService = inject(VehicleService)
+
+
 
   ngOnInit(): void {
     if (this.id !== undefined) {
@@ -47,15 +52,16 @@ export class ModalComponent implements OnInit {
 
   totalPrice() {
     if (!this.vehicles || !this.vehicles.price) return 0;
-    return Number(this.vehicles.price) * this.inputTotalModal;
+    return Number(this.vehicles.price) * this.vehicleService.totalDays;
   }
   cancel() {
     this.close.emit();
   }
 
   openDetail() {
-    this.router.navigate(['modal-price-datail']);
+    this.router.navigate(['modal-price-datail/', this.id]);
   }
+
 
   closeModal() {
     this.showModal = false;

@@ -26,6 +26,15 @@ export class VehicleController {
         }
     }
 
+    @Get('price/:id')
+    public async getByPrice(@Param('id') id: number): Promise<number | null> {
+        try {
+            return await this._vehicleService.getByPrice(id);
+        } catch (error) {
+            throw new Error('Vehicle not found')
+        }
+    }
+
     @Get()
     public async getVehicles(
         @Query('page') page: number = 1,

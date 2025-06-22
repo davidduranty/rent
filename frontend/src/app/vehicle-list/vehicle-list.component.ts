@@ -2,15 +2,15 @@ import { Component, inject, Input, OnInit } from '@angular/core';
 import { Data, Vehicle } from '../models/location.model';
 import { VehicleService } from '../services/vehicle.service';
 import { throwError } from 'rxjs';
-import { Router, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { DataService } from '../services/data.service';
 import { CommonModule } from '@angular/common';
 import { ModalComponent } from "./modal/modal.component";
-import { ModalPriceDatailComponent } from "./modal/modal-price-datail/modal-price-datail.component";
+
 
 @Component({
   selector: 'app-vehicle-list',
-  imports: [RouterLink, CommonModule, ModalComponent, ModalPriceDatailComponent],
+  imports: [RouterLink, CommonModule, ModalComponent],
   templateUrl: './vehicle-list.component.html',
   styleUrl: './vehicle-list.component.css'
 })
@@ -19,7 +19,7 @@ export class VehicleListComponent implements OnInit {
   vehicles: Vehicle[] = [];
   public dataList: Data[] = [];
   showModal = false;
-  public totalDayslistVehicule: number = 0;
+
 
 
   private vehicleService = inject(VehicleService)
@@ -51,7 +51,7 @@ export class VehicleListComponent implements OnInit {
     try {
       const dates = this.dataList[0];
       this.getNumberOfDays(dates.startDate, dates.endDate);
-      console.log(this.totalDayslistVehicule)
+      console.log(this.vehicleService.totalDays)
       const vehicule = await this.vehicleService.getById(id);
       this.showModal = true;
       this.vehicleInfo = vehicule;
@@ -70,8 +70,8 @@ export class VehicleListComponent implements OnInit {
 
     const diffTime = Math.abs(endDate.getTime() - startDate.getTime());
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
-    this.totalDayslistVehicule = diffDays;
-    console.log("sup" + this.totalDayslistVehicule);
+    this.vehicleService.totalDays = diffDays;
+    console.log("sup" + this.vehicleService.totalDays);
     return diffDays;
   }
 

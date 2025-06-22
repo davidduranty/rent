@@ -1,4 +1,4 @@
-<div class=" bg-black bg-opacity-50 flex items-center justify-center mt-80">
+<div class="  flex items-center justify-center mt-80 ">
   <dialog open class="m-auto bg-white rounded-lg shadow-lg p-6 w-full max-w-md" (click)="$event.stopPropagation()">
     <div class="modal" tabindex="-1">
       <div class="modal-dialog">
@@ -10,8 +10,8 @@
           </div>
 
           <div class="modal-body">
-            <p><strong>Tarif journalier : {{vehicles.price}}</strong></p>
-            <p><strong>Durée :</strong> {{inputTotalModalPriceDetail || 0}} jours</p>
+            <p><strong>Tarif journalier : {{priceVehicle ? priceVehicle + " €/jour" : "Indisponible" }} </strong></p>
+            <p><strong>Durée :</strong> {{this.vehicleService.totalDays || 0}} jours</p>
             <p><strong>Assurance :</strong> </p>
             <p><strong>Frais supplémentaires :</strong> </p>
             <hr>

@@ -26,6 +26,14 @@ export class VehicleService {
     async getById(id: number): Promise<VehicleDTO | null> {
         return this._vehicleRepository.findOne({ id });
     }
+    async getByPrice(id: number): Promise<number | null> {
+
+        const vehicle = await this._vehicleRepository.findOne({ id });
+        if (!vehicle) {
+            throw new Error('Vehicle not found')
+        }
+        return vehicle.price ?? null
+    }
 
     async getVehicles(page: number, limit: number) {
         const [vehicle, totalCount] = await this._vehicleRepository.findAndCount(
