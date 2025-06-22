@@ -217,10 +217,10 @@
   },
   {
     "transmition": "Automatique",
-    "model": "Hybride",
-    "brand": "DS7",
+    "model": "A1 Sportback",
+    "brand": "AUDI",
     "type": "Berline",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/audi-a1-sportback-grau-2019.png",
     "price": "83",
     "description": "La DS7 Hybride propose luxe à la française et motorisation hybride performante."
   },
@@ -244,19 +244,19 @@
   },
   {
     "transmition": "Manuelle",
-    "model": "Classe C Hybride",
-    "brand": "Mercedes",
+    "model": "Fermentor",
+    "brand": "CUPRA",
     "type": "Berline",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/cupra-formentor-suv-white-2025.png",
     "price": "84",
     "description": "La Mercedes Classe C Hybride combine élégance, confort et motorisation hybride."
   },
   {
     "transmition": "Automatique",
-    "model": "Classe C",
-    "brand": "Mercedes-Benz",
+    "model": "DEFENDER 110",
+    "brand": "Land Rover",
     "type": "SUV",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/land-rover-defender-4d-suv-green-2020.png",
     "price": "88",
     "description": "Le Mercedes-Benz Classe C SUV offre luxe, sécurité et espace pour toute la famille."
   },
@@ -289,19 +289,19 @@
   },
   {
     "transmition": "Automatique",
-    "model": "X5 Hybride",
+    "model": "X5 ",
     "brand": "BMW",
     "type": "SUV",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/bmw-x5-5d-weiss-2018.png",
     "price": "100",
     "description": "Le BMW X5 Hybride offre puissance, espace et motorisation hybride pour des trajets responsables."
   },
   {
     "transmition": "Automatique",
-    "model": "X3 Hybride",
+    "model": "X3 M40",
     "brand": "BMW",
     "type": "SUV",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/bmw-x3-m40i-5d-schwarz-2019.png",
     "price": "98",
     "description": "Le BMW X3 Hybride est un SUV performant, adapté à tous les styles de conduite."
   },
@@ -310,34 +310,34 @@
     "model": "X3",
     "brand": "BMW",
     "type": "Compact Break",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/bmw-x3-suv-silver-2025.png",
     "price": "97",
     "description": "Le BMW X3 Compact Break offre polyvalence et confort pour les familles exigeantes."
   },
   {
     "transmition": "Automatique",
-    "model": "Classe V Extra Longue",
-    "brand": "Mercedes-Benz",
+    "model": "Série 4 Gran Coupé",
+    "brand": "BMW",
     "type": "Berline",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/bmw-4-grand-coupe-black-2021.png",
     "price": "105",
     "description": "La Mercedes-Benz Classe V Extra Longue est idéale pour les groupes ou familles nombreuses."
   },
   {
     "transmition": "Automatique",
-    "model": "X5",
+    "model": "XM",
     "brand": "BMW",
     "type": "SUV",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/bmw-xm-suv-blue-US-2024.png",
     "price": "102",
     "description": "Le BMW X5 est un SUV de luxe, alliant puissance, confort et technologies avancées."
   },
   {
     "transmition": "Manuelle",
-    "model": "Velar",
+    "model": "Sport",
     "brand": "Range Rover",
     "type": "SUV",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/land-rover-range-rover-sport-5d-suv-grey-2022.png",
     "price": "110",
     "description": "Le Range Rover Velar est un SUV élégant et performant, parfait pour les amateurs de belles mécaniques."
   },
@@ -352,10 +352,10 @@
   },
   {
     "transmition": "Automatique",
-    "model": "XM",
-    "brand": "BMW",
+    "model": "Q7",
+    "brand": "AUDI",
     "type": "Berline",
-    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/audi-q7-suv-black-2021.png",
     "price": "121",
     "description": "La BMW XM offre des performances exceptionnelles et un confort haut de gamme."
   }
