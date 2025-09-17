@@ -1,0 +1,66 @@
+@if (isAddLocation) {
+<app-new-location (close)="onCloseAddLocation()" />
+}
+@if(isPublicHoliday) {
+<app-public-holiday (close)="isPublicHoliday=$event" [id]="publicHolidayId" />
+}
+@if(isModifyLocation) {
+<app-modify-location (close)="isModifyLocation=$event" [location]="modifyLocation" />
+}
+
+
+<div class="flex justify-center items-center flex-col mt-4">
+  <div class="flex justify-center items-center space-x-4 mb-2">
+    <button class="text-white cursor-pointer" (click)="prevPage()" [disabled]="currentPage === 1">Précédent</button>
+    <button class=" text-white cursor-pointer" (click)="nextPage()"
+      [disabled]="currentPage === totalPages">Suivant</button>
+  </div>
+  <span class="text-center text-white">Page {{ currentPage }} / {{ totalPages }}</span>
+</div>
+<div class="flex flex-col items-center w-full mt-10">
+  <table class="table-auto border-collapse border border-gray-300 shadow-lg bg-white rounded-lg">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Id</th>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Name</th>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Address</th>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">City</th>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Zip-Code</th>
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700">Jours d'ouverture</th>
+
+        <th class="px-6 py-3 border border-gray-300 text-left font-semibold text-gray-700"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (location of locationList; track location.id) {
+      <tr class="hover:bg-gray-200">
+        <td class="px-6 py-4 border border-gray-300 text-gray-600">{{location.id}}</td>
+        <td class="px-6 py-4 border border-gray-300 text-gray-600">{{location.name}}</td>
+        <td class="px-6 py-4 border border-gray-300 text-gray-600">{{location.address}}</td>
+        <td class="px-6 py-4 border border-gray-300 text-gray-600">{{location.city}}</td>
+        <td class="px-6 py-4 border border-gray-300 text-gray-600">{{location.zipCode}}</td>
+        <td>
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-0.5  cursor-pointer"
+            (click)="onClick(location.publicHoliday.id!)">List
+            location_holiday</button>
+        </td>
+
+        <div>
+          <td class="px-6 py-4 border border-gray-300 text-gray-600">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-0.5  cursor-pointer"
+              (click)="ModifyLocationId(location)"><mat-icon>edit</mat-icon></button>
+            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded cursor-pointer"
+              (click)="deleteLocation(location.id!)"><mat-icon>delete</mat-icon></button>
+          </td>
+        </div>
+      </tr>
+      }
+    </tbody>
+  </table>
+  <div class="flex justify-center mt-10">
+    <button
+      class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-0.5 min-w-20 block cursor-pointer"
+      (click)="onAddLocation()">Create</button>
+  </div>
+</div>

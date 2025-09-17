@@ -271,5 +271,12 @@
     "brand": "BMW",
     "type": "Berline",
     "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
+  },
+  {
+    "transmition": "Automatique",
+    "model": "XM",
+    "brand": "BMW",
+    "type": "Berline",
+    "image": "https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/752x500/vw-id3-4d-white-2022.png"
   }
 ]

@@ -1,0 +1,42 @@
+<div class="flex min">
+  <nav class="bg-white p-6 w-60 flex flex-col items-center space-y-6 rounded-r shadow min-h-screen
+      fixed md:static z-20 transition-all duration-300"
+    [ngClass]="{'translate-x-0': showMenu, '-translate-x-[85%]': !showMenu}" style="transition: transform 2s;"
+    [style.minWidth]="showMenu ? '240px' : '0px'">
+    <div class="flex justify-center items-center w-full mb-6 relative">
+      <h1 class="text-2xl text-center mb-0 flex-1">{{pageTitle}}</h1>
+
+    </div>
+    <ul class="flex flex-col items-center space-y-4 w-full">
+      <li>
+        <a routerLink="/location" routerLinkActive="text-teal-400"
+          class=" hover:text-teal-300 font-semibold">Location</a>
+      </li>
+      <li>
+        <a routerLink="/user" routerLinkActive="text-teal-400" class=" hover:text-teal-300 font-semibold">User</a>
+      </li>
+      <li>
+        <a routerLink="/vehicle" routerLinkActive="text-teal-400" class=" hover:text-teal-300 font-semibold">Vehicle</a>
+      </li>
+    </ul>
+  </nav>
+  <button class="toggle-menu-btn" (click)="toggleMenu()" style="background: none; border: none;">
+    <mat-icon>{{ showMenu ? 'cancel' : 'menu' }}</mat-icon>
+  </button>
+
+  <div class="flex-1 flex flex-col" [style.marginLeft]="showMenu ? '10%' : '10%'">
+    <h1 class="text-2xl text-center mb-0 flex-1">{{pageTitle}}</h1>
+    <div class="flex justify-center mt-10">
+      <button type="button"
+        class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded mr-10 min-w-20 block"
+        routerLink="/location" routerLinkActive="active">Location</button>
+      <button type="button"
+        class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded  mr-10 min-w-20 block"
+        routerLink="/user" routerLinkActive="active">User</button>
+      <button type="button"
+        class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded mr-0.5 min-w-20 block"
+        routerLink="/vehicle" routerLinkActive="active">Vehicle</button>
+    </div>
+    <router-outlet />
+  </div>
+</div>

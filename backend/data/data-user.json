@@ -1,0 +1,572 @@
+[
+  {
+    "id": 1,
+    "name": "Leanne",
+    "surname": "Graham",
+    "email": "Sincere@april.biz",
+    "address": {
+      "street": "Kulas Light",
+      "suite": "Apt. 556",
+      "city": "Gwenborough",
+      "zipcode": "92998-3874",
+      "geo": {
+        "lat": "-37.3159",
+        "lng": "81.1496"
+      }
+    },
+    "phone": "1-770-736-8031 x56442",
+    "website": "hildegard.org",
+    "birthday": "1980-01-01"
+  },
+  {
+    "id": 2,
+    "name": "Ervin",
+    "surname": "Howell",
+    "email": "Shanna@melissa.tv",
+    "address": {
+      "street": "Victor Plains",
+      "suite": "Suite 879",
+      "city": "Wisokyburgh",
+      "zipcode": "90566-7771",
+      "geo": {
+        "lat": "-43.9509",
+        "lng": "-34.4618"
+      }
+    },
+    "phone": "010-692-6593 x09125",
+    "website": "anastasia.net",
+    "birthday": "1985-12-18"
+  },
+  {
+    "id": 3,
+    "name": "Clementine",
+    "surname": "Bauch",
+    "email": "Nathan@yesenia.net",
+    "address": {
+      "street": "Douglas Extension",
+      "suite": "Suite 847",
+      "city": "McKenziehaven",
+      "zipcode": "59590-4157",
+      "geo": {
+        "lat": "-68.6102",
+        "lng": "-47.0653"
+      }
+    },
+    "phone": "1-463-123-4447",
+    "website": "ramiro.info",
+    "birthday": "1990-01-01"
+  },
+  {
+    "id": 4,
+    "name": "Patricia",
+    "surname": "Lebsack",
+    "email": "Julianne.OConner@kory.org",
+    "address": {
+      "street": "Hoeger Mall",
+      "suite": "Apt. 692",
+      "city": "South Elvis",
+      "zipcode": "53919-4257",
+      "geo": {
+        "lat": "29.4572",
+        "lng": "-164.2990"
+      }
+    },
+    "phone": "493-170-9623 x156",
+    "website": "kale.biz",
+    "birthday": "2000-01-01"
+  },
+  {
+    "id": 5,
+    "name": "Chelsey",
+    "surname": "Dietrich",
+    "email": "Lucio_Hettinger@annie.ca",
+    "address": {
+      "street": "Skiles Walks",
+      "suite": "Suite 351",
+      "city": "Roscoeview",
+      "zipcode": "33263",
+      "geo": {
+        "lat": "-31.8129",
+        "lng": "62.5342"
+      }
+    },
+    "phone": "(254)954-1289",
+    "website": "demarco.info",
+    "birthday": "1999-01-01"
+  },
+  {
+    "id": 6,
+    "name": "Dennis",
+    "surname": "Schulist",
+    "email": "Karley_Dach@jasper.info",
+    "address": {
+      "street": "Norberto Crossing",
+      "suite": "Apt. 950",
+      "city": "South Christy",
+      "zipcode": "23505-1337",
+      "geo": {
+        "lat": "-71.4197",
+        "lng": "71.7478"
+      }
+    },
+    "phone": "1-477-935-8478 x6430",
+    "website": "ola.org",
+    "birthday": "1970-01-01"
+  },
+  {
+    "id": 7,
+    "name": "Kurtis",
+    "surname": "Weissnat",
+    "email": "Telly.Hoeger@billy.biz",
+    "address": {
+      "street": "Rex Trail",
+      "suite": "Suite 280",
+      "city": "Howemouth",
+      "zipcode": "58804-1099",
+      "geo": {
+        "lat": "24.8918",
+        "lng": "21.8984"
+      }
+    },
+    "phone": "210.067.6132",
+    "website": "elvis.io",
+    "birthday": "1960-01-01"
+  },
+  {
+    "id": 8,
+    "name": "Nicholas",
+    "surname": "Reichert",
+    "email": "Sherwood@rosamond.me",
+    "address": {
+      "street": "Ellsworth Summit",
+      "suite": "Suite 729",
+      "city": "Aliyaview",
+      "zipcode": "45169",
+      "geo": {
+        "lat": "-14.3990",
+        "lng": "-120.7677"
+      }
+    },
+    "phone": "586.493.6943 x140",
+    "website": "jacynthe.com",
+    "birthday": "2002-01-01"
+  },
+  {
+    "id": 9,
+    "name": "Glenna",
+    "surname": "Reichert",
+    "email": "Chaim_McDermott@dana.io",
+    "address": {
+      "street": "Dayna Park",
+      "suite": "Suite 449",
+      "city": "Bartholomebury",
+      "zipcode": "76495-3109",
+      "geo": {
+        "lat": "24.6463",
+        "lng": "-168.8889"
+      }
+    },
+    "phone": "(775)976-6794 x41206",
+    "website": "conrad.com",
+    "birthday": "1988-01-01"
+  },
+  {
+    "id": 10,
+    "name": "Clementina",
+    "surname": "DuBuque",
+    "email": "Rey.Padberg@karina.biz",
+    "address": {
+      "street": "Kattie Turnpike",
+      "suite": "Suite 198",
+      "city": "Lebsackbury",
+      "zipcode": "31428-2261",
+      "geo": {
+        "lat": "-38.2386",
+        "lng": "57.2232"
+      }
+    },
+    "phone": "024-648-3804",
+    "website": "ambrose.net",
+    "birthday": "1958-01-01"
+  },
+  {
+    "id": 11,
+    "name": "Sophie",
+    "surname": "Martin",
+    "email": "sophie.martin@example.com",
+    "address": {
+      "street": "Rue de la République",
+      "suite": "Appt 42",
+      "city": "Lyon",
+      "zipcode": "69001",
+      "geo": {
+        "lat": "45.7640",
+        "lng": "4.8357"
+      }
+    },
+    "phone": "06 12 34 56 78",
+    "website": "",
+    "birthday": "1990-05-15"
+  },
+  {
+    "id": 12,
+    "name": "Thomas",
+    "surname": "Bernard",
+    "email": "thomas.bernard@example.com",
+    "address": {
+      "street": "Avenue des Champs-Élysées",
+      "suite": "",
+      "city": "Paris",
+      "zipcode": "75008",
+      "geo": {
+        "lat": "48.8698",
+        "lng": "2.3079"
+      }
+    },
+    "phone": "07 89 01 23 45",
+    "website": "",
+    "birthday": "1985-11-22"
+  },
+  {
+    "id": 13,
+    "name": "Camille",
+    "surname": "Dubois",
+    "email": "camille.dubois@example.com",
+    "address": {
+      "street": "Boulevard de la Liberté",
+      "suite": "",
+      "city": "Lille",
+      "zipcode": "59000",
+      "geo": {
+        "lat": "50.6292",
+        "lng": "3.0573"
+      }
+    },
+    "phone": "06 45 67 89 01",
+    "website": "",
+    "birthday": "1992-03-30"
+  },
+  {
+    "id": 14,
+    "name": "Nicolas",
+    "surname": "Leroy",
+    "email": "nicolas.leroy@example.com",
+    "address": {
+      "street": "Rue de la Gare",
+      "suite": "",
+      "city": "Marseille",
+      "zipcode": "13001",
+      "geo": {
+        "lat": "43.2965",
+        "lng": "5.3698"
+      }
+    },
+    "phone": "07 23 45 67 89",
+    "website": "",
+    "birthday": "1988-07-12"
+  },
+  {
+    "id": 15,
+    "name": "Laura",
+    "surname": "Moreau",
+    "email": "laura.moreau@example.com",
+    "address": {
+      "street": "Place Bellecour",
+      "suite": "",
+      "city": "Lyon",
+      "zipcode": "69002",
+      "geo": {
+        "lat": "45.7578",
+        "lng": "4.8320"
+      }
+    },
+    "phone": "06 78 90 12 34",
+    "website": "",
+    "birthday": "1995-09-05"
+  },
+  {
+    "id": 16,
+    "name": "Antoine",
+    "surname": "Petit",
+    "email": "antoine.petit@example.com",
+    "address": {
+      "street": "Rue de Rivoli",
+      "suite": "",
+      "city": "Paris",
+      "zipcode": "75004",
+      "geo": {
+        "lat": "48.8556",
+        "lng": "2.3608"
+      }
+    },
+    "phone": "07 56 78 90 12",
+    "website": "",
+    "birthday": "1991-12-18"
+  },
+  {
+    "id": 17,
+    "name": "Marie",
+    "surname": "Durand",
+    "email": "marie.durand@example.com",
+    "address": {
+      "street": "Cours Mirabeau",
+      "suite": "",
+      "city": "Aix-en-Provence",
+      "zipcode": "13100",
+      "geo": {
+        "lat": "43.5297",
+        "lng": "5.4474"
+      }
+    },
+    "phone": "06 34 56 78 90",
+    "website": "",
+    "birthday": "1987-02-25"
+  },
+  {
+    "id": 18,
+    "name": "Pierre",
+    "surname": "Laurent",
+    "email": "pierre.laurent@example.com",
+    "address": {
+      "street": "Rue de la Paix",
+      "suite": "",
+      "city": "Nice",
+      "zipcode": "06000",
+      "geo": {
+        "lat": "43.7009",
+        "lng": "7.2684"
+      }
+    },
+    "phone": "07 90 12 34 56",
+    "website": "",
+    "birthday": "1993-06-08"
+  },
+  {
+    "id": 19,
+    "name": "Julie",
+    "surname": "Simon",
+    "email": "julie.simon@example.com",
+    "address": {
+      "street": "Place du Capitole",
+      "suite": "",
+      "city": "Toulouse",
+      "zipcode": "31000",
+      "geo": {
+        "lat": "43.6047",
+        "lng": "1.4442"
+      }
+    },
+    "phone": "06 21 43 65 87",
+    "website": "",
+    "birthday": "1996-08-14"
+  },
+  {
+    "id": 20,
+    "name": "François",
+    "surname": "Michel",
+    "email": "francois.michel@example.com",
+    "address": {
+      "street": "Rue de la République",
+      "suite": "",
+      "city": "Lyon",
+      "zipcode": "69002",
+      "geo": {
+        "lat": "45.7640",
+        "lng": "4.8357"
+      }
+    },
+    "phone": "07 65 43 21 09",
+    "website": "",
+    "birthday": "1989-04-03"
+  },
+  {
+    "id": 21,
+    "name": "Élodie",
+    "surname": "Roux",
+    "email": "elodie.roux@example.com",
+    "address": {
+      "street": "Rue de la Pompe",
+      "suite": "",
+      "city": "Paris",
+      "zipcode": "75016",
+      "geo": {
+        "lat": "48.8566",
+        "lng": "2.2756"
+      }
+    },
+    "phone": "06 09 87 65 43",
+    "website": "",
+    "birthday": "1994-10-27"
+  },
+  {
+    "id": 22,
+    "name": "David",
+    "surname": "Fournier",
+    "email": "david.fournier@example.com",
+    "address": {
+      "street": "Rue de la Soif",
+      "suite": "",
+      "city": "Rennes",
+      "zipcode": "35000",
+      "geo": {
+        "lat": "48.1173",
+        "lng": "-1.6778"
+      }
+    },
+    "phone": "07 12 34 56 78",
+    "website": "",
+    "birthday": "1986-01-19"
+  },
+  {
+    "id": 23,
+    "name": "Sarah",
+    "surname": "Lefebvre",
+    "email": "sarah.lefebvre@example.com",
+    "address": {
+      "street": "Rue Sainte-Catherine",
+      "suite": "",
+      "city": "Bordeaux",
+      "zipcode": "33000",
+      "geo": {
+        "lat": "44.8378",
+        "lng": "-0.5792"
+      }
+    },
+    "phone": "06 78 90 12 34",
+    "website": "",
+    "birthday": "1997-05-22"
+  },
+  {
+    "id": 24,
+    "name": "Alexandre",
+    "surname": "Girard",
+    "email": "alexandre.girard@example.com",
+    "address": {
+      "street": "Place de la Comédie",
+      "suite": "",
+      "city": "Montpellier",
+      "zipcode": "34000",
+      "geo": {
+        "lat": "43.6085",
+        "lng": "3.8793"
+      }
+    },
+    "phone": "07 45 67 89 01",
+    "website": "",
+    "birthday": "1990-11-30"
+  },
+  {
+    "id": 25,
+    "name": "Chloé",
+    "surname": "Blanc",
+    "email": "chloe.blanc@example.com",
+    "address": {
+      "street": "Rue du Faubourg Saint-Antoine",
+      "suite": "",
+      "city": "Paris",
+      "zipcode": "75012",
+      "geo": {
+        "lat": "48.8481",
+        "lng": "2.3729"
+      }
+    },
+    "phone": "06 32 54 76 98",
+    "website": "",
+    "birthday": "1998-07-07"
+  },
+  {
+    "id": 26,
+    "name": "Maxime",
+    "surname": "Chevalier",
+    "email": "maxime.chevalier@example.com",
+    "address": {
+      "street": "Rue de la Halle",
+      "suite": "",
+      "city": "Strasbourg",
+      "zipcode": "67000",
+      "geo": {
+        "lat": "48.5831",
+        "lng": "7.7458"
+      }
+    },
+    "phone": "07 98 76 54 32",
+    "website": "",
+    "birthday": "1984-09-15"
+  },
+  {
+    "id": 27,
+    "name": "Amandine",
+    "surname": "Boyer",
+    "email": "amandine.boyer@example.com",
+    "address": {
+      "street": "Rue de la République",
+      "suite": "",
+      "city": "Lyon",
+      "zipcode": "69003",
+      "geo": {
+        "lat": "45.7640",
+        "lng": "4.8357"
+      }
+    },
+    "phone": "06 45 67 89 01",
+    "website": "",
+    "birthday": "1991-03-28"
+  },
+  {
+    "id": 28,
+    "name": "Benoît",
+    "surname": "André",
+    "email": "benoit.andre@example.com",
+    "address": {
+      "street": "Rue du Vieux Port",
+      "suite": "",
+      "city": "Marseille",
+      "zipcode": "13002",
+      "geo": {
+        "lat": "43.2965",
+        "lng": "5.3698"
+      }
+    },
+    "phone": "07 65 43 21 09",
+    "website": "",
+    "birthday": "1987-12-10"
+  },
+  {
+    "id": 29,
+    "name": "Caroline",
+    "surname": "Renard",
+    "email": "caroline.renard@example.com",
+    "address": {
+      "street": "Place du Parlement",
+      "suite": "",
+      "city": "Bordeaux",
+      "zipcode": "33000",
+      "geo": {
+        "lat": "44.8378",
+        "lng": "-0.5792"
+      }
+    },
+    "phone": "06 12 34 56 78",
+    "website": "",
+    "birthday": "1993-04-17"
+  },
+  {
+    "id": 30,
+    "name": "Guillaume",
+    "surname": "Lemoine",
+    "email": "guillaume.lemoine@example.com",
+    "address": {
+      "street": "Rue de la Gare",
+      "suite": "",
+      "city": "Nantes",
+      "zipcode": "44000",
+      "geo": {
+        "lat": "47.2184",
+        "lng": "-1.5536"
+      }
+    },
+    "phone": "07 89 01 23 45",
+    "website": "",
+    "birthday": "1985-08-05"
+  }
+]
